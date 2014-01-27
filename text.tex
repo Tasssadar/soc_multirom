@@ -284,9 +284,38 @@ Možnost provozovat více operačních systému na jedno zařízení je užiteč
 %\pagestyle{headings} % znovu zapne číslování
 \pagestyle{plain}
 
+%
+% Motivace 
 \section*{Úvod}
 \addcontentsline{toc}{section}{Úvod} % přidá položku úvod do obsahu
 \label{uvod}
+
+
+
+\section{Motivace}
+Abych mohl vysvětlit důvod, proč je multi-boot na mobilních zařízeních užitečný, musím nejdříve upozornit na možnosti, které tato zařízení mají.
+
+Tablety a telefony s platformou Google Android lze narozdíl od jiných systémů relativně snadno upravovat. Uživatelé na nich mohou získat přístup k tzv. superuživateli\footnote{Uživatel, který má práva přistupovat a měnit všechny části systému, je možné ho připodobnit k uživateli \It{Administrátor} v MS Windows. V Linuxu se jmenuje \It{root}.} a dále pak upravovat software na zařízení jakýmkoliv způsobem chtějí. Toto společně s faktem, že velká část OS Android má otevřené zdrojové kódy, vedlo ke vzniku obrovské komunity programátorů a nadšenců, kteří tyto zařízení různými způsoby upravují a vylepšují. Jedním z \uv{produktů} této komunity jsou celé upravené distribuce Androidu, tzv. ROM.
+
+\subsection{Android ROM}
+ROM lze přirovnat k distribucím Linuxu, jak je známe ze stolních počítačů. Jejich základem jsou obvykle zdrojové kódy z AOSP\cite{aosp}\footnote{\It{Android Open Source Project} - označení pro otevřenou část zrojových kódů OS Android}, které si autoři upravují podle svých představ - přidávají optimalizace pro zrychlení celého systému, přidávají další možnosti personalizace pro uživatele, mění prvky uživatelského rozhraní a mnoho dalšího. Na zařízeních, která již nejsou podporované výrobcem, mohou být ROM jediným způsobem, jak na ně přinést novější verze OS Android.
+
+ROM často vydávají a spravují pouze jednotlivci, ale existují i projekty s velkým počtem vývojářů i uživatelů, například CyanogenMod\cite{CM}. Ten nedávno překonal hranici 10 milionů uživatelů, oficiálně podporuje přes 200 zařízení a je aktuálně největší upravenou ROM.
+
+\subsection{Další operační systémy}
+Kromě Androidu existují i další mobilní operační systémy, například Ubuntu Touch\cite{utouch}, Mozilla Firefox OS\cite{firefoxos} a další. Tyto systémy často použivají zařízení původně prodávaná s Androidem jako testovací, zejména kvůli jejich snadné dostupnosti a relativně nízké ceně. Pro tablet Google Nexus 7 dokonce existuje plná verze Linuxové distribuce Ubuntu, díky které je možné tento tablet po připojení klávesnice a myši používat jako netbook, s většinou programů které známe z PC.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=\textwidth]{img/n7_ubuntu.jpg}
+\caption{Ubuntu na tabletu Nexus 7 s připojenou klávesnicí}
+\label{split_img}
+\end{center}
+\end{figure}
+
+
+\subsection{Více systémů na jednom zařízení}
+Tyto telefony a tablety tedy ve většině případů (více o této problematice v příloze \uv{\nameref{sec:locked}}) nejsou uzamknuté na jediném, výrobcem vybraném systému a jeho verzi a dokáží podobně jako stolní počítače provozovat více typů a verzí operačních systémů. Chybí jim však možnost mít více systémů nainstalovaných zárověň.
 
 
 
@@ -299,7 +328,22 @@ Možnost provozovat více operačních systému na jedno zařízení je užiteč
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \section*{PŘÍLOHA A:}
+\section*{Uzamykání zařízení pouze na určitý systém}
+\label{sec:locked}
+I když zdrojové kódy OS Android jsou z velké části otevřené, mezi výrobci panuje trend uzamykaní zařízení tak, aby mohli uživatelé používat pouze systém vydaný výrobcem, ať už v zájmu bezpečnosti, zachování určitých vlastností systému (např. předinstalované aplikace často obtěžující uživatele) nebo z prostého nepochopení trhu. V současnosti existuje několik typů uzamknutí zařízení:
 
+\begin{enumerate}
+    \item \B{Volně odemykatelné} - uživatel si je může sám odemknout, bez žádných nevýhod oproti uzamknutým zařízením. Tento typ je nejvíce ojedinělý, příkladem jsou zařízení z řady \It{Nexus} vydávané pod záštitou firmy Google.
+    
+    \item \B{Odemykatelné za registraci} - výrobce provozuje web, který po zadání sériového čísla zařízení vydá odemykací kód. Takto si vytvoří databázi odemknutých zařízení, kterou poté může využít k zamítnutí reklamací (podobné chování nemusí být v souladu s legislativou).
+    
+    Někteří výrobci při tomto odemknutí smažou klíče pro placený obsah (tzv. DRM\footnote{\It{Digital Rights Management} - systémy navrhnuté pro zabránění nelegálního kopírování digitálního obsahu - hudby, filmů, her apod.}), protože je na odemknutých systémech podle jejich názoru větší nebezpečí nelegálního kopírování obsahu chráněného pomocí DRM.
+    
+    \item \B{\uv{Edice pro vývojáře}} - výrobce kromě standardní varianty zařízení vydávají verzi, kterou je možné odemknout, buďto za registraci nebo volně. Tyto edice jsou často bezdůvodně dražší anebo nejsou dostupné ve všech zemích, ve kterých je možné koupit standardní variantu. Označení \uv{Developer edition}, které výrobci používají, je v tomto případě mírně zavádějící - zařízení je možné pouze odemknout a kromě této skutečnosti není o nic více přispůsobené vývojářům (části s uzavřeným zdrojovým kódem jsou stále nedostupné a hardware telefonu je rovněž stejný).
+
+    \item \B{Bez možnosti odemknutí} - výrobce neposkytuje žádný způsob jak zařízení odemknout. V naprosté většině případů ale komunita překoná toto omezení a existuje více nebo méně pohodlná možnost neoficiálního odemknutí. Někteří výrobci tomuto odporují a dokonce přidávají vlastnosti kontrolující integritu systému a sledující, zda nebylo uzamknutí prolomeno. Tyto ochrany bývají často také překonány.
+    
+\end{enumerate}
 
 \newpage
  \section*{PŘÍLOHA E:}
@@ -308,9 +352,21 @@ Možnost provozovat více operačních systému na jedno zařízení je užiteč
  %% 99 znamená, že maximální délka čísla literatury jsou dva znaky
 % seznam samozřejmě změníte podle svého, tohle je pouze ukázka formátování
 
-    \bibitem{serialchart} \It{SerialChart} -- Analyse and chart serial data from RS-232 COM ports \\
-    \url{http://code.google.com/p/serialchart/}\\
-    (Stav ke dni 25.\,2.\,2013)
+    \bibitem{aosp} \It{Android Open Source Project} \\
+    \url{http://source.android.com/}\\
+    (Stav ke dni 19.\,1.\,2014)
+
+    \bibitem{CM} \It{CyanogenMod} \\
+    \url{http://www.cyanogenmod.org/}\\
+    (Stav ke dni 19.\,1.\,2014)
+
+    \bibitem{utouch} \It{Ubuntu Touch} - Ubuntu on phones \\
+    \url{http://www.ubuntu.com/phone}\\
+    (Stav ke dni 21.\,1.\,2014)
+
+    \bibitem{firefoxos} \It{Firefox OS}\\
+    \url{http://www.mozilla.org/cs/firefox/os/}\\
+    (Stav ke dni 21.\,1.\,2014)
 
 
 \end{thebibliography}
