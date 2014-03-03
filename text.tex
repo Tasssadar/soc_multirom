@@ -229,11 +229,19 @@
 
 \section*{Prohlášení}
 
-Prohlašuji, že jsem svou práci vypracoval samostatně, použil jsem pouze podklady (literaturu, SW atd.) citované v~práci a~uvedené v~přiloženém seznamu a~postup při zpracování práce je v~souladu se zákonem č. 121/2000 Sb., o~právu autorském, o~právech souvisejících s~právem autorským a~o~změně některých zákonů (autorský zákon) v~platném znění. 
- 
-\vspace{20mm} 
- 
-\noindent V~Brně  dne: 6.3.2014 \hspace{50mm}                 podpis:   
+Prohlašuji, že jsem svou práci vypracoval samostatně, použil jsem pouze podklady (literaturu, SW atd.) citované v~práci a~uvedené v~přiloženém seznamu a~postup při zpracování práce je v~souladu se zákonem č. 121/2000 Sb., o~právu autorském, o~právech souvisejících s~právem autorským a~o~změně některých zákonů (autorský zákon) v~platném znění.
+
+\vspace{10mm}
+
+\noindent \parbox{\textwidth}{
+\noindent V~Brně dne: \rule{4cm}{1pt}
+\hfill\parbox{5cm}{
+    \centering
+    \vspace{9mm}
+    \rule{5cm}{1pt}\\
+        Vojtěch Boček
+}
+}
  
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -285,6 +293,7 @@ Možnost provozovat více operačních systému na jedno zařízení je užiteč
 
 
 
+\newpage
 \section{Motivace}
 Abych mohl vysvětlit důvod, proč je multi-boot na mobilních zařízeních užitečný, musím nejdříve upozornit na možnosti, které tato zařízení mají.
 
@@ -351,7 +360,7 @@ Platforma ARM bohužel stále není standardizovaná alespoň do takové míry j
 
 Seznam není příliš dlouhý, zejména protože s každým dalším podporovaným zařízením značně narůstá čas, který musím věnovat testování a protože jen velmi nerad podporuji zařízení, které nevlastním - jak jsem se přesvědčil u Nexusu 4, značně to omezuje schopnost řádně otestovat nové funkce a úpravy, protože musím spoléhat na některého ze zkušenějších uživatelů MultiROM, aby vše řádně otestoval, případně pomohl s řešením problému.
 
-MultiROM má ale svobodný zdrojový kód, takže kdokoliv může přidat podporu pro další zařízení, což se také stalo - existují neoficiální verze například pro telefony HTC One, Samsung Galaxy S3 nebo Sony Xperia M. Verze pro Nexus 4 byla původně také upravena jiným členem komunity, já jsem ji převzal a poskytuji pro ni podporu.
+MultiROM má ale otevřený zdrojový kód, takže kdokoliv může přidat podporu pro další zařízení, což se také stalo - existují neoficiální verze například pro telefony HTC One, Samsung Galaxy S3 nebo Sony Xperia M. Verze pro Nexus 4 byla původně také upravena jiným členem komunity, já jsem ji převzal a poskytuji pro ni podporu.
 
 \subsection{Požadavky}
 MultiROM mění části systému, zařízení tedy musí být odemknuté. Všechny oficálně podporované přístroje patří do řady Nexus, jsou tedy \uv{volně odemykatelné} (více o této problematice v příloze \uv{\nameref{sec:locked}}).
@@ -404,14 +413,14 @@ Grafické rozhraní TWRP mi umožnilo vytvořit relativně snadný a rychlý zp�
 \subsection{Kexec}
 Kexec je funkce Linuxového jádra, která umožňuje spustit jiné jádro bez nutnosti restartu počítače. Staré jádro se ukončí a místo něj se spustí nové, vynechá se tak fáze startu BIOSu a zavadeče. Restart zařízení pomocí volání kexec je tedy rychlejší, nicméně MultiROM kexec využívá z jiného důvodu.
 
-MultiROM při spouštění jiného systému potřebuje nahrát jeho jádro, ideálně bez toho, aby přepsala jádro hlavního OS, které je uložené v zaváděcím sektoru. Právě k tomu je využit kexec - nové jádro je pouze načteno do operační paměti a spuštěno.
+MultiROM při spouštění jiného systému potřebuje nahrát jeho jádro, ideálně bez toho, aby přepsala jádro hlavního OS, které je uložené v zaváděcím sektoru. Právě k tomu je využit kexec - nové jádro je pouze načteno do operační paměti a spuštěno. V případě, že bych upravoval zaváděcí sektor pro každý systém zvlášť, existovalo by nebezpečí, že v něm v případě nějaké chyby zůstane zapsané špatné jádro a zařízení by ani po restartu nenabootovalo -- toto nebezpečí díky použití funkce kexec odpadá, protože původní jádro není přepsáno.
 
 \subsection{Kexec-hardboot}
-Kexec potřebuje, aby všechny ovladače při ukončení jádra zanechaly zařízení ve správném stavu tak, aby je nové jádro mohlo znovu inicializovat a použít. Bohužel, ovladače na zařízení s Androidem často nejsou na kexec připraveny a přístroj při pokusu tuto funkci použít jednoduše zamrzne někde mezi starým a novým jádrem. V tomto stavu není možné bez speciálního vybavení a dokumentace nijak zjistit příčinu zamrznutí, opravení ovladačů je tedy téměř nemožné.
+Kexec potřebuje, aby všechny ovladače při ukončení jádra zanechaly periferie ve správném stavu tak, aby je nové jádro mohlo znovu inicializovat a použít. Bohužel, ovladače na zařízení s Androidem často nejsou na kexec připraveny a přístroj při pokusu tuto funkci použít jednoduše zamrzne někde mezi starým a novým jádrem. V tomto stavu není možné bez speciálního vybavení a dokumentace nijak zjistit příčinu zamrznutí, opravení ovladačů je tedy téměř nemožné.
 
 Proto byla vytvořena modifikace funkce kexec, nazvaná kexec-hardboot, která přidává do procesu reálný restart zařízení. Staré jádro tedy uloží nové do oblasti operační paměti, která se při restartu nepřepíše a restartuje zařízení. Zavaděč poté korektně nastaví všechny zařízení do počátečního stavu (jako při normálním bootu), několik prvních instrukcí jádra ze zaváděcího sektoru detekuje, že bylo do operační paměti uloženo jiné jádro a přeskočí do něj.
 
-Tento patch původně napsal Mike Kasick\cite{kexec-hardboot-orig}, já jsem ho upravil pro zařízení podporované MultiROM a také významně vylepšil jeho možnosti (podrobně popsáno v příloze  \uv{\nameref{sec:kexec-hardboot}})
+Tento patch původně napsal Mike Kasick\cite{kexec-hardboot-orig}, já jsem ho upravil pro zařízení podporované MultiROM a také významně vylepšil jeho možnosti (podrobně popsáno v příloze  \uv{\nameref{sec:kexec-hardboot}}).
 
 \section{Aplikace pro Android}
 Aplikace \It{MultiROM Manager} je poměrně nová část MultiROM, přidaná hlavně za účelem zjednodušení instalace celé modifikace. Postupně přibyla instalace Ubuntu Touch, možnost správa instalovaných systémů a možnost nabootovat do systému přímo z této aplikace, bez nutnosti restartovat nejdříve do boot manageru.
@@ -529,13 +538,16 @@ dir_cmdline="rootsubdir=%s"
 \section{Srovnání s jinými multiboot nástroji}
 Žádný jiný multiboot nástroj pro zařízení řady Nexus, které MultiROM podporuje, neexistují, budu tedy srovnávat s metodamy, které jsou běžné pro jiné telefony a tablety.
 
-Nejčastějším způsobem je tzv. \B{dual-boot kernel}, který spočívá upravení \It{init} skriptů a používání některé z volných oddílů na zařízení pro umístění druhé ROM (například |/cache|). Do druhého systému se uživatel nabootuje, pokud bude držet některou z kláves na zařízení, např. snížení hlasitosti. Nevýhody této metody jsou možnost instalace pouze dvou systémů, které navíc musí být jen Android ROM. Dále používá pro obě ROM stejné jádro, které tedy musí být s oběma kompatibilní.
+Nejčastějším způsobem je tzv. \B{dual-boot kernel}, který spočívá upravení \It{init} skriptů a používání některé z volných oddílů na zařízení pro umístění druhé ROM (například |/cache|). Do druhého systému se uživatel nabootuje, pokud bude držet některou z kláves na zařízení, např. snížení hlasitosti. Nevýhody této metody jsou možnost instalace pouze dvou systémů, které navíc musí být jen Android ROM. Dále používá pro obě ROM stejné jádro, které tedy musí být s oběma kompatibilní. To může být často problém, na většině zařízení existuje 2 a více základních druhů ROM, které mezi sebou nejsou kompatibilní.
 
-Méně častá jsou \B{řešení založená na volání kexec}, podobně jako MultiROM. Pro ukládání vedlejších ROM používají obrazy oddílů nebo složky a často mají i nějakou formu boot manageru. Jako příklad použiji modifikaci \It{Xperia Boot Menu}\cite{xperia-boot-menu}, která používá kexec-hardboot patch, nicméně nemá upravenou recovery, který by pomáhala s instalací vedlejších ROM, která se tím pádem stává poměrně náročnou činností.
+Méně častá jsou \B{řešení založená na volání kexec}, podobně jako MultiROM. Pro ukládání vedlejších ROM používají obrazy oddílů nebo složky a často mají i nějakou formu boot manageru. Jako příklad použiji modifikaci \It{Xperia Boot Menu}\cite{xperia-boot-menu}, která používá kexec-hardboot patch, nicméně nemá upravenou recovery, který by pomáhala s instalací vedlejších ROM, tato činnost se tím pádem stává poměrně náročnou.
 
-Dalším populární modifikací je MoDaCo.SWITCH\cite{modaco-switch}, jejíž hlavní předností je sdílení všech dat a aplikací mezi hlavním a vedlejším systémem. Jedná se však pouze o dual-boot, a to jen mezi dvěma ROM - uživatel si je nemůže vybrat, protože jsou součástí této modifikace. Právě to umožňuje relativně bezproblémové sdílení všech dat mezi oběma systémy, které MultiROM ještě nepodporuje.
+Dalším populární modifikací je MoDaCo.SWITCH\cite{modaco-switch}, jejíž hlavní předností je sdílení všech dat a aplikací mezi hlavním a vedlejším systémem. Jedná se však pouze o dual-boot, a to jen mezi dvěma předem určenými ROM - uživatel si je nemůže vybrat, protože jsou součástí této modifikace. Právě to umožňuje relativně bezproblémové sdílení všech dat mezi oběma systémy, které MultiROM ještě nepodporuje.
 
 Mezi hlavní výhody MultiROM patří zejména \B{velmi snadná instalace a používání} v porovnání s ostatními podobnými modifikacemi. Aplikace pro Android nainstaluje vše potřebné a udržuje MultiROM aktualizovanou a další systémy se instalují v upravené recovery velmi podobně jako bez multibootu - stačí pouze vybrat ZIP soubor a stisknout tlačítko. MultiROM dále podporuje téměř \B{jakýkoliv typ operačního systému} - například pro Nexus 7 existují kromě Androidu balíčky se systémy Ubuntu Touch, Ubuntu Desktop, Plasma Active, WebOS, Tizen, BohdiLinux či ArchLinux. Další důležitou vlastností je možnost \B{instalace jakéhokoliv množství vedlejších systémů}, jediným limitem je velikost paměti. Navíc je možné \B{instalovat i na USB flash disk}, pokud je interní paměť zařízení vyčerpána.
+
+\section{Spolupráce s komunitou}
+% TWRP, porty, kexec-hardboot ....
 
 \section{Přijetí MultiROM}
 \subsection{XDA Developers fóra}
@@ -642,7 +654,7 @@ I když zdrojové kódy OS Android jsou z velké části otevřené, mezi výrob
     
     Někteří výrobci při tomto odemknutí smažou klíče pro placený obsah (tzv. DRM\footnote{\It{Digital Rights Management} - systémy navrhnuté pro zabránění nelegálního kopírování digitálního obsahu - hudby, filmů, her apod.}), protože je na odemknutých systémech podle jejich názoru větší nebezpečí nelegálního kopírování obsahu chráněného pomocí DRM.
     
-    \item \B{\uv{Edice pro vývojáře}} - výrobce kromě standardní varianty zařízení vydávají verzi, kterou je možné odemknout, buďto za registraci nebo volně. Tyto edice jsou často bezdůvodně dražší anebo nejsou dostupné ve všech zemích, ve kterých je možné koupit standardní variantu. Označení \uv{Developer edition}, které výrobci používají, je v tomto případě mírně zavádějící - zařízení je možné pouze odemknout a kromě této skutečnosti není o nic více přispůsobené vývojářům (části s uzavřeným zdrojovým kódem jsou stále nedostupné a hardware telefonu je rovněž stejný).
+    \item \B{\uv{Edice pro vývojáře}} - výrobce kromě standardní varianty zařízení vydávají verzi, kterou je možné odemknout, buďto za registraci nebo volně. Tyto edice jsou často bezdůvodně dražší anebo nejsou dostupné ve všech zemích, ve kterých je možné koupit standardní variantu. Označení \uv{Developer edition}, které výrobci používají, je v tomto případě mírně zavádějící -- odemknutí zařízení spočívá opět pouze v povolení zápisu do většiny paměti a vypnutí ochran, které by zařízení zablokovali v případě, že jsou systémové části SW změněny. Kromě této skutečnosti není o nic více přispůsobené vývojářům (části softwaru s uzavřeným zdrojovým kódem jsou stále nedostupné a hardware telefonu je rovněž stejný, neobsahuje např. další dobře dostupné porty pro ladění zařízení).
 
     \item \B{Bez možnosti odemknutí} - výrobce neposkytuje žádný způsob jak zařízení odemknout. V naprosté většině případů ale komunita překoná toto omezení a existuje více nebo méně pohodlná možnost neoficiálního odemknutí. Někteří výrobci tomuto odporují a dokonce přidávají vlastnosti kontrolující integritu systému a sledující, zda nebylo uzamknutí prolomeno. Tyto ochrany bývají často také překonány.
     
