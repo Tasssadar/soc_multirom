@@ -332,6 +332,7 @@ Tyto telefony a tablety tedy ve většině případů (více o této problematic
 \noindent \It{Multiboot} je tedy užitečný i na přenosných zařízeních, což, jak se přesvědčíte dále v této práci, potvrzuje i počet uživatelů MultiROM.
 
 \section{MultiROM}
+%TODO: wiki
 MultiROM je modifikace pro zařízení původně s OS Android, která umožňuje používat více operačních systémů zárověň na jednom zařízení. Skládá se ze čtyř částí, které budou dalé důkladně popsány v samostatných kapitolách:
 
 \begin{enumerate}
@@ -420,7 +421,7 @@ Kexec potřebuje, aby všechny ovladače při ukončení jádra zanechaly perife
 
 Proto byla vytvořena modifikace funkce kexec, nazvaná kexec-hardboot, která přidává do procesu reálný restart zařízení. Staré jádro tedy uloží nové do oblasti operační paměti, která se při restartu nepřepíše a restartuje zařízení. Zavaděč poté korektně nastaví všechny zařízení do počátečního stavu (jako při normálním bootu), několik prvních instrukcí jádra ze zaváděcího sektoru detekuje, že bylo do operační paměti uloženo jiné jádro a přeskočí do něj.
 
-Tento patch původně napsal Mike Kasick\cite{kexec-hardboot-orig}, já jsem ho upravil pro zařízení podporované MultiROM a také významně vylepšil jeho možnosti (podrobně popsáno v příloze  \uv{\nameref{sec:kexec-hardboot}}).
+Tento patch původně napsal Mike Kasick\cite{kexec-hardboot-orig}, já jsem ho upravil pro zařízení podporované MultiROM a také významně vylepšil jeho možnosti (podrobně popsáno v příloze \uv{\nameref{sec:kexec-hardboot}}).
 
 \section{Aplikace pro Android}
 Aplikace \It{MultiROM Manager} je poměrně nová část MultiROM, přidaná hlavně za účelem zjednodušení instalace celé modifikace. Postupně přibyla instalace Ubuntu Touch, možnost správa instalovaných systémů a možnost nabootovat do systému přímo z této aplikace, bez nutnosti restartovat nejdříve do boot manageru.
@@ -536,7 +537,7 @@ dir_cmdline="rootsubdir=%s"
 \linespread{1.3}
 
 \section{Srovnání s jinými multiboot nástroji}
-Žádný jiný multiboot nástroj pro zařízení řady Nexus, které MultiROM podporuje, neexistují, budu tedy srovnávat s metodamy, které jsou běžné pro jiné telefony a tablety.
+Žádný jiný multiboot nástroj pro zařízení řady Nexus, které MultiROM podporuje, neexistují, budu tedy srovnávat s metodami, které jsou běžné pro jiné telefony a tablety.
 
 Nejčastějším způsobem je tzv. \B{dual-boot kernel}, který spočívá upravení \It{init} skriptů a používání některé z volných oddílů na zařízení pro umístění druhé ROM (například |/cache|). Do druhého systému se uživatel nabootuje, pokud bude držet některou z kláves na zařízení, např. snížení hlasitosti. Nevýhody této metody jsou možnost instalace pouze dvou systémů, které navíc musí být jen Android ROM. Dále používá pro obě ROM stejné jádro, které tedy musí být s oběma kompatibilní. To může být často problém, na většině zařízení existuje 2 a více základních druhů ROM, které mezi sebou nejsou kompatibilní.
 
@@ -545,9 +546,6 @@ Méně častá jsou \B{řešení založená na volání kexec}, podobně jako Mu
 Dalším populární modifikací je MoDaCo.SWITCH\cite{modaco-switch}, jejíž hlavní předností je sdílení všech dat a aplikací mezi hlavním a vedlejším systémem. Jedná se však pouze o dual-boot, a to jen mezi dvěma předem určenými ROM - uživatel si je nemůže vybrat, protože jsou součástí této modifikace. Právě to umožňuje relativně bezproblémové sdílení všech dat mezi oběma systémy, které MultiROM ještě nepodporuje.
 
 Mezi hlavní výhody MultiROM patří zejména \B{velmi snadná instalace a používání} v porovnání s ostatními podobnými modifikacemi. Aplikace pro Android nainstaluje vše potřebné a udržuje MultiROM aktualizovanou a další systémy se instalují v upravené recovery velmi podobně jako bez multibootu - stačí pouze vybrat ZIP soubor a stisknout tlačítko. MultiROM dále podporuje téměř \B{jakýkoliv typ operačního systému} - například pro Nexus 7 existují kromě Androidu balíčky se systémy Ubuntu Touch, Ubuntu Desktop, Plasma Active, WebOS, Tizen, BohdiLinux či ArchLinux. Další důležitou vlastností je možnost \B{instalace jakéhokoliv množství vedlejších systémů}, jediným limitem je velikost paměti. Navíc je možné \B{instalovat i na USB flash disk}, pokud je interní paměť zařízení vyčerpána.
-
-\section{Spolupráce s komunitou}
-% TWRP, porty, kexec-hardboot ....
 
 \section{Přijetí MultiROM}
 \subsection{XDA Developers fóra}
@@ -632,6 +630,34 @@ Na grafu č. \ref{graf-uzivatele} můžete vidět graf \B{aktivních} instalací
 \noindent \uv{MultiROM: Must-Have for Nexus 7 Tinkering}
 
 \hfill \It{AppsLab\cite{appslab}}
+
+\section{Spolupráce s komunitou}
+\subsection{TeamWin Recovery Project}
+Při implementování rozsáhlých úprav do TWRP, aby dokázala spravovat MultiROM, jsem se podrobně seznámil se strukturou tohoto projektu. Během tohoto procesu jsem také opravil několik chyb a přidal nemalé množství úprav a nových funkcí, které jsem v TWRP postrádal. Část těchto úprav, která nesouvisela s MultiROM, jsem postupně odeslal do hlavního stromu TWRP, aby je mohli používat všichni uživatelé této recovery. Patří mezi ně například:
+
+\begin{itemize}
+    \item Přidání posuvníku do seznamu souborů
+    \item Optimalizace vykreslování GUI, výsledkem je až čtyřnásobné zrychlení
+    \item Nový prvek GUI - horizontální posuvník pro nastavení hodnoty v určitém rozmezí, například jas displeje (0-100\%)
+    \item Podpora myši připojené přes USB (hodí se pro uživatele, kterým se rozbila dotyková vrstva displeje)
+    \item Úpravy rozšiřující možnosti XML témat (podmíněné zobrazování prvků GUI, ukládání proměnných, ...)
+\end{itemize}
+
+\subsection{Kexec-hardboot patch}
+%FIXME: XDA reference, musi byt pod vysvetlenim co je XDA
+Patch upravený pro jednotlivá zařízení s dalšími vylepšeními jsem zveřejnil na XDA fóru, aby ho mohli používat i ostatní, což se také stalo - další členové komunity můj patch použili na dalších zařízeních (zejména z řady Sony Xperia). Podprobný popis mé verze patche a odkazy na jednotlivá vlákna na XDA fóru najdete v příloze \uv{\nameref{sec:kexec-hardboot}}.
+
+\subsection{Verze MultiROM pro další zařízení}
+Členové komunity MultiROM upravili pro některé další zařízení, vetšině jsem osobně nějakým způsobem pomáhal -- odpovídal na dotazy nebo implementoval některé komplexnější části MultiROM pro jejich telefon či tablet (např. kexec-hardboot patch). Pomáhaly jim také stránky o upravovaní MultiROM pro další zařízení, které jsem napsal na wiki (součást repozitáře na Githubu):
+
+\begin{itemize}
+    \item \url{https://github.com/Tasssadar/multirom/wiki/Porting-MultiROM}
+\end{itemize}
+
+\subsection{Ubuntu Touch}
+Ubuntu Touch\cite{utouch} je nový mobilní operační systém v současnosti vyvíjený firmou Canonical. Má stejný základ jako počítačová distribuce Ubuntu a je tedy mnohem blíže úplnému Linuxovému systému než Android. Díky MultiROM jsem si tento systém mohl vyzkoušet bez smazání mého hlavního systému. Kdyby MultiROM neexistovala, pravběpodobně bych tento OS vyzkoušel až mnohem později, protože Ubuntu Touch ještě není připravené pro běžné používání, je teprve ve vývoji. Tento OS mě zaujal, a tak jsem do tohoto OS různým způsobem přispíval -- nahlašováním chyb a několika málo opravami.
+
+Mimo jiné jsem také vytvořil server\cite{tasemnice-si-mail}, který sestavuje Ubuntu Touch pro telefon Nexus 5 a poskytuje instalační soubory a aktualizace pro všechny zájemce.  Nexus 5 není oficiálně podporovaný firmou Canonical, ale díky tomuto serveru mohou uživatelé tento systém instalovat stejným způsobem jako na oficiální podporovaná zařízení -- stačí pouze zadat jinou adresu serveru s instalačními soubory. Fungují dokonce i automatické aktualizace.
 
 \newpage
 \section*{Závěr}
@@ -850,6 +876,10 @@ Kromě toho bylo provedeno několik dalších změn, zejména pro kompatibilitu 
     \bibitem{appslab} \It{AppsLab} - Článek o MultiROM\\
     \url{http://theappslab.com/2013/04/16/multirom-must-have-for-nexus-7-tinkering/}\\
     (Stav ke dni 2.\,3.\,2014)
+
+    \bibitem{tasemnice-si-mail} E-mail popisující můj server pro Ubuntu Touch\\
+    \url{https://lists.launchpad.net/ubuntu-phone/msg06721.html}\\
+    (Stav ke dni 5.\,3.\,2014)
 
 \end{thebibliography}
 

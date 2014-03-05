@@ -1,0 +1,2356 @@
+Content-Type: multipart/related; start=<op.mhtml.1394005217722.d93d80751b7f6b22@172.16.0.55>; boundary=----------CdrkFMnOmwYklZ8m05cvug
+Content-Location: https://lists.launchpad.net/ubuntu-phone/msg06721.html
+Subject: =?utf-8?Q?Custom=20system-image=20server=20for=20Nexus=205=20:=20Mailing=20list=20archive=20:=20ubuntu-phone=20team=20in=20Launchpad?=
+MIME-Version: 1.0
+
+------------CdrkFMnOmwYklZ8m05cvug
+Content-Disposition: inline; filename=msg06721.html
+Content-Type: text/html; name=msg06721.html
+Content-ID: <op.mhtml.1394005217722.d93d80751b7f6b22@172.16.0.55>
+Content-Location: https://lists.launchpad.net/ubuntu-phone/msg06721.html
+Content-Transfer-Encoding: 8bit
+
+<!-- MHonArc v2.6.18 -->
+<!--X-Subject:  Custom system&#45;image server for Nexus 5 -->
+<!--X-From-R13: Hbwgrpu Pbprx <iobprxNtznvy.pbz> -->
+<!--X-Date: Mon, 03 Mar 2014 20:58:16 +0000 -->
+<!--X-Message-Id: CAOeGmbr3hP8TNAkqLGvxTtd=fMCN94AoZZR5V8CDbsH9ZCTSAA@mail.gmail.com -->
+<!--X-Content-Type: text/plain -->
+<!--X-Head-End-->
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+
+ Custom system-image server for Nexus 5 : Mailing list archive : ubuntu-phone team in Launchpad
+</title>
+<style type="text/css">
+h1, ul, ol, dl, li, dt, dd {
+    margin: 0;
+    padding: 0;
+    }
+ul ul {
+    margin-left: 2em;
+    }
+.mail li {
+    margin-left: 20px;
+    padding-left: 0px;
+   }
+.upper-batch-nav {
+    margin: 12px 0;
+    border-bottom: 1px solid #d2d2d2;
+    }
+.lower-batch-nav {
+    margin: 12px 0;
+    border-top: 1px solid #d2d2d2;
+    }
+.lower-batch-nav.message-count-0 {
+    display: none;
+    }
+.batch-navigation-links {
+    text-align: right;
+    padding-left: 24px;
+    }
+.message-count-0 {
+    margin-bottom: 12px;
+    }
+.message-count-0:before {
+    content: "There are no messages in this mailing list archive.";
+    }
+.back-to {
+    margin: 0 0 12px 0;
+    padding: 0 0 6px 0;
+    border-bottom: 1px solid #d2d2d2;
+    }
+.facetmenu {
+    margin-top: 4px;
+    margin-left: .5em;
+    }
+</style>
+<link rel="stylesheet" href="https://launchpad.net/+icing/import.css" />
+<link rel="shortcut icon" href="https://launchpad.net/@@/launchpad.png" />
+</head>
+<body>
+  <div class="back-to">
+    <a href="https://launchpad.net/~ubuntu-phone">&larr;
+      Back to team overview</a>
+  </div>
+  <h1>ubuntu-phone team mailing list archive</h1>
+  <div id="watermark" class="watermark-apps-portlet">
+    <div class="wide">
+
+<!--X-Body-Begin-->
+<!--X-User-Header-->
+<!--X-User-Header-End-->
+<!--X-TopPNI-->
+    <ul class="facetmenu">
+        <li title="View messages by thread"
+          class="active"><a href="maillist.html">Thread</a></li>
+        <li title="View messages by date"><a href="date.html">Date</a></li>
+    </ul>
+  </div>
+</div>
+
+<ol class="breadcrumbs">
+  <li>
+    <img src="https://launchpad.net/@@/team" alt=""/>
+    <a href="https://launchpad.net/~ubuntu-phone">ubuntu-phone team</a>
+  </li>
+  <li>
+    <a href="maillist.html">Mailing list archive</a>
+  </li>
+  <li>
+    Message #06721
+  </li>
+</ol>
+
+<h2> Custom system-image server for Nexus 5</h2>
+
+<table class="wide upper-batch-nav">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td class="batch-navigation-links">
+      <a href="msg06711.html">Thread Previous</a> &bull;
+      <a href="msg06720.html">Date Previous</a> &bull;
+      <a class="next" href="msg06722.html">Date Next</a> &bull;
+      <a href="msg06729.html">Thread Next</a>
+    </td>
+  </tr>
+</table>
+
+<!--X-TopPNI-End-->
+<!--X-MsgBody-->
+<!--X-Subject-Header-Begin-->
+  <!-- Supress the header section since it was moved before the top links. -->
+<!--X-Subject-Header-End-->
+<!--X-Head-of-Message-->
+<ul class="iconed">
+<li>
+  <strong>
+<strong>To</strong></strong>:
+ <a href="mailto:ubuntu-phone@DOMAIN.HIDDEN">ubuntu-phone@xxxxxxxxxxxxxxxxxxx</a></li>
+
+<li>
+  <strong>
+<strong>From</strong></strong>:
+ Vojtech Bocek &lt;<a href="mailto:vbocek@DOMAIN.HIDDEN">vbocek@xxxxxxxxx</a>&gt;</li>
+
+<li>
+  <strong>
+<strong>Date</strong></strong>:
+ Mon, 3 Mar 2014 21:58:16 +0100</li>
+
+</ul>
+<!--X-Head-of-Message-End-->
+<!--X-Head-Body-Sep-Begin-->
+<hr>
+<!--X-Head-Body-Sep-End-->
+<!--X-Body-of-Message-->
+<pre>Since Nexus 5 images are not build on system-image.ubuntu.com, but the
+code is in the official repositories and since it is possible to make
+your own system-image server[1], I figured why not make one for
+hammerhead :)
+
+* Address: <a  rel="nofollow" href="http://system-image.tasemnice.eu">http://system-image.tasemnice.eu</a>
+* Channels: trusty and trusty-proposed, both are set-up so that their
+version numbers correspond with those on system-image.ubuntu.com. When
+there is a new image on s-i.ubuntu.com, there'll be new one with the
+same version number on my server within an hour or two. The device
+parts are built every night (if something changes) and they don't
+trigger new image build - new device tarball will simply be in the
+next image, whenever that happens.
+* How to install it to your device:
+
+    ubuntu-device-flash --channel trusty --bootstrap=true
+--server=&quot;<a  rel="nofollow" href="http://system-image.tasemnice.eu&quot">http://system-image.tasemnice.eu&quot</a>;
+
+* Custom changes:
+  1. MIR is turned on by default
+  2. Sound fix (v2) from bug 1276901[2]
+  3. Backported system-image client rev. 242, to support servers
+without https protocol
+* cdimage-like server with device partition images: <a  rel="nofollow" href="http://cdimage.tasemnice.eu">http://cdimage.tasemnice.eu</a>
+* IMPORTANT: I have no idea how many people will it handle. It is a
+crappy VPS, I even had to buy upgrade for it because it originaly
+didn't have enough disc space. It's traffic is &quot;unlimited&quot; (it
+uploaded 740GB over the course of 3 days already, btw), but it's
+connected via just 100Mb line, and I'm not sure about international
+connectivity (it is in Central Europe, Czech Republic). So be a bit
+tolerant about it's speed.
+* I obviously can't guarantee it'll work correctly forever, but I'll
+do my best to keep it running.
+
+I've created this server specifically for my multiboot thingy called
+MultiROM[3], so it will work with it, including updates. I have no
+idea if it's gonna work with the &quot;oficial&quot; dual-boot, I don't know how
+exactly is it set-up.
+
+The system-image server code has some changes, mainly to support
+grabbing version numbers from s-i.ubuntu.com and patching of the
+rootfs. I've pushed it to launchpad[4], so you can look at it if you
+wish.
+
+Enjoy :)
+
+[1]: <a  rel="nofollow" href="https://www.stgraber.org/2014/02/11/your-own-ubuntu-touch-image-server/">https://www.stgraber.org/2014/02/11/your-own-ubuntu-touch-image-server/</a>
+[2]: <a  rel="nofollow" href="https://bugs.launchpad.net/ubuntu/+source/android/+bug/1276901">https://bugs.launchpad.net/ubuntu/+source/android/+bug/1276901</a>
+[3]: <a  rel="nofollow" href="http://forum.xda-developers.com/showthread.php?t=2571011">http://forum.xda-developers.com/showthread.php?t=2571011</a>
+[4]: <a  rel="nofollow" href="https://code.launchpad.net/~vbocek/+junk/system-image-server-tasemnice">https://code.launchpad.net/~vbocek/+junk/system-image-server-tasemnice</a>
+
+</pre>
+<!--X-Body-of-Message-End-->
+<!--X-MsgBody-End-->
+<!--X-Follow-Ups-->
+<hr>
+<h3>Follow ups</h3>
+<ul class="mail wide">
+<li>
+  <strong><a name="06729" href="msg06729.html">Re:  Custom system-image server for Nexus 5</a></strong>
+  <br />From: Sayantan Das, 2014-03-04
+</li>
+
+</ul>
+<!--X-Follow-Ups-End-->
+<!--X-References-->
+<!--X-References-End-->
+<!--X-BotPNI-->
+<table class="wide lower-batch-nav">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td class="batch-navigation-links">
+      <a href="msg06711.html">Thread Previous</a> &bull;
+      <a href="msg06720.html">Date Previous</a> &bull;
+      <a class="next" href="msg06722.html">Date Next</a> &bull;
+      <a href="msg06729.html">Thread Next</a>
+    </td>
+  </tr>
+</table>
+
+<!--X-BotPNI-End-->
+<!--X-User-Footer-->
+<!--X-User-Footer-End-->
+  <div id="footer" class="footer">
+    <div class="lp-arcana">
+        <div class="lp-branding">
+          <a href="https://launchpad.net/"><img
+         src="https://launchpad.net/@@/launchpad-logo-and-name-hierarchy.png"
+         alt="Launchpad" /></a>
+          &nbsp;&bull;&nbsp;
+          <a href="https://launchpad.net/+tour">Take the tour</a>
+          &nbsp;&bull;&nbsp;
+          <a href="https://help.launchpad.net/">Read the guide</a>
+          &nbsp;&bull;&nbsp;
+          <a href="https://help.launchpad.net/Teams/MailingLists"
+          >Help for mailing lists</a>
+          &nbsp;
+          <form id="globalsearch" method="get"
+                accept-charset="UTF-8"
+                action="https://launchpad.net/+search">
+            <input type="search" id="search-text" name="field.text" />
+            <input type="submit" value=""
+              class="sprite search-icon" />
+          </form>
+        </div>
+    </div>
+    <div class="colophon">
+      &copy; 2004-2012
+      <a href="http://canonical.com/">Canonical&nbsp;Ltd.</a>
+      &nbsp;&bull;&nbsp;
+      <a href="https://launchpad.net/legal">Terms of use</a>
+      &nbsp;&bull;&nbsp;
+      <a href="/support">Contact Launchpad Support</a>
+      &nbsp;&bull;&nbsp;
+      <a href="http://identi.ca/launchpadstatus">System status</a>
+      </span>
+    </div>
+  </div>
+</body>
+</html>
+
+
+------------CdrkFMnOmwYklZ8m05cvug
+Content-Disposition: inline
+Content-Type: text/css
+Content-Location: https://launchpad.net/+icing/css/base.css
+Content-Transfer-Encoding: 8bit
+
+body {
+    /* line-height is the same as the sprite height. */
+    font-family: Ubuntu, 'Bitstream Vera Sans', 'DejaVu Sans', Tahoma, sans-serif;
+    font-size: 12px;
+    line-height: 18px;
+    color: #333;
+    }
+
+body.private,
+body.public {
+    /* It must be obvious to the user that the context is private */
+    background-image: none;
+    }
+
+body.private .private-disallow {
+    /* We want to disable/hide some actions on private artifacts */
+    display: none;
+    }
+
+.private-only {
+    /* We want to only show some items on private artifacts */
+    display: none;
+    }
+
+body.private .private-only {
+    /* We want to only show some items on private artifacts */
+    display: block;
+    }
+
+hr {
+    display: none;
+    }
+
+dt {
+    margin-bottom: .3em;
+    margin-top: 0.5em;
+    font-weight: bold;
+    }
+
+dt dfn {
+    font-weight: bold;
+    }
+
+dd {
+    margin-bottom: .8em;
+    }
+
+dl.faq dd {
+    margin: 1em 0 2em 4em;
+    }
+
+.contributors dt strong {
+    padding-left: 1em;
+    }
+
+ol {
+    margin-left: 1.8em;
+    }
+
+ol li {
+    list-style: decimal outside;
+    }
+
+li {
+    padding-bottom: .3em;
+    }
+
+ul.news,
+li.news {
+    list-style-type: none;
+    margin-bottom: 1em;
+    }
+
+ul.architecture,
+li.architecture {
+    list-style-image: url(/@@/architecture);
+    }
+
+ul.build-success,
+li.build-success {
+    list-style-image: url(/@@/build-success);
+    }
+
+ul.bug.remote,
+li.bug.remote {
+    list-style-image: url(/@@/bug-remote);
+    }
+
+ul.language,
+li.language {
+    list-style-image: url(/@@/language);
+    /* Disable .language sprite. */
+    background: inherit;
+    }
+
+ul.mail,
+li.mail {
+    list-style-image: url(/@@/mail);
+    }
+
+ul.meeting,
+li.meeting {
+    list-style-image: url(/@@/meeting);
+    }
+
+ul.rss,
+li.rss {
+    list-style-image: url(/@@/rss);
+    }
+
+ul.translation,
+li.translation {
+    list-style-image: url(/@@/translation);
+    }
+
+ul.webref,
+li.webref {
+    list-style-image: url(/@@/link);
+    }
+
+ul.iconed {
+    list-style-type: none;
+    padding-left: 0 !important;
+    margin: 0 !important;
+    }
+
+ul.buttons {
+    /* without !important, gets overridden by the '#maincontent ol' rule */
+    margin: 0.5em 0 0.5em 0 !important;
+    padding: 0 !important;
+    }
+
+ul.buttons li {
+    display: inline;
+    margin: 0 0 0 0;
+    }
+
+.bulleted {
+    margin-bottom: 0.5em;
+    }
+
+.bulleted li {
+    margin: 0 0 0 2em;
+    list-style-type: disc;
+    }
+
+.horizontal {
+    margin: 1em 0 0 0;
+    }
+
+.horizontal li {
+    display: inline;
+    padding: 0 1.5em 0 0;
+    }
+
+.subordinate {
+    margin-left: 2em;
+    }
+
+ol.subordinate {
+    margin-left: 4em;
+    }
+
+.two-column-list dl {
+    width: 48%;
+    float: left;
+    display: inline;
+    margin: 0 0.25em 0 0;
+    }
+
+.two-column-list dl:first-child dt,
+.two-column-list dl:first-child + dl dt {
+    margin-top: 0;
+    }
+
+.three-column-list dl {
+    width: 31%;
+    float: left;
+    display: inline;
+    margin: 0 0.25em 0 0;
+    }
+
+.two-column-list li {
+    width: 48%;
+    float: left;
+    display: inline;
+    margin: 0 0.25em 0 0;
+    }
+
+.three-column-list li {
+    width: 31%;
+    float: left;
+    display: inline;
+    margin: 0 0.25em 0 0;
+    }
+
+.two-column-list:after,
+.three-column-list:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+    }
+
+.two-column-list dl.unseen,
+.two-column-list li.unseen,
+.three-column-list dl.unseen,
+.three-column-list li.unseen {
+    /* Keep the abilty to hide list entries. */
+    display: none;
+    }
+
+caption {
+    caption-side: bottom;
+    text-align: left;
+    }
+
+th {
+    text-align: right;
+    }
+
+th,
+td {
+    vertical-align: baseline;
+    }
+
+.head th,
+thead th,
+tr.thead th {
+    text-align: left;
+    vertical-align: bottom;
+    }
+
+th.icon,
+td.icon {
+    vertical-align: top;
+    white-space: nowrap;
+    width: 1px;
+    }
+
+th.icon.left,
+td.icon.left {
+    padding-right: 0;
+    }
+
+th.icon.right,
+td.icon.right {
+    padding-left: 0;
+    }
+
+th.nowrap,
+td.nowrap {
+    white-space: nowrap;
+    }
+
+tfoot th,
+table.contributions th {
+    text-align: left;
+    }
+
+tr.white {
+    background-color: #fff;
+    }
+
+tr.shaded {
+    background-color: #f6f6f6;
+    }
+
+table .amount,
+table .action-icons {
+    text-align: right;
+    }
+
+table.contributions th {
+    font-weight: normal;
+    }
+
+table.contributions td {
+    vertical-align: middle;
+    width: 16px;
+    text-align: left;
+    }
+
+table.latest th,
+table.latest td {
+    padding-bottom: 2em;
+    }
+
+table.duplicate.listing * {
+    color: #999;
+    }
+
+.table-actions:nth-child(2) {
+    /* text-align works because the <li> is also display:inline. */
+    text-align: right;
+    }
+
+.table-actions {
+    margin: 1em 0 0 0;
+    }
+
+.table-actions li {
+    display: inline;
+    padding: 0 1.5em 0 0;
+    }
+
+table.compressed {
+    width: auto;
+    }
+
+table.compressed td {
+    padding: 0.25em 0.5em;
+    }
+
+table.cozy-listing {
+    width: 20em;
+    background-color: #fff;
+    border: 1px solid #d2d2d2;
+    border-bottom: 1px solid #d2d2d2;
+    }
+
+table.cozy-listing td {
+    border: 1px #d2d2d2;
+    border-style: dotted none none none;
+    }
+
+table.sortable a.sortheader {
+    color: #666;
+    font-weight: bold;
+    text-decoration: none;
+    display: block;
+    }
+
+table.sortable img.sortarrow {
+    padding-left: 2px;
+    }
+
+table.sortable th {
+    cursor: pointer;
+    }
+
+th.ascending {
+    background-image: url(/@@/arrowDown);
+    background-position: center right;
+    background-repeat: no-repeat;
+    }
+
+th.descending {
+    background-image: url(/@@/arrowUp);
+    background-position: center right;
+    background-repeat: no-repeat;
+    }
+
+.sortkey,
+.revsortkey {
+    /* Used to indicate a value to be used to sort cells in a row */
+    display: none;
+    }
+
+table.listing {
+    margin: 0;
+    width: 100%;
+    }
+
+table.listing,
+table.listing tbody,
+table.listing td.end-of-section {
+    border-bottom: 1px solid #d2d2d2;
+    }
+
+table.listing th {
+    font-weight: bold;
+    }
+
+table.listing .head,
+table.listing .head th,
+table.listing thead,
+table.listing thead th,
+table.listing tfoot tr,
+table.listing tr.thead th {
+    border: 1px solid #d2d2d2;
+    background-color: #fff;
+    }
+
+table.listing tr.category {
+    border-bottom: 1px solid #d2d2d2;
+    }
+
+table.listing tr.category th,
+table.listing tr.category td {
+    padding-top: 1em;
+    }
+
+table.listing thead td,
+table.listing table tbody,
+table.listing table thead,
+table.listing table thead th,
+table.listing tfoot tr,
+table.listing table tfoot td,
+table.listing table td {
+    border: none;
+    }
+
+table.listing tfoot td {
+    border: 1px solid #d2d2d2;
+    }
+
+table.listing th,
+table.listing td {
+    padding: 0.25em;
+    }
+
+table.listing table th,
+table.listing table td {
+    /* We don't want extra padding on nested tables, like batch navigation. */
+    padding: 0;
+    }
+
+table.listing thead th,
+table.listing tr.thead th {
+    white-space: nowrap;
+    }
+
+table.listing td {
+    border: 1px #d2d2d2;
+    border-style: dotted none none none;
+    }
+
+table.listing .section-break td {
+    border-width: 1px 0 0 0;
+    border-style: solid;
+    border-color: #d2d2d2;
+    height: 1em;
+    }
+
+table.listing .note td {
+    border-style: none;
+    }
+
+table.listing img {
+    vertical-align: middle;
+    }
+
+table.listing tr.secondary th,
+table.listing tr.secondary td {
+    border-top: none;
+    }
+
+table.listing table.simple {
+    margin-left: 2em;
+    }
+
+table.listing table.simple td {
+    padding: 0.25em;
+    }
+
+table.listing .section-heading {
+    border: none;
+    padding-top: 1.5em;
+    }
+
+table.summary th,
+table.summary td,
+table.listing table.summary th,
+table.listing table.summary td {
+    /* Summary tables havesubdued headers and a little row spacing. */
+    padding: 0 0.5em 0.5em 0;
+    }
+
+table.summary th {
+    font-weight: normal;
+    }
+
+table.summary caption {
+    font-style: italic;
+    margin-left: 1em;
+    }
+
+table.summary ul,
+table.summary ul li {
+    list-style-position: inside;
+    margin: 0;
+    padding: 0;
+    }
+
+.results {
+    background-color: #f4f4f4;
+    padding: 2px 10px 5px 10px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    }
+
+------------CdrkFMnOmwYklZ8m05cvug
+Content-Disposition: inline
+Content-Type: image/png
+Content-Location: https://launchpad.net/@@/mail
+Content-Transfer-Encoding: Base64
+
+iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAABmJLR0QA/wD/AP+g
+vaeTAAAAB3RJTUUH1goWBRUQG7hx6wAAATFJREFUKJG9ks1qwkAUhb8xjj8IUkW6
+kQQi8S0KXfSduyi0i0IfIUgiuMhaFzVmJtRkbhfGv0WLdNEDZ3O53z0zlwv/LfXy
++ix/AdsAjw9PiAie5/3aXNc1AO8fbwdQa81yucTzPGazGUqpK0BEWK1W1HXNfD4H
+oAWglCIIfKw1pGmKiFxBaZpirSEI/NPQ1rHBOUcYhmw2a+I4RkQQEeI4ZrNZE4Yh
+zrnrPx7eX1EUBVW1x5gdi8UCAGN2VNWePN8yGAxO4CnRWkuSpPi+TxRF5Pkneb4l
+iiJ83ydJUqy114nOObIsYzweobXGGMN0Om0SDVprxuMRWZYxmdyfwbIsGQ7vEBGK
+4jz1Up1Oj263T1mWQHMAx0XcIqXUwRe1NtBv3AM6Tf0LKAHbuLop4Sd9AxA5k4+h
+FqHnAAAAAElFTkSuQmCC
+
+------------CdrkFMnOmwYklZ8m05cvug
+Content-Disposition: inline
+Content-Type: text/css
+Content-Location: https://launchpad.net/+icing/css/typography.css
+Content-Transfer-Encoding: 8bit
+
+
+h1, h2, h3, h4, h5, h6 {
+    background: none;
+    clear: left;
+    }
+h1 {
+    clear: none;
+    font-size: 30px;
+    line-height: 34px;
+    }
+h2 {
+    margin-top: 16px;
+    margin-bottom: 8px;
+    font-size: 22px;
+    line-height: 26px;
+    }
+h3 {
+    margin-top: 16px;
+    margin-bottom: 8px;
+    font-size: 16px;
+    line-height: 20px;
+    }
+.yui-u > div > h3:first-child {
+    margin-top: 0;
+    }
+p {
+    width: auto;
+    margin-bottom: 0.8em;
+    }
+div + p, ul + p, table + p {
+    margin-top: 0.8em;
+    }
+p, li, dt, dd, blockquote, .narrow, .narrow-listing {
+    /* Wrap the text before the eye gets lost. */
+    max-width: 45em;
+    }
+.wide * {
+    max-width: 60em;
+    }
+table.wide {
+    width: 60em;
+    }
+pre, code, samp, tt, .console {
+    font-family: 'Ubuntu Mono', monospace;
+    margin-bottom: 0.8em;
+    }
+pre.wrap {
+    /* From nice_pre in tales.py */
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    }
+
+:link, :visited {
+    /* Links are blue, brighter when clicked, and greyer once visited. */
+    color: #03a;
+    text-decoration: none;
+    }
+:link:hover, :visited:hover {
+    text-decoration: underline;
+    }
+:link:active, :visited:active {
+    color: #36c;
+    }
+a[onclick], .collapsible legend a, a.js-action,
+a[onclick]:active, .collapsible legend a:active, a.js-action,
+a.js-action:active {
+    /* Links that don't open separate pages are green. */
+    color: #093;
+    }
+a.help {
+    border-bottom: 1px dotted #03a;
+    cursor: help;
+    }
+a.help:hover, a.action-icon:hover {
+    text-decoration: none;
+    }
+a.help.icon, a.sprite.maybe.help {
+    border: none;
+}
+a.invalid-link, a.invalid-link:active, a.invalid-link:hover {
+    color: #909090;
+    text-decoration: none;
+    cursor: default;
+    }
+img, a img {
+    /* No border on images that are links. */
+    border: none;
+    }
+abbr[title], acronym[title] {
+    border-bottom: 1px dotted black;
+    cursor: help;
+    }
+em {
+    font-style: italic;
+    }
+strong {
+    font-weight: bold;
+    }
+.title {
+    font-weight: bold;
+    }
+kbd {
+    background-color: #ddd;
+    border: 1px solid;
+    border-color: white gray gray white;
+    color: black;
+    margin: 1px;
+    min-width: 1em;
+    outline: 1px #666;
+    }
+tt.command {
+    padding-left: 2em;
+    }
+.nowrap {
+    white-space: nowrap;
+    }
+
+------------CdrkFMnOmwYklZ8m05cvug
+Content-Disposition: inline
+Content-Type: text/css
+Content-Location: https://launchpad.net/+icing/css/colours.css
+Content-Transfer-Encoding: 8bit
+
+
+
+.questionstatusOPEN {
+    color: #000;
+    }
+.questionstatusNEEDSINFO {
+    /* brown */
+    color: #930;
+    }
+.questionstatusANSWERED {
+    /* grey-green */
+    color: #363;
+    }
+.questionstatusSOLVED {
+    color: #090;
+    }
+.questionstatusEXPIRED {
+    color: #666;
+    }
+.questionstatusINVALID {
+    color: #c00;
+    }
+
+
+.specstatusAPPROVED, .specstatusAPPROVED a {
+    color: green;
+    }
+.specstatusPENDINGAPPROVAL, .specstatusPENDINGAPPROVAL a,
+.specstatusPENDINGREVIEW, .specstatusPENDINGREVIEW a {
+    color: #f09;
+    }
+.specstatusDRAFT, .specstatusDRAFT a,
+.specstatusDISCUSSION, .specstatusDISCUSSION a {
+    color: #930;
+    }
+.specstatusNEW, .specstatusNEW a {
+    color: red;
+    }
+.specstatusSUPERSEDED, .specstatusSUPERSEDED a,
+.specstatusOBSOLETE, .specstatusOBSOLETE a,
+.specpriorityNOTFORUS, .specpriorityNOTFORUS a,
+.specpriorityUNDEFINED, .specpriorityUNDEFINED a {
+    color: gray;
+    }
+.specpriorityLOW, .specpriorityLOW a {
+    color: black;
+    }
+.specpriorityMEDIUM, .specpriorityMEDIUM a {
+    color: #f60;
+    }
+.specpriorityHIGH, .specpriorityHIGH a,
+.specpriorityESSENTIAL, .specpriorityESSENTIAL a {
+    color: red;
+    }
+.specdeliveryUNKNOWN, .specdeliveryUNKNOWN a,
+.specdeliveryNOTSTARTED, .specdeliveryNOTSTARTED a {
+    color: gray;
+    }
+.specdeliveryDEFERRED, .specdeliveryDEFERRED a,
+.specdeliveryNEEDSINFRASTUCTURE, .specdeliveryNEEDSINFRASTUCTURE a,
+.specdeliveryBLOCKED, .specdeliveryBLOCKED a {
+    color: red;
+    }
+.specdeliverySTARTED, .specdeliverySTARTED a,
+.specdeliveryGOOD, .specdeliveryGOOD a {
+    color: blue;
+    }
+.specdeliverySLOW, .specdeliverySLOW a {
+    color: red;
+    }
+.specdeliveryBETA, .specdeliveryBETA a {
+    color: #f60;
+    }
+.specdeliveryNEEDSREVIEW, .specdeliveryNEEDSREVIEW a {
+    color: purple;
+    }
+.specdeliveryAWAITINGDEPLOYMENT, .specdeliveryAWAITINGDEPLOYMENT a {
+    color: red;
+    }
+.specdeliveryIMPLEMENTED, .specdeliveryIMPLEMENTED a,
+.specdeliveryINFORMATIONAL, .specdeliveryINFORMATIONAL a {
+    color: green;
+    }
+
+
+.bug-activity {
+    color: #555;
+    }
+.statusNEW, .statusNEW a {
+    color: #930;
+    }
+.statusINCOMPLETE, .statusINCOMPLETE a,
+.statusCONFIRMED, .statusCONFIRMED a {
+    color: red;
+    }
+.statusTRIAGED, .statusTRIAGED a {
+    color: #f60;
+    }
+.statusINPROGRESS, .statusINPROGRESS a {
+    color: black;
+    }
+.statusFIXCOMMITTED, .statusFIXCOMMITTED a {
+    color: #050;
+    }
+.statusFIXRELEASED, .statusFIXRELEASED a {
+    color: green;
+    }
+.statusINVALID, .statusINVALID a,
+.statusWONTFIX, .statusWONTFIX a {
+    color: #555;
+    }
+.importanceCRITICAL, .importanceCRITICAL a {
+    color: red;
+    }
+.importanceHIGH, .importanceHIGH a {
+    color: #f60;
+    }
+.importanceMEDIUM, .importanceMEDIUM a {
+    color: green;
+    }
+.importanceLOW, .importanceLOW a {
+    color: black;
+    }
+.importanceWISHLIST, .importanceWISHLIST a {
+    color: blue;
+    }
+.importanceUNDECIDED, .importanceUNDECIDED a {
+    color: #999;
+    }
+#client-listing .statusUNKNOWN, #client-listing .statusUNKNOWN a,
+#client-listing .statusNEW, #client-listing .statusNEW a,
+#client-listing .statusINCOMPLETE, #client-listing .statusINCOMPLETE a {
+        color: #c63600;
+        background-color: #ffdabe;
+    }
+#client-listing .statusCONFIRMED, #client-listing .statusCONFIRMED a,
+#client-listing .statusTRIAGED, #client-listing .statusTRIAGED a {
+        color: #896e00;
+        background-color: #f4f1a4;
+    }
+#client-listing .statusINPROGRESS, #client-listing .statusINPROGRESS a,
+#client-listing .statusFIXCOMMITTED, #client-listing .statusFIXCOMMITTED a {
+        color: #137587;
+        background-color: #cbe7ef;
+    }
+#client-listing .statusFIXRELEASED, #client-listing .statusFIXRELEASED a {
+        color: #4f7b10;
+        background-color: #cef1a0;
+    }
+#client-listing .statusEXPIRED, #client-listing .statusEXPIRED a,
+#client-listing .statusINVALID, #client-listing .statusINVALID a,
+#client-listing .statusWONTFIX, #client-listing .statusWONTFIX a,
+#client-listing .statusOPINION, #client-listing .statusOPINION a {
+        color: #464646;
+        background-color: #ddd;
+    }
+#client-listing .importanceCRITICAL, #client-listing .importanceCRITICAL a {
+    background-color: #DF382C;
+    color: white;
+    }
+#client-listing .importanceHIGH, #client-listing .importanceHIGH a {
+    background-color: #EFB73E;
+    color: white;
+    }
+#client-listing .importanceMEDIUM, #client-listing .importanceMEDIUM a {
+    background-color: #19B6EE;
+    color: white;
+    }
+#client-listing .importanceLOW, #client-listing .importanceLOW a {
+    background-color: #38B44A;
+    color: white;
+    }
+#client-listing .importanceWISHLIST, #client-listing .importanceWISHLIST a {
+    background-color: #724dc8;
+    color: white;
+    }
+#client-listing .importanceUNDECIDED, #client-listing .importanceUNDECIDED a {
+    background-color: #666666;
+    color: white;
+    }
+
+a.official-tag {
+    /* Looks just like a normal link  */
+    }
+a.unofficial-tag {
+    color: #6699ee;
+    }
+
+
+
+.vcsimportSUCCESS {
+    /* inherited text color */
+    }
+.vcsimportFAILURE {
+    color: Red;
+    }
+.greylink a:link, .greylink a:visited {
+    color: gray;
+    }
+.stale-diff {
+    color: #f60;
+    }
+.conflicts-diff {
+    color: red;
+    }
+.branchstatusMATURE, .branchstatusMATURE a {
+    color: #090;
+    }
+.branchstatusDEVELOPMENT, .branchstatusDEVELOPMENT a {
+    color: #900;
+    }
+.branchstatusEXPERIMENTAL, .branchstatusEXPERIMENTAL a {
+    color: #930;
+    }
+.branchstatusMERGED, .branchstatusMERGED a,
+.branchstatusABANDONED, .branchstatusABANDONED a {
+    color: gray;
+    }
+.branchstatusNEW, .branchstatusNEW a {
+    color: black;
+    }
+.voteAPPROVE {
+    color: green;
+    }
+.voteNEEDS_FIXING {
+    color: #930;
+    }
+.voteDISAPPROVE,
+.voteRESUBMIT {
+    color: red;
+    }
+.voteABSTAIN {
+    color: #666;
+    }
+.votePENDING {
+    color: #f60;
+    }
+.mergestatusWORK_IN_PROGRESS, .mergestatusWORK_IN_PROGRESS a {
+    color: black;
+    }
+.mergestatusNEEDS_REVIEW, .mergestatusNEEDS_REVIEW a {
+    color: #f60;
+    }
+.mergestatusCODE_APPROVED, .mergestatusCODE_APPROVED a,
+.mergestatusMERGED, .mergestatusMERGED a {
+    color: green;
+    }
+.mergestatusREJECTED, .mergestatusREJECTED a,
+.mergestatusMERGE_FAILED, .mergestatusMERGE_FAILED a {
+    color: red;
+    }
+.mergestatusQUEUED, .mergestatusQUEUED a {
+    color: black;
+    }
+.mergestatusSUPERSEDED, .mergestatusSUPERSEDED a {
+    color: #666;
+    }
+.codeimportNEW {
+    color: #930;
+    }
+.codeimportREVIEWED {
+    color: green;
+    }
+.codeimportINVALID,
+.codeimportSUSPENDED,
+.codeimportFAILING {
+    color: red;
+    }
+
+
+.translationimportstatusAPPROVED,
+.translationimportstatusAPPROVED a {
+    color: #050;
+    }
+.translationimportstatusIMPORTED,
+.translationimportstatusIMPORTED a {
+    color: green;
+    }
+.translationimportstatusDELETED,
+.translationimportstatusDELETED a {
+    color: black;
+    }
+.translationimportstatusFAILED,
+.translationimportstatusFAILED a {
+    color: red;
+    }
+.translationimportstatusNEEDS_REVIEW,
+.translationimportstatusNEEDS_REVIEW a {
+    color: #f60;
+    }
+.translationimportstatusBLOCKED,
+.translationimportstatusBLOCKED a {
+    color: blue;
+    }
+.translationimportstatusNEEDS_INFORMATION,
+.translationimportstatusNEEDS_INFORMATION a {
+    color: maroon;
+    }
+.dismissed, .dismissed a {
+    color: #666;
+    }
+
+
+.distromirrorstatusUP,
+.distromirrorstatusONEHOURBEHIND,
+.distromirrorstatusTWOHOURSBEHIND,
+.distromirrorstatusFOURHOURSBEHIND,
+.distromirrorstatusSIXHOURSBEHIND {
+    color: green;
+    }
+.distromirrorstatusONEDAYBEHIND {
+    color: #f60;
+    }
+.distromirrorstatusTWODAYSBEHIND,
+.distromirrorstatusONEWEEKBEHIND {
+    color: red;
+    }
+.distromirrorstatusUNKNOWN {
+    color: #666;
+    }
+.buildstatusNEEDSBUILD {
+    color: gray;
+    }
+.buildstatusBUILDING {
+    color: black;
+    }
+.buildstatusFULLYBUILT {
+    color: green;
+    }
+.buildstatusFAILEDTOBUILD,
+.buildstatusMANUALDEPWAIT,
+.buildstatusCHROOTWAIT,
+.buildstatusSUPERSEDED,
+.buildstatusFAILEDTOUPLOAD {
+    color: red;
+    }
+
+
+.launchpad-gold {
+    color: #F8C300;
+    }
+
+
+.green {
+    color: green;
+}
+
+.red {
+    color: red;
+}
+
+------------CdrkFMnOmwYklZ8m05cvug
+Content-Disposition: inline
+Content-Type: text/css
+Content-Location: https://launchpad.net/+icing/css/forms.css
+Content-Transfer-Encoding: 8bit
+
+form {
+    margin-bottom: 1em;
+    }
+form h1 {
+    margin-bottom: 1em;
+    }
+form table th, form table td {
+    padding: 2px;
+    }
+form table tbody th {
+    font-weight: bold;
+    }
+form table label {
+    font-weight: bold;
+    }
+.compound {
+    margin-bottom: .5em;
+    }
+.field.subordinate label {
+    font-weight: normal;
+    }
+fieldset {
+    border-width: 2px 0 0;
+    margin: 1em 0;
+    padding: 1em 0 0;
+    }
+label {
+    white-space: nowrap;
+    }
+input[type='image'] {
+    vertical-align: middle;
+    }
+input {
+    visibility: inherit;
+    }
+input[type=radio] {
+    margin-left: 1em;
+    }
+input.urlTextType {
+    width: 40em;
+    }
+textarea {
+    display: block;
+    width: 90%;
+    max-width: 60em;
+    padding: 2px;
+    }
+button {
+    padding: 0;
+    }
+button.overlay-close-button {
+    float: right;
+    width: 15px;
+    height: 15px;
+    display: block;
+    margin-top: 4px;
+    }
+inout[type=input] + button,
+img[src$=spinner] + button  {
+    margin-left: 6px !important;
+    }
+.selection-choices {
+    margin: 0.75em 0 0 1em
+    }
+.fieldRequired, .fieldOptional {
+    color: #999;
+    }
+.field.subordinate {
+    margin-left: 2.6em;
+    }
+.formHelp {
+    max-width: 45em;
+    margin: 0.2em 0 0.5em 0.2em;
+    color: #666;
+    }
+.subordinate[type="checkbox"] + label + .formHelp {
+    margin-left: 3.4em;
+    }
+.listbox {
+    /* a scrolling list of checkboxes or radio buttons */
+    border: 1px solid #8cacbb;
+    display: inline-block;
+    max-height: 12em;
+    overflow: auto;
+    overflow: -moz-scrollbars-vertical;
+    }
+.listbox label {
+    background-color: #f6f6f6;
+    border: solid white;
+    border-width: 0 0 1px 0;
+    display: block;
+    }
+.extra-form-buttons {
+    text-align: center;
+    padding-top: 1em;
+    }
+.extra-form-buttons button {
+    margin-right: 0.7em;
+    }
+.actions * {
+    /*
+      Action links are those that begin the process of doing something.
+      For example, "Register a branch", "Edit profile", "Link to CVE".
+      When presented inline, they are rendered by launchpad-inline-link.pt.
+
+      Action buttons are those that submit a multi-row form.
+      Often an action button will have an "or _Cancel_" link next to it.
+
+      We want 0.5em horizontal gap between links and buttons in these
+      sections. Using margin-left would cause a bad gap to the left of a
+      leftmost item. Using margin-right would cause a bad gap to the right of
+      a rightmost item. We could fix these problems with :first-child/:last-
+      child, but not in IE. So we do something a little tricky. We go ahead
+      and give each child of the actions container a right margin:
+    */
+    margin-right: 0.5em;
+    }
+.actions * * {
+    /* because ">" doesn't work in IE6 */
+    margin-right: 0;
+    }
+.actions {
+    /* Then in addition to the top/bottom margins of the actions container,
+       we give it a *negative* right margin, cancelling out that of the last
+       child. */
+    margin: 1em -0.5em 1em 0;
+    }
+table.radio-button-widget tr td {
+    /* Opera doesn't use the general tr above for the radio button table */
+    vertical-align: top;
+    }
+table.listing div.field>table {
+    /* Hack to add breathing room to bug status forms: */
+    margin-top: 0.5em;
+    }
+table.listing div.field>label,
+table.listing div.field>div>label,
+table.listing div.actions {
+    display: block;
+    margin-top: 1em;
+    }
+table.form, table.extra-options {
+    /* Many forms are laid out using tables, with appropriate spacing: */
+    /* http://launchpad.dev/firefox/+edit */
+    margin: 1em 0 inherit inherit;
+    width: 100%;
+    }
+table.form th {
+    font-weight: normal;
+    }
+table.form th, table.form td,
+table.form table.extra-options td,
+table.form table.extra-options th {
+    padding-bottom: 1em;
+    }
+table.form table.listing th,
+table.form table.listing td {
+    padding-bottom: 0.25em;
+}
+table.form td td {
+    padding-bottom: 0;
+    }
+.long td {
+    /* Long forms are composed of multiple tables and visible fieldsets */
+    padding-right: 1em;
+    }
+.long fieldset {
+    margin-top: 1em;
+    }
+.long legend {
+    color: #666;
+    font-weight: bold;
+    }
+.collapsible {
+    /* Collapsible sections
+       Some page sections are hidden by default, expanded by clicking a link.
+       see lp.js:activate_collapsibles() */
+    border: none;
+    margin: 0;
+    }
+fieldset.collapsible {
+    padding: 16px 0 0; /* "Add a comment/attachment" form in bug reports */
+    }
+.collapsible h2 {
+    margin-top: 0;
+    }
+.collapsible .collapsed {
+    display: none;
+    }
+.collapsible .expanded {
+    display: block;
+    }
+.collapsible > :first-child {
+    font-weight: normal;
+    }
+.collapsible > :first-child, .collapsible :first-child a:hover {
+    text-decoration: none;
+    }
+.collapsible > :first-child a span {
+    text-decoration: underline;
+    }
+img.collapseIcon {
+    text-decoration: none;
+    vertical-align: middle;
+    }
+.collapsible .collapsed {
+    border: none;
+    margin-bottom: 0;
+    }
+.yui3-pretty-overlay #yui3-pretty-overlay-modal h1,
+.yui3-pretty-overlay #yui3-pretty-overlay-modal h2 {
+    /* lazr is injecting presumptive markup. */
+    color: #333;
+    margin-right: 15px;
+    }
+.yui3-editable_text {
+    outline: none;
+    }
+.yui3-ieditor {
+    padding-right: 288px;
+    }
+.yui3-skin-sam .yui3-ieditor-input {
+    margin-top: 0;
+}
+h1 .yui3-ieditor-errors {
+    font-size: 12px;
+    }
+.steps h2 {
+    /* lazr is injecting presumptive markup. */
+    font-size: 12px;
+    line-height: 30px;
+    }
+.step-links {
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-left: 0.75em;
+    margin-right: 10em;
+    text-align: left;
+    }
+.step-links .prev {
+    margin-right: 0.7em;
+    }
+.lazr-multiline-edit .yui3-ieditor {
+    padding-right: 0;
+    }
+.lazr-multiline-edit .clearfix h3 {
+    /* Undo the damage done by lazr. */
+    font-family: Ubuntu, 'Bitstream Vera Sans', 'DejaVu Sans', Tahoma, sans-serif;
+    line-height: 12px;
+    }
+.widget-hd.js-action {
+    /* The js-action class is also used for non-links, for example, with
+       expand/collapse sections. */
+    color: #093;
+    cursor: pointer;
+    }
+.widget-hd.js-action:hover {
+    text-decoration: underline;
+    }
+
+.yui3-ichoicesource-content .value:hover {
+    text-decoration: underline;
+    cursor: pointer;
+    }
+
+.no-click:hover {
+    text-decoration: none !important;
+    cursor: default !important;
+    }
+    
+.yui3-buglisting-config-util a {
+    position: relative;
+    top: 3px;
+    left: 4px;
+    }
+.yui3-baseconfigutil a {
+    cursor: pointer;
+    }
+.yui3-buglisting-config-util-overlay a.close-button {
+    visibility: inherit;
+    }
+.yui3-buglisting-config-util-overlay form {
+    width: 80%;
+    }
+.yui3-buglisting-config-util-overlay div.yui3-lazr-formoverlay-actions {
+    text-align: left;
+    }
+.yui3-buglisting-config-util-overlay .reset-buglisting {
+    position: relative;
+    top: 20px;
+    left: 75px;
+    cursor: pointer;
+    }
+.error.message, .warning.message, .informational.message {
+    border: solid #666;
+    border-width: 1px 2px 2px 1px;
+    color: black;
+    margin: 1em auto 1em auto;
+    padding: 0 1em 1em 2em;
+    width: 30em;
+    }
+.error.message::before, .warning.message::before,
+.informational.message::before {
+    /* The alerts are preceded with an icon overlaying the top left corner: */
+    display: block;
+    margin: -15px 0 -6px -35px;
+    }
+.error {
+    /* Error messages are pink, with alerts having an error icon: */
+    background: #ffe4e4;
+    }
+.error.message::before {
+    content: url(/@@/error-large);
+    }
+.warning {
+    /* Warning messages are orange, with alerts having a warning icon: */
+    background: #fff59c;
+    }
+.warning.message::before {
+    content: url(/@@/warning-large);
+    }
+.informational {
+    /* Informational messages are blue-to-grey, alerts have an info icon. */
+
+    background: #d4e8ff url(/+icing/blue-fade-to-grey);
+    }
+.informational.message::before {
+    content: url(/@@/info-large);
+    }
+.informational p.last {
+    margin-bottom: 0;
+    }
+.debugging {
+    /* Debugging messages are white on grey, alerts have an info icon. */
+    background: #666;
+    color: white;
+    }
+.debugging.message::before {
+    content: url(/@@/info-large);
+    }
+.error .message {
+    /* And inside, the error message itself uses a smaller icon. */
+    background: url(/@@/error) center left no-repeat;
+    margin-bottom: 0.25em;
+    padding-left: 18px;
+    }
+table.form .error {
+    /* Form errors override this background color, because the lack of space
+       between the edge of fields and the edge of the color would look bad. */
+    background: none;
+    }
+.inline-warning {
+    /* Warning messages inlined in the page. */
+    color: red;
+    font-weight: bold;
+    }
+.sml-informational {
+    background: #d4e8ff url('/+icing/blue-fade-to-grey');
+    border: solid #666;
+    border-width: 1px 2px 2px 1px;
+    padding: 5px 5px 5px 5px;
+    width: 44em;
+    }
+.sml-informational::before {
+    content: url('/@@/info');
+    }
+.important-notice-popup {
+    padding: 1em 1em 0 1em;
+    width: auto;
+    overflow: hidden;
+    }
+.important-notice-container {
+    text-align: center;
+    width: 100%;
+    padding-bottom: 1em;
+    position: relative;
+    }
+.important-notice-balloon {
+    border-radius: 5px;
+    background-color: #ededed;
+    padding: 1em;
+    border: 1px solid #000;
+    width: auto;
+    overflow: hidden;
+    }
+.important-notice-buttons {
+    float: right;
+    }
+.important-notice-cancel-button {
+    visibility: hidden;
+    cursor: pointer;
+    }
+.important-notice {
+    padding: 0px 0px 40px 0px;
+    height: 32px;
+    overflow: hidden;
+    }
+.important-notice a {
+    font-weight: bold;
+    text-decoration: underline;
+    }
+
+
+/* ==================
+   Translations Forms
+*/
+
+/* ==== Translations hand-made forms ==== */
+
+form.translations div.fields {
+    padding: 1em;
+    }
+form.translations div.actions {
+    padding: 1em;
+    text-align: left;
+    clear: both;
+    }
+form.translations input {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    }
+form.translations select {
+    margin-left: 0.5em;
+    padding-right: 0.5em;
+    }
+form.translations label {
+    padding-left: 0.5em;
+    padding-right: 1em;
+    }
+form.translations .listbox label {
+    padding: 2px 1em 2px 2px;
+    }
+
+/* Provide top-alignment for radio boxes and longer explanations
+ * without using tables.
+ *
+ * Examples:
+ *   https://translations.launchpad.dev/evolution/trunk/+pots/evolution-2.2/es/+upload
+ *   https://translations.launchpad.dev/evolution/trunk/+pots/evolution-2.2/+export
+ */
+form.translations div.alignment .content {
+    float: left;
+    }
+form.translations div.alignment .selector {
+    margin-right: 0.5em;
+    float: left;
+    clear: both;
+    }
+form.translations div.alignment .content label {
+    padding: 0px;
+    margin: 0px;
+    font-weight: bold;
+    }
+form.translations div.alignment .secondary label {
+    font-weight: normal;
+    padding: 2px 1em 2px 2px;
+    }
+
+------------CdrkFMnOmwYklZ8m05cvug
+Content-Disposition: inline
+Content-Type: text/css
+Content-Location: https://launchpad.net/+icing/css/layout.css
+Content-Transfer-Encoding: 8bit
+
+/* This probably shouldn't be here, but I'm not sure where to put it yet */
+.yui-d0 {
+    margin: 10px 20px;
+    }
+.yui-t4 .yui-b {
+    width: 21%;
+    }
+.yui-t4 .yui-main {
+    clear: both;
+    float: left;
+    margin-right: -25%;
+    }
+.yui-t4 .yui-main .yui-b {
+    width: auto;
+    margin-right: 25%;
+    }
+
+
+
+/* =========================
+   Header
+*/
+.demo {
+    background-color: #fee;
+    }
+.login-logout {
+    position: absolute;
+    top: .5em;
+    right: 1.5em;
+    }
+#rendertime {
+    float: left;
+    margin: 0.1em 1.2em 0 0;
+    color: #666;
+    }
+#ajax-time {
+    float: left;
+    margin: 0 1.2em 0 0.2em;
+    position: relative;
+    }
+#ajax-time-list {
+    position: absolute;
+    z-index: 10;
+    top: 20px;
+    right: 0;
+    width: 200px;
+    background-color: #f2f2f2;
+    border: 2px solid #fff;
+    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    }
+#ajax-time-list li {
+    border-bottom: 1px solid #e0e0e0;
+    padding: 3px 5px;
+    }
+#ajax-time-list li:last-child {
+    border-bottom: none;
+    }
+#ajax-time-list li span {
+    color: #999;
+    font-size: 11px;
+    display: block;
+    }
+#ajax-time-list strong.warning {
+    color: #f00;
+    background-color: transparent;
+    }
+/* The actions row of the watermark is reused by our mhonarc templates,
+ * which we can't easily change. So about half of this is overcomplex to
+ * support them too. Caution is also needed to avoid breaking
+ * Product:+index's inline title edit widget.
+ */
+div.watermark-apps-portlet {
+    clear: both;
+    margin-bottom: 0.8em;
+    }
+div.watermark-apps-portlet > div {
+    display: inline-block;
+    vertical-align: middle;
+    }
+div.watermark-apps-portlet > div.wide {
+    width: 75%;
+    }
+div.watermark-apps-portlet > div > img,
+div.watermark-apps-portlet > div > a > img {
+    display: block;
+    margin: 0 1.5em 0 0;
+    }
+div.watermark-apps-portlet h1, div.watermark-apps-portlet h2 {
+    color: #000;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 34px;
+    margin: 0;
+    }
+.watermark-apps-portlet ul.facetmenu {
+    margin-top: 6px;
+    margin-left: -0.5em;
+    white-space: nowrap;
+    }
+.watermark-apps-portlet ul.facetmenu li {
+    display: inline;
+    list-style-type: none;
+    }
+.watermark-apps-portlet ul.facetmenu li a,
+.watermark-apps-portlet ul.facetmenu li span {
+    padding: 0.3em 0.5em;
+    margin-right: 0.4em;
+    }
+.watermark-apps-portlet ul.facetmenu li a:link,
+.watermark-apps-portlet ul.facetmenu li a:visited {
+    color: #000;
+    text-decoration: none;
+    }
+.watermark-apps-portlet ul.facetmenu li a:hover {
+    color: #000;
+    background-color: #f3f3f3;
+    }
+.watermark-apps-portlet ul.facetmenu li.active a,
+.watermark-apps-portlet ul.facetmenu li.active span {
+    font-weight: bold;
+    color: #fff;
+    background-color: #747474;
+    }
+.watermark-apps-portlet ul.facetmenu li.disabled-tab {
+    color: #747474;
+    }
+.context-publication {
+    margin-bottom: 1em;
+    }
+.registering {
+    /* Registered slot */
+    margin: .5em 0 1em 0;
+    font-size: 10px;
+    color: #666;
+    }
+.breadcrumbs {
+    margin-left: 0;
+    list-style-type: none;
+    clear: both;
+    font-size: 10px;
+    }
+.breadcrumbs li {
+    display: inline;
+    padding: 0;
+    }
+.breadcrumbs li a {
+    color: #494949;
+    }
+.breadcrumbs li:after {
+    content: "\00BB \0020"
+    }
+.breadcrumbs li:last-child {
+    /* The following leaves a small margin in chrome/webkit, but using none
+       doesn't hide the » in webkit either (both work for FF3.5). */
+    font-weight: bold;
+    }
+.breadcrumbs li:last-child:after {
+    content: '';
+    }
+#logincontrol {
+    /* Top right of the page is a link to log in or a button to log out: */
+    float: right;
+    }
+#logincontrol img {
+    /* align the image with the text */
+    margin-bottom: -2px;
+    }
+#logincontrol form {
+    margin: 0;
+    }
+#logincontrol input[type='submit'] {
+    /* The button lacks the right margin that buttons usually have: */
+    font-size: 10px;
+    margin-right: 0;
+    }
+
+
+/* =========================
+   Footer
+*/
+.footer {
+    clear: both;
+    margin-top: 4em;
+    padding-top: 0.5em;
+    }
+.footer .lp-arcana {
+    background: url(/@@/footer-background.png) top left repeat-x;
+    padding: 0.8em;
+    border-radius: 5px 5px 0 0;
+    height: 2em;
+    }
+.footer .lp-arcana img {
+    vertical-align: middle;
+    }
+.footer .sitemessage {
+    text-align: right;
+    }
+.footer .colophon {
+    margin: 3em 3em 1em 3em;
+    text-align: center;
+    }
+.footer .lp-branding {
+    float: left;
+    }
+.footer form {
+    display: inline;
+    }
+
+------------CdrkFMnOmwYklZ8m05cvug
+Content-Disposition: inline
+Content-Type: image/png
+Content-Location: https://launchpad.net/@@/footer-background.png
+Content-Transfer-Encoding: Base64
+
+iVBORw0KGgoAAAANSUhEUgAAAAoAAAA8CAIAAADQc7xaAAAAAXNSR0IArs4c6QAA
+AAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9kIDBYRC1/jNmQAAAEmSURBVDjL
+pVRBEgIxCEs6/P+R/sAX4GEppUDV1R3H0ZZAEmD5eD4RHwW4/g0FFEgRfiIjIQkE
+/ETrdmrRCmGIt7qzPIkRKzOzgDBnBLi+Db1gMZoTzYBTwlMOJBw3vJDUIsmKEVLl
+RgbCZHVMpV572uJ3asm5Dhhw129xD5Jiq23iFGD2HMBgCGcxbnYMDW2kjjl/l1A6
+FvQDLiz2MQQJ934kGsLpvvq0cDkjW7aAdtd4QeuwABgXI8I++2Rd1NhswqSWhOss
+rHNa4p0Hr4YCB2LbpHZPqZ2uD1mNpbzB0l1r9m+5VvZod+0d844RF/MiLM7yITnv
+ufbNhnbvlo/C9OC5CWO3XTtz9kPxofYt3amhWTezB//Wbt6kZVJP89qMw6+1b6Nf
+799M9UwBb1gAAAAASUVORK5CYII=
+
+------------CdrkFMnOmwYklZ8m05cvug
+Content-Disposition: inline
+Content-Type: text/css
+Content-Location: https://launchpad.net/+icing/css/modifiers.css
+Content-Transfer-Encoding: 8bit
+
+div.left,
+div.right {
+    width: 50%;
+    }
+
+div.left,
+.cves {
+    clear: both;
+    float: left;
+    }
+
+div.right {
+    clear: right;
+    float: right;
+    }
+
+div.centered {
+    text-align: center;
+    }
+
+div.centered table {
+    margin: 0 auto;
+    text-align: left;
+    }
+
+div.see-all {
+    text-align: right;
+    }
+
+span.nolink {
+    font-weight: bold;
+    }
+
+span.see-all {
+    float: right;
+    }
+
+.see-all a {
+    padding-left: 8px;
+    background: inherit;
+    font-size: 12px;
+    text-decoration: underline;
+    }
+
+.transparent {
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    }
+
+.rss-right {
+    background: url(/@@/rss.png) right center no-repeat;
+    }
+
+.logo {
+    float: left;
+    display: inline;
+    width: 64px;
+    height: 64px;
+    margin: 0 5px 0 0;
+    }
+
+.registered {
+    color: #666;
+    }
+
+.description {
+    clear: both;
+    }
+
+.search-results {
+    margin-top: 1em;
+    }
+
+.top-portlet .summary {
+    margin: 0 0 1em 0;
+    /* Same as h3, this appears under a h1. */
+    font-size: 16px;
+    }
+
+.main-portlet {
+    margin: 1em 0 1em 0;
+    }
+
+.pre {
+    white-space: pre;
+    }
+
+.clearfix:after {
+    /* use class="clearfix" whenever floats should be enclosed */
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+    }
+
+* html .clearfix {
+    /* Work around float bug in MSIE */
+    height: 1%;
+    }
+
+div.beta {
+    background-color: #c24848;
+    margin-bottom: 7px;
+    margin-top: 7px;
+    height: 10px;
+    width: 175px;
+    }
+
+div.beta img {
+    height: 10px;
+    }
+
+.scrolled-box {
+    max-height: 4.5em;
+    overflow-y: scroll;
+    }
+
+.ellipsis.single-line {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    -ms-text-overflow: ellipsis;
+    }
+
+.ellipsis.wide {
+    max-width: 60em;
+    }
+
+.ellipsis:before {
+    content: attr(data-ellipsis-original-text);
+    position: absolute;
+    display: block;
+    }
+.ellipsis:hover:before {
+    display: block;
+    }
+
+.exception {
+    color: #cc0000;
+    }
+
+.highlight {
+    background: #ddd;
+    border: 1px solid #ddd;
+    }
+
+.lowlight {
+    opacity: .5;
+    filter: alpha(opacity=50);
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    }
+
+.status :link,
+.importance :link {
+    text-decoration: none;
+    }
+
+.lesser,
+.duplicate-details {
+    font-size: 10px;
+    clear: left;
+    }
+
+pre.changelog,
+table.diff,
+.comment-text,
+.bug-activity {
+    font-family: 'Ubuntu Mono', monospace;
+    }
+
+.cloud-size-smallest {
+    font-size: 10px;
+    }
+
+.cloud-size-small {
+    font-size: 12px;
+    }
+
+.cloud-size-medium {
+    font-size: 14px;
+    }
+
+.cloud-size-large {
+    font-size: 16px;
+    }
+
+.cloud-size-largest {
+    font-size: 18px;
+    }
+
+.cloud-dark {
+    color: #00f;
+    }
+
+.cloud-medium {
+    color: #7878ff;
+    }
+
+.cloud-light {
+    color: #b8b8ff;
+    }
+
+/* =========================
+   Universal presentation
+   Sprites
+*/
+.sprite {
+    padding: 0 0 6px 18px;
+    line-height: 18px;
+    }
+.block-sprite {
+    padding: 2px 2px 15px 36px;
+    margin-bottom: 0;
+    }
+
+.action-icon {
+    /* Textual browsers read the text, graphical browsers see the sprite. */
+    display: inline-block;
+    margin-left: 6px;
+    width: 1px;
+    height: 16px;
+    vertical-align: text-top;
+    text-indent: 3px;
+    overflow: hidden;
+    }
+
+.action-icon + .action-icon {
+    margin-left: 0px;
+    }
+
+.action-icon.standalone {
+    margin-top: -6px;
+    }
+
+th .action-icon {
+    height: 12px;
+}
+
+h1 a.sprite,
+h2 a.sprite,
+h3 a.sprite {
+    position: relative;
+    top: 8px;
+    font-size: 12px;
+    }
+
+h3 a.sprite {
+    top: 4px;
+    }
+
+/* Hide the grey background for the Calendar content. */
+.yui3-skin-sam .yui3-pretty-overlay .yui3-calendar-content {
+    background: none;
+    border: none;
+    }
+
+/* Center the Calendar within its overlay. */
+.yui3-calendarbase {
+    margin: 0 auto;
+    }
+
+/* Hidden must be the last rule because it overides all other rules. */
+.inline {
+    display: inline;
+    margin: 0;
+    }
+
+/* Use 'hidden' to hide elements unconditionally.
+ * Some things we want to hide by default only if javascript is enabled; for
+ * these cases use 'hide-on-load'.
+ */
+.hidden, .yui3-js-enabled .hide-on-load {
+    display: none;
+    }
+
+------------CdrkFMnOmwYklZ8m05cvug
+Content-Disposition: inline; filename=import.css
+Content-Type: text/css; name=import.css
+Content-Location: https://launchpad.net/+icing/import.css
+Content-Transfer-Encoding: 8bit
+
+@import url("css/base.css");
+@import url("css/typography.css");
+@import url("css/colours.css");
+@import url("css/forms.css");
+@import url("css/layout.css");
+@import url("css/modifiers.css");
+
+/* We have a few files that need to include some base CSS.
+   This file is purely for that
+*/
+
+
+------------CdrkFMnOmwYklZ8m05cvug
+Content-Disposition: inline; filename=launchpad.png
+Content-Type: image/png; name=launchpad.png
+Content-Location: https://launchpad.net/@@/launchpad.png
+Content-Transfer-Encoding: Base64
+
+iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhk
+iAAAAAlwSFlzAAALEwAACxMBAJqcGAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3Nj
+YXBlLm9yZ5vuPBoAAAEgSURBVDiNpZO7SgNBGIW/2awDaTRJs7FaEdfCylcQsbT2
+AcTSN/ABtvAJAj6AlfYWIjaCjYWwBC0kWISQgBd0sxfntwi6Jibrmpxy5sx3Dv/M
+KBERZpA1upAkCXEcTwcIggDf92m1WtMBoijCGFP48C/AqKR/j3m9AkkwT2fI+y0w
+PDI7D5A+HGC6xyhdR+L2IHFhg7m1UyjN/93gO2WlgV6/plTfwzyfkz4eFmvwJau2
+PTAvLfPRPkJeLrK9IoAsroayq0jSzQdMelvydoOkPVTZy5g/DVprADqdDp6XmdK7
+XVAa0zsBoLS4Px7gui6O4xCG4XBy2ETCJqq8iu01sCqbQ3UnKg52pH+Za5H/DXGM
+cq/Rqm6h7EouQM36nT8B8aKcEoKd93oAAAAASUVORK5CYII=
+
+------------CdrkFMnOmwYklZ8m05cvug
+Content-Disposition: inline; filename=team.png
+Content-Type: image/png; name=team.png
+Content-Location: https://launchpad.net/@@/team
+Content-Transfer-Encoding: Base64
+
+iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAABHNCSVQICAgIfAhk
+iAAAAAlwSFlzAAAN1wAADdcBQiibeAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3Nj
+YXBlLm9yZ5vuPBoAAAJuSURBVCiRdZJdSFNhAIbf75zvHM9+nM4pm6ZoNmvolkGa
+QpQh/RBmdNGNBNFFN3ZTQRdRVFAUFF10153gTYEgCSVdFRFaxMxYGv63dNPNTdzm
+Nrezc873dZFdFPreP/A+Ly/hnGOnnOrwPVS53JtWqb1Y1iOE68/WVeVpwP+FCTtB
+p495H6zmzLcExWH3ehthd9VV5mB5rFDjHgBsCza3trlXc+abFcUCfHUlQD6BlZUo
+KJXAuHANAMjfqieO+u5rKLqSVkWHrUhbr7UkbTcuHafVzd3gRgGRpRk8f/kOozNp
+ZjBiFrZc7sbz5juCUubwehtR6txdNp120b43E1xLR2DkU7BbRLS4ErnOqvAjAKL4
+avitO6fTgfJiUWiqr4Ca20QwFIMkSVhaU0mDOcRFqCTgH8H87LxQvpi93D8WjJH9
+LYcau+t+jfWc7zZV+c4A4IiGZtE3+BHvA3FcNM/xTLlIKkMF2KY2C9qGEWeAW4wu
+h+Ofh54cMCmKx7WrloBpKCJ5KNk5Xj0/SdpGN8i+H5twLRdgV7mYAQQdWKYA8FOt
+f8ECk2chSlL9Hg9ZWJjm4+MTpGU6C5mxfxZ3ANYV4LbY71fag7pnKMprSWo9KgUn
+P+BbzEE+ZTuMEetBtIe/Eso5CAAGQAeQBnSx1N05rJjkGqfnCN17uAcRxzmE5Vak
+qUtIaEwPy9a4MzZF1gAxAeQywCoDeikIaZBNFhQ0HbOLcTDGoet/6sk2m+SvaSUD
+3wet/5+EgvPXmWSiizFYkskSUEkBMwrQ1Sz0fBYAJ9u9i4IIFxjn1zOp5EmykWri
+HM4tFRXgUYBc3Q78DRrvEV6YGmGjAAAAAElFTkSuQmCC
+
+------------CdrkFMnOmwYklZ8m05cvug
+Content-Disposition: inline; filename=launchpad-logo-and-name-hierarchy.png
+Content-Type: image/png; name=launchpad-logo-and-name-hierarchy.png
+Content-Location: https://launchpad.net/@@/launchpad-logo-and-name-hierarchy.png
+Content-Transfer-Encoding: Base64
+
+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
+gg==
+
+------------CdrkFMnOmwYklZ8m05cvug--
