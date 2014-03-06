@@ -349,6 +349,12 @@ MultiROM je svobodný software, distribuovaný pod licencí GNU GPLv3 (boot mana
     \item \B{Android aplikace}: \url{http://github.com/Tasssadar/MultiROMMgr}
 \end{itemize}
 
+Na serveru Github je také k dispozici wiki s informacemi jak pro uživatele, tak pro vývojáře kteří chtějí vědět více o tom jak MultiROM funguje nebo ji chtějí upravit pro svoje zařízení. Je napsaný z části mnou (zejména části týkající se technických záležitostí) a z části členy komunity (hlavně informace o používání MultiROM).
+
+\begin{itemize}
+\item \url{https://github.com/Tasssadar/multirom/wiki}
+\end{itemize}
+
 \subsection{Kompatibilní zařízení}
 Platforma ARM bohužel stále není standardizovaná alespoň do takové míry jako x86, kterou známe z PC, a proto není možné vytvořit tuto nízkouúrovňovou modifikaci tak, aby fungovala se všemi Android telefony a tablety. V současnosti oficiálně podporuji tato zařízení:
 
@@ -381,7 +387,6 @@ Hlavní část MultiROM, která se spustí okamžitě po startu Linuxového jád
 \end{center}
 \end{figure}
 
-
 \section{Upravená recovery}
 \subsection{Obecné představení pojmu}
 Pojem \uv{recovery} u zařízení s OS Android označuje velmi malý (v řádech několika megabajtů), oddělený systém, původně určený pro instalaci aktualizací OS od výrobce, případně reinstalaci systému v případě jeho porušení. Recovery je obvykle možné spustit vypnutím zařízení a následným podržením určité kombinace tlačítek (např. vypínací tlačítko a tlačítko pro zvýšení hlasitosti zároveň). S podobným nápadem se můžeme setkat i u PC, kdy je na \uv{Oddílu pro obnovu} kopie operačního systému, ze které lze obnovit ten hlavní.
@@ -391,6 +396,13 @@ Komunita možnosti recovery značně rozšířila a vylepšila a v současné do
 \subsection{TeamWin Recovery Project}
 % TODO: screenshot
 TeamWin Recovery Project\cite{twrp} (dále jen TWRP) je jedna z upravených recovery a pravděpodobně má nejvíce funkcí. Má grafické rozhraní plně podporující dotykový displej, podporuje témata (celé GUI je napsané pomocí XML souborů a je možné ho jakkoliv upravit), dokáže instalovat ROM, dělat zálohy, mazat diskové oddíly, obsahuje jednoduchý terminál a další.
+
+\begin{figure}[H]
+\begin{center}
+ \includegraphics[width=250px]{img/recovery.png}
+\caption{Hlavní menu upravené recovery \It{TWRP}}
+\end{center}
+\end{figure}
 
 % TODO: doplnit
 
@@ -792,6 +804,54 @@ Nejvýznamnější změnou je přesunutí kódu, který zkopíruje atagy pro nov
 Další změnou, která byla třeba pro Google Nexus 5, je podpora DTB\footnote{\It{Device Tree Blob} - binární struktura, která obsahuje informace o hardwaru zařízení dříve kompilované přímo do jádra. Na ARM platformě představuje \It{částečnou} náhradu ACPI, které známe z platformy x86. Mimo jiné také nahrazuje atagy.}. Jednalo se zejména o úpravy userspace částí kexecu a změny v kernelu, aby byl schopný zpracovat DTB.
 
 Kromě toho bylo provedeno několik dalších změn, zejména pro kompatibilitu se zařízeními, která MultiROM podporuje.
+
+
+\newpage
+ \section*{PŘÍLOHA D: Velké obrázky}
+ \addcontentsline{toc}{section}{PŘÍLOHA D: Velké obrázky}
+
+\begin{figure}[H]
+\begin{center}
+ \includegraphics[height=\textheight-70pt]{img/boot_manager.png}
+\caption{\B{Boot manager}: hlavní obrazovka se seznamem systémů}
+\end{center}
+\end{figure}
+
+
+\begin{figure}[H]
+\begin{center}
+ \includegraphics[height=\textheight-40]{img/boot_manager_autoboot.png}
+\caption{\B{Boot manager}: je možné nastavit automatické spuštění jednoho ze systémů po určité prodlevě}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+ \includegraphics[height=\textheight-20]{img/boot_manager_misc.png}
+\caption{\B{Boot manager}: obrazovka "ostatní možnosti"}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+ \includegraphics[height=\textheight-40]{img/recovery_install1.png}
+\caption{\B{Instalace vedlejšího systému v recovery 1}: výběr typu systému a umístění instalace}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+ \includegraphics[height=\textheight-40]{img/recovery_install2.png}
+\caption{\B{Instalace vedlejšího systému v recovery 2}: výběr instalačního média (ZIP soubor, záloha nebo nahrání z počítače přes USB)}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+ \includegraphics[height=\textheight-40]{img/recovery_install3.png}
+\caption{\B{Instalace vedlejšího systému v recovery 3}: výběr instalačního ZIP souboru}
+\end{center}
+\end{figure}
 
 
 \newpage
