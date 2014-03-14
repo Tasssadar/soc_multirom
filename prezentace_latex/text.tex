@@ -55,7 +55,7 @@
 %\institute[vbocek@gmail.com]{SPŠ a VOŠ technická, Sokolská 1, Brno \\[0.5cm] \includegraphics[width=2cm]{logo-skoly}}
 \institute[vbocek@gmail.com]{SPŠ a VOŠ technická Brno, Sokolská 1}
 \title{MultiROM}
-\subtitle{Nástroj pro instalaci více operačních systémů na jedno mobilní zařízení}
+\subtitle{Nástroj pro instalaci více operačních systémů\\na jedno mobilní zařízení}
 \date[]{}
 
 %\newdate{date}{13}{03}{2013}
@@ -71,32 +71,54 @@
     \frametitle{MultiROM}
     \begin{columns}
     \column{.48\textwidth}
+    \vspace{-10mm}
     \begin{itemize}
-        \item Instalace libovolného množství OS
+        \item Instalace libovolného množství vedlejších systémů -- \It{multiboot}
         \item Podpora mnoha operačních systémů
         \item Snadné používání
     \end{itemize}
     \column{.48\textwidth}
+    \vspace{-5mm}
+    \begin{figure}[H]
+    \includegraphics[width=145px]{../img/boot_manager_promo.png}
+    \end{figure}
+%     \begin{figure}[H]
+%     \begin{tikzpicture}
+%         \node[drop shadow={shadow xshift=.8ex,shadow yshift=-.8ex},fill=white,draw] at (0,0) { \includegraphics[width=120px]{../img/boot_manager.png}};
+%     \end{tikzpicture}
+%     \end{figure}
+    \end{columns}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Výsledky}
+    \begin{itemize}
+        \item Výrazně jednodušší používání v porovnání s ostatními podobnými modifikacemi
+        \item Přispívání zpět do komunity, zejména TWRP a Ubuntu Touch
+        \item MultiROM využívají i další vývojáři na jiných zařízeních
+        \item Úspěšný crowdfunding projekt
+        \item Přes 13 000 uživatelů
+    \end{itemize}
     \begin{figure}[H]
     \begin{tikzpicture}
-        \node[drop shadow={shadow xshift=.8ex,shadow yshift=-.8ex},fill=white,draw] at (0,0) { \includegraphics[width=120px]{../img/boot_manager.png}};
+         \node[fill=white,draw] at (0,0) { \includegraphics[width=0.95\textwidth]{../img/graph_active.png}};
     \end{tikzpicture}
     \end{figure}
-    \end{columns}
 \end{frame}
 
 \begin{frame}
     \frametitle{Proč?}
     \begin{itemize}
-        \item Vývoj aplikací pro Android
+        \item Na PC je multiboot běžná funkcionalita
         \item Vyzkoušení jiných operačních systémů
+        \item Vývoj aplikací pro Android
         \item Využívání aplikací kompatibilních pouze s jedním OS
-        \item Na PC je to běžná funkcionalita
     \end{itemize}
 \end{frame}
 
 \begin{frame}
-    \frametitle{Zkoušení distribucí OS Android}
+    \frametitle{Zkoušení rozdílných ROM}
     \begin{columns}
     \column{.48\textwidth}
         \begin{negativeblock}{Dříve}
@@ -117,7 +139,7 @@
                 \item Nainstalovat nový systém do MultiROM
                 \item[2a.] Zjistit, že starý byl lepší a smazat ho
                 \pause
-                \item[2b.] Meh, ujde, zatím ho nesmažu
+                \item[2b.] Hmm, ujde, zatím ho nesmažu
             \end{enumerate}
             \vspace{2mm}
         \end{positiveblock}
@@ -136,6 +158,7 @@
     \end{itemize}
     \end{positiveblock}
 
+    \pause
     \begin{negativeblock}{Nevýhody}
     \begin{itemize}
         \item Nemožnost sdílení aplikací mezi systémy
@@ -225,7 +248,7 @@
     \end{columns}
 \end{frame}
 
-% BOOT MENU
+% BOOT MENUp
 % to stejne na N5, tam boot android
 % N7 - recovery, boot android
 % n5 - ukazat nabootovanou rom, reboot do ubuntu
@@ -241,21 +264,6 @@
     \end{center}
 \end{frame}
 
-\begin{frame}
-    \frametitle{Výsledky}
-    \begin{itemize}
-        \item Výrazně jednodušší používání v porovnání s ostatními podobnými modifikacemi
-        \item Úspěšný crowdfunding projekt
-        \item Přispívání zpět do komunity, zejména TWRP a Ubuntu Touch
-        \item MultiROM využívají i další vývojáři na jiných zařízeních
-        \item Přes 13 000 uživatelů
-    \end{itemize}
-    \begin{figure}[H]
-    \begin{tikzpicture}
-         \node[fill=white,draw] at (0,0) { \includegraphics[width=0.95\textwidth]{../img/graph_active.png}};
-    \end{tikzpicture}
-    \end{figure}
-\end{frame}
 
 \begin{frame}
     \begin{center}
