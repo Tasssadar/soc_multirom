@@ -3,7 +3,7 @@
 
 \usepackage{tipa} % -- musi byt nad czech, jinak rozbije rozdelovani slov
 \usepackage{czech}
-%\usepackage[czech]{babel} -- neprida spravny rozdelovani slov.
+\usepackage[czech]{babel} % neprida spravny rozdelovani slov, je potreba i czech, kerej zase ale neudela cesky data
 \usepackage[center]{caption}
 \usepackage[utf8]{inputenc}
 \usepackage{wrapfig} % nastavení obtékání textu
@@ -232,7 +232,7 @@ Prohlašuji, že jsem svou práci vypracoval samostatně, použil jsem pouze pod
 \vspace{150mm}
 
 \section*{Poděkování}
-Děkuji Ing. Jaroslavu Hodálovi za rady, obětavou pomoc, velkou trpělivost a~podnětné připomínky poskytované během psaní této práce a Jakubu \mbox{Streitovi} za velkou pomoc s~prací.
+Děkuji Ing. Jaroslavu Hodálovi za rady, obětavou pomoc, velkou trpělivost a~podnětné připomínky poskytované během psaní této práce, Jakubu \mbox{Streitovi} za velkou pomoc s~prací a v neposlední řadě Ing. Martinu Foučkovi za pomoc s textovou částí práce.
  
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -241,11 +241,14 @@ Děkuji Ing. Jaroslavu Hodálovi za rady, obětavou pomoc, velkou trpělivost a~
 \vspace{-20mm}
 
 \section*{Anotace}
-%TODO: anglicky
-
-Tato práce popisuje softwarovou modifikaci pro mobilní zařízení s~operačním systémem Google Android, která umožňuje instalaci více operačních systémů vedle sebe, podobně jako na PC. Může se jednat pouze o několik různých verzí OS Google Android, ale i~úplně jiné systémy -- například právě se vyvíjející Ubuntu Touch a~další.
+Tato práce popisuje softwarovou modifikaci pro mobilní zařízení s~operačním systémem Google Android, která umožňuje instalaci více operačních systémů vedle sebe na jedno zařízení, podobně jako na PC. Může se jednat pouze o několik různých verzí OS Google Android, ale i~úplně jiné systémy -- například právě se vyvíjející Ubuntu Touch a~další.
 
 Možnost provozovat více operačních systémů na jednom zařízení je užitečná spíše pro pokročilé uživatele, podobně jako na stolních počítačích, nicméně více než 13 000 aktivních uživatelů (březen 2014) dokazuje, že zájem o~tuto modifikaci rozhodně je.
+
+\section*{Annotation}
+This thesis covers a software modification for mobile devices running on Google Android operating system which enables installation of multiple operating systems on a single device, a feature commonly known as \It{multiboot}. This is a very common feature on desktop computers, but most portable devices are able to run just one system at a time. My project supports not only several versions of Android, but also different systems, like currently-in-development Ubuntu Touch and others.
+
+Just like on desktop computers, \It{multiboot} is feature only more advanced users are likely to use, however, more than 13,000 MultiROM's active users (march 2014) prove that demand for this feature certainly exists.
 
 \addtolength{\textheight}{30mm} % prodlouží následující stránku
 
@@ -485,7 +488,7 @@ Aplikace je zdarma dostupná v obchodě Google Play, kde má velmi pozitivní ho
 \subsection{Instalace a~aktualizace MultiROM}
 Aplikace dokáže vše potřebné (MultiROM, Recovery a~kernel) stáhnout a~nainstalovat. Dále hlídá, jestli jsou verze všech komponent aktuální a~v~případě že nejsou, nabídne uživateli aktualizaci. Kvůli této funkci jsem vytvořil server, který hostuje data o~dostupných verzích pro jednotlivé zařízení a~skladuje všechny instalační soubory.
 
-Tato část aplikace výrazně zjednodušila instalaci a~aktualizace celého projektu -- dříve byly aktualizace vydávány pouze na XDA fóru a~uživatel na si musel aktualizace všimnout, stáhnout ji, nahrát do telefonu a~nainstalovat. MultiROM Manager tohle všechno zvládá v~jednom kroku.
+Tato část aplikace výrazně zjednodušila instalaci a~aktualizace celého projektu -- dříve byly aktualizace vydávány pouze na XDA fóru\footnote{\It{XDA-Developers.com} -- největší web, na kterém se schromažďují nadšenci zabívající se úpravami Android zařízení.} a~uživatel na si musel aktualizace všimnout, stáhnout ji, nahrát do telefonu a~nainstalovat. MultiROM Manager tohle všechno zvládá v~jednom kroku.
 
 \begin{figure}[H]
 \begin{center}
@@ -651,9 +654,12 @@ Na grafu č. \ref{graf-uzivatele} můžete vidět graf \B{aktivních} instalací
 \end{center}
 \end{figure}
 
-%TODO: youtube videa
-%\subsection{Videa na serveru Youtube}
-%Poměrně brzo po vydání MultiROM se na serveru Youtube začaly objevovat videa podrobně popisují jak se MultiROM používá.
+\subsection{Videa na serveru Youtube}
+Poměrně brzo po vydání MultiROM se na serveru Youtube začaly objevovat videa podrobně popisují jak se MultiROM používá. K dnešnímu dni jich na Youtube lze najít několik desítek, zaměřená na různá zařízení nebo jen na instalaci určitého systému. Jedno jsem udělal i já, je silně \It{amatérské} a popisuje a ukazuje většinu možností MultiROM v době natočení videa (15.\,1.\,2013). Moje video je v angličtině a můžete ho najít na přiloženém CD nebo na serveru Youtube:
+
+\begin{itemize}
+    \item \qrurl{http://www.youtube.com/watch?v=JDnDNxqfSaw}
+\end{itemize}
 
 \subsection{Napsali o~MultiROM}
 \noindent \uv{Žonglér s~ROM -- S~MultiROM můžete na váš Nexus 7 nainstalovat několik systémů zároveň, a~to jak Android ROM tak další Linuxové distribuce.} (Překlad z~němčiny.)
@@ -725,9 +731,15 @@ Mimo jiné jsem také vytvořil server\cite{tasemnice-si-mail}, který sestavuje
 \newpage
 \section*{Závěr}
 \addcontentsline{toc}{section}{Závěr}
-%TODO: Napsat
+Můj projekt MultiROM se stal až překvapivě úspěšným. Tuto skutečnost přisuzuji zejména, v porovnání s ostatními podobnými úpravami, snadnému používání a takřka žádným nevýhodám oproti stavu, kdy modifikace není nainstalována. Instalaci zvládne díky nabízené aplikaci pro Android i lehce pokročilý uživatel. Na serveru Youtube má pak k dispozici několik desítek video návodů, a to nejen v angličtině.
 
+Vyzkoušení některého z méně známých operačních systémů dostupných pro tato přenosná zařízení dříve znamenalo spoustu času stráveného vytvářením záloh a jejich obnovováním. Díky mému projektu se tento proces značně usnadňuje, a nepřímo tak pomáhá i vývojářům těchto systémů, protože více uživatelů si jejich produkt vyzkouší anebo si ho dokonce oblíbí.
 
+Vedlejším produktem mojí práce na MultiROM jsou opravy a vylepšení projektů, které moje modifikace rozšiřuje nebo se jich jinak dotýká. Většina změn, které nejsou částí MultiROM, byla odeslána do hlavních stromů příslušných projektů a řada z nich si našla cestu i k uživatelům, kteří MultiROM nemají nainstalovanou. Toto platí zejména o upravené recovery TeamWin Recovery Project.
+
+MultiROM má po roce a půl od vydaní první verze pro Nexus 7 (2012) téměř 14 tisíc aktivních instalací a mnoho pozitivních ohlasů od uživatelů. Má za sebou úspěšnou crowdfunding kampaň, na kterou přispívali sami uživatelé a vývojáři a díky které se rodina oficiálně podporovaných zařízení z původního Nexusu 7 rozrostla na celkově 2 tablety a 2 telefony z řady Google Nexus a více než dvojnásobek jiných zařízení, která podporují další členové komunity.
+
+V budoucnu bych chtěl přidat podporu pro další zařízení a implementovat možnost sdílení aplikací a jejich dat mezi několika instalacemi operačního systému Android.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
