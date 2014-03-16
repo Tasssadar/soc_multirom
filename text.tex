@@ -1,8 +1,11 @@
+%%    VLNKA <fileinput>  KkSsVvZzOoUuAaIi
 \documentclass[12pt, a4paper, oneside]{article} 
 
-\usepackage[czech]{babel}
-\usepackage[center]{caption} 
-\usepackage[utf8]{luainputenc}
+\usepackage{tipa} % -- musi byt nad czech, jinak rozbije rozdelovani slov
+\usepackage{czech}
+%\usepackage[czech]{babel} -- neprida spravny rozdelovani slov.
+\usepackage[center]{caption}
+\usepackage[utf8]{inputenc}
 \usepackage{wrapfig} % nastavení obtékání textu
 \usepackage{graphicx} % nastavení grafiky, matematiky
 \usepackage{float}
@@ -13,13 +16,19 @@
 \usepackage{fancyvrb}
 \usepackage{marginnote}
 \usepackage{marginfix}
-\usepackage{tipa}
+\usepackage{breakurl}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{minted}
 \usepackage{pst-barcode}
-\usepackage[latex=-shell-escape,cleanup={}]{auto-pst-pdf} % uncomment this if used with pdflatex
-\usepackage[bookmarksopen,colorlinks,plainpages=false,linkcolor=black,urlcolor=blue,citecolor=black,filecolor=black,menucolor=black,unicode=true]{hyperref}
+\usepackage[latex=-shell-escape]{auto-pst-pdf} % uncomment this if used with pdflatex
+\usepackage{tocloft} % přidá tečky do obsahu ke kapitolám /sekcím
+\usepackage[bookmarksopen,colorlinks,plainpages=false,linkcolor=black,urlcolor=blue,citecolor=black,filecolor=black,menucolor=black,unicode=true,breaklinks]{hyperref}
 \usepackage[backend=biber,bibstyle=numeric,sorting=none,date=long,dateabbrev=false,texencoding=utf8,bibencoding=utf8]{biblatex}
+
+%%%% Bibliography
 \addbibresource{text.bib}
-\DeclareFieldFormat[online]{url}{ Dostupné na World Wide Web:\\ \href{#1}{\textless \nolinkurl{#1}\textgreater}\marginpar{\qrcode{1}}}
+\DeclareFieldFormat[online]{url}{Dostupné na World Wide Web:\\* \href{#1}{\textless\nolinkurl{#1}\textgreater}}
 \DeclareFieldFormat[online]{title}{\It{#1} [online]}
 \DeclareNameAlias{default}{last-first}
 
@@ -49,88 +58,33 @@
 }
 \ExecuteBibliographyOptions{urldate=MYSTYLE}
 
-\usepackage{tocloft} %přidá tečky do obsahu ke kapitolám /sekcím 
-\renewcommand{\cftsecdotsep}{\cftdotsep}
-
-\hypersetup{pdfencoding=auto}
-\urlstyle{rm}
-%bookmarksopen -- open up bookmark tree 
-%colorlinks -- zbarví odkazy (implicitně orámovaný nezbarvený text)
-%urlcolor -- barva odkazů (implicitně magenta) 
-%linkcolor=black -- barva odkazů v obsahu (implicitně red)
-
-
-\usepackage{listings}
-\usepackage{color}
-\usepackage{minted}
+%%%% Minted
 \definecolor{lightgray}{RGB}{240,240,240}
 \definecolor{darkgray}{rgb}{.4,.4,.4}
 \definecolor{purple}{rgb}{0.65, 0.12, 0.82}
 \definecolor{darkgreen}{RGB}{0,150,0}
 
 \usemintedstyle{perldoc}
-\newminted{js}{linenos=true, bgcolor=lightgray}
 \newminted{ini}{linenos=true, fontsize=\footnotesize}
-
-\lstdefinelanguage{JavaScript}{
-  keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break, for},
-  keywordstyle=\color{blue}\bfseries,
-  ndkeywords={class, export, boolean, throw, implements, import, this},
-  ndkeywordstyle=\color{blue}\bfseries,
-  identifierstyle=\color{black},
-  sensitive=zr,
-  comment=[l]{//},
-  morecomment=[s]{/*}{*/},
-  commentstyle=\color{darkgreen}\ttfamily,
-  stringstyle=\color{red}\ttfamily,
-  morestring=[b]',
-  morestring=[b]"
-}
-
-\lstset{
-   backgroundcolor=\color{lightgray},
-   extendedchars=true,
-   basicstyle=\footnotesize\ttfamily,
-   showstringspaces=false,
-   showspaces=false,
-   numbers=left,
-   numberstyle=\footnotesize,
-   numbersep=9pt,
-   tabsize=2,
-   breaklines=true,
-   showtabs=false,
-   aboveskip=5mm,
-   belowskip=7mm,
-   captionpos=b
-}
 
 \renewcommand{\listingscaption}{Příklad}
 \renewcommand{\listoflistingscaption}{Příklady}
 
-
-% \usepackage{parskip} -- zapne americké odstavce v celé práci
-
-\addtolength{\textwidth}{-2mm} 
+%%%% Dimensions
+\addtolength{\textwidth}{-2mm}
 \addtolength{\hoffset}{4mm}  % posun textu kvůli kroužkové vazbě  
 
 \setlength{\intextsep}{5mm} % nastavení mezery okolo obrázků
+\marginparsep=15pt
+\linespread{1.3}
+\unitlength=1mm % nastavení volby jednotek 
 
 % nastavení příkazu >\figcaption pro popis čehokoli, jako by to byly obrázky 
-\makeatletter   
+\makeatletter
 \newcommand\figcaption{\def\@captype{figure}\caption}
 \makeatother
 
-\renewcommand\refname{Literatura} 
-%\def\bibname{PŘÍLOHA D: Reference}
-%\renewcommand\bibname{PŘÍLOHA D: Reference}
-% přejmenuje anglický název Reference na české Literatura
-
-
-%\makeindex % příprava pro výrobu indexu (jestli ho chcete)
-
-%%    VLNKA <fileinput>  KkSsVvZzOoUuAaIi        
-
-% definice příkazů 
+% definice příkazů
 \newcommand{\D}{\medskip \noindent} % nový odstavec v "americkém" formátování 
 \newcommand{\B}{\textbf} %tučné písmo
 \newcommand{\A}{\mathbf} %tučné písmo v matematickém režimu
@@ -157,31 +111,27 @@
     \psbarcode{#1}{eclevel=L width=0.85 height=0.85}{qrcode}%
   \end{pspicture}%
 }
+%\newcommand{\qrcode}[1]{ }
 \newcommand{\qrurl}[1]{\url{#1}\marginpar{\qrcode{#1}\vspace{7pt}}}
-\newcommand{\curl}[1]{\href{#1}{\textless #1\textgreater}}
 
+%%%% Misc
+\renewcommand{\cftsecdotsep}{\cftdotsep}
+
+%\hypersetup{pdfencoding=auto}
+\urlstyle{rm}
 \DefineShortVerb{\|}
-% další příkaz se aplikuje, pouze, když jste v matematickém režimu
 
-%\hyphenation{Pusť-me pla-tí hod-no-ty do-sa-dí-me za-da-né dal-ším}
+%\hyphenation{Pusť-me pla-tí hod-no-ty do-sa-dí-me za-da-né dal-ším u-mož-ňu-je}
 % dělení slov, kdyby implicitní nevyhovovalo
-
-\linespread{1.3} 
-% řádkování 1,5x  
-% použijete podle situace  
-
-\unitlength=1mm % nastavení volby jednotek 
-\marginparsep=15pt
 
 % konec hlavičky
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{document} % začátek textové části 
+\begin{document}
 
-% titulní strana
 \pagestyle{empty} % vynechá číslování
- 
+
 \voffset = -20mm % posun začátku textu výš
 \enlargethispage{60mm} % zvětší oblast tisku pro tuto stránku   
 
@@ -276,7 +226,7 @@ Prohlašuji, že jsem svou práci vypracoval samostatně, použil jsem pouze pod
  
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage   % Poděkování -- nepovinné 
+\newpage   % Poděkování -- nepovinné
 
 ~ % musí to tu být, aby fungovala svislá mezera
 \vspace{150mm}
@@ -312,7 +262,6 @@ Možnost provozovat více operačních systémů na jednom zařízení je užite
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \setlength{\voffset}{0mm} % posune text/obrázek na této stránce, kam patří
-%\pagestyle{headings} % znovu zapne číslování
 \pagestyle{plain}
 
 % TODO: prodloužit
@@ -448,7 +397,7 @@ Hlavní část MultiROM, která se spustí okamžitě po startu Linuxového jád
 \end{center}
 \end{figure}
 \vspace{-20pt}
-\noindent \It{Další obrázky jsou kvůli velikosti zařazeny v příloze \attref{sec:obrazky}.}
+\noindent \It{Další obrázky jsou kvůli velikosti zařazeny v příloze \attref{obrazky}.}
 
 Grafické rozhraní je poměrně jednoduché a skládá se ze tří sekcí. Záložka \B{Internal} označuje seznam systémů nainstalovaných ve vnitřní paměti zařízení, hlavní systém (ten, který byl na zařízení nainstalovaný před instalací MultiROM) je vždy první v seznamu. Uživatel si zde může vybrat, který systém chce spustit a poté stisknout tlačítko \uv{boot}.
 
@@ -491,7 +440,7 @@ Grafické rozhraní TWRP mi umožnilo vytvořit relativně snadný a~rychlý zp�
 \subsection {Podporované formáty instalačních souborů}
 \B{Android ROM} se instalují pomocí ZIP souborů obsahujících systém a~script, který recovery spustí. Tento způsob, pojmenovaný \It{Edify script}, původně používal Google pro instalaci aktualizací přes recovery, nicméně komunita ho velmi rychle adoptovala a~používá se k~instalaci naprosté většiny Android ROM.
 
-\B{Ubuntu Touch} má dva způsoby instalace -- první, starší, používá dva ZIP soubory s~\It{Edify scriptem}, moje upravená TWRP umožňuje uživateli vybrat oba soubory na začátku instalace (nemusí je instalovat postupně) a~provede během instalace všechny změny potřebné pro běh s~MultiROM. Druhý způsob je nový a~používá oddělené datové soubory a~soubor s~příkazy, který zpracovává script v~recovery -- tento způsob instalace je třeba provádět přes aplikaci pro Android, protože pro stažení instalačních souborů je třeba parsovat určitá metadata (který datový soubor patří ke které verzi systému, ...).
+\B{Ubuntu Touch} má dva způsoby instalace -- první, starší, používá dva ZIP soubory s~\It{Edify scriptem}, moje upravená TWRP umožňuje uživateli vybrat oba soubory na začátku instalace (nemusí je instalovat postupně) a~provede během instalace všechny změny potřebné pro běh s~MultiROM. Druhý způsob je nový a~používá oddělené datové soubory a~soubor s~příkazy, který zpracovává script v~recovery -- tento způsob instalace je třeba provádět přes aplikaci pro Android, protože pro stažení instalačních souborů je třeba parsovat určitá metadata (který datový soubor patří ke které verzi systému~a~podobně).
 
 \B{Ubuntu Desktop} pro Nexus 7 (2012) je distribuován jako obraz diskového oddílu. Moje upravená TWRP ho dokáže rozbalit, nainstalovat a~upravit tak, aby běžel v~prostředí MultiROM. 
 
@@ -709,6 +658,8 @@ Na grafu č. \ref{graf-uzivatele} můžete vidět graf \B{aktivních} instalací
 \subsection{Napsali o~MultiROM}
 \noindent \uv{Žonglér s~ROM -- S~MultiROM můžete na váš Nexus 7 nainstalovat několik systémů zároveň, a~to jak Android ROM tak další Linuxové distribuce.} (Překlad z~němčiny.)
 
+\hfill \It{číslo 21/2013 německého tištěného časopisu c't magazin\cite{ctmagazine}} \\
+
 \noindent \uv{...A great thing about MultiROM is the wa  y it doesn’t require a~lot of tweaking on the user’s part to get things to work...}
 
 \hfill \It{AddictiveTips\cite{addictivetips}} \\
@@ -724,8 +675,6 @@ Na grafu č. \ref{graf-uzivatele} můžete vidět graf \B{aktivních} instalací
 \noindent \uv{Do you love to try out different ROMs on your Nexus 7? ... it can get a~bit frustrating flashing backwards and forwards between new ROMs and your daily driver. There is an easier way! MultiROM allows you to have multiple ROMs installed on your device and gives you the ability to switch between them at will.}
 
 \hfill \It{AndroidMagazine\cite{androidmagazine}} \\
-
-\hfill \It{číslo 21/2013 německého tištěného časopisu c't magazin\cite{ctmagazine}} \\
 
 \noindent \uv{MultiROM is extremely easy to use, even for users with little knowledge, and that is why that stands out other similar tools that require fiddling a~bit more about the system by yourself.}
 
@@ -872,8 +821,8 @@ usb_img_fs="vfat ntfs"
 # Example: base_folders="data:50:1024 system:450:640 cache:50:450"
 base_folders="root:1000:1500"
 \end{inicode}
-\SaveVerb{term}|manifest.txt|
-\caption{Obsah souboru \protect\UseVerb{term} s~komentáři}
+\SaveVerb{term2}|manifest.txt|
+\caption{Obsah souboru \protect\UseVerb{term2} s~komentáři}
 \label{manifest-txt}
 \end{listing}
 
@@ -917,7 +866,7 @@ Kromě toho bylo provedeno několik dalších změn, zejména pro kompatibilitu 
  \section*{PŘÍLOHA D:}
  \section*{Velké obrázky}
  \addcontentsline{toc}{section}{PŘÍLOHA D: Velké obrázky}
- \label{sec:obrazky}
+ \label{obrazky}
 
 \addtolength{\textheight}{-70pt}
 \begin{figure}[H]
@@ -996,13 +945,13 @@ Kromě toho bylo provedeno několik dalších změn, zejména pro kompatibilitu 
 
 \newpage
 \section*{PŘÍLOHA E:}
-\addcontentsline{toc}{section}{PŘÍLOHA E: Odkazy}
+\addcontentsline{toc}{section}{PŘÍLOHA E: Reference}
 \printbibliography
 
 \newpage
 \section*{PŘÍLOHA F:}
 ~
 \addcontentsline{toc}{section}{PŘÍLOHA F: Seznam obrázků}
-\listoffigures   % seznam obrázkù 
+\listoffigures
 
 \end{document}
