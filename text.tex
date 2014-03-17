@@ -532,7 +532,7 @@ MultiROM \B{nahrazuje} \It{init} v~\It{initrd}, je tedy prvním programem, kter�
     \end{enumerate}
     \item Přípojí podsložky vybrané ROM z~SD karty na umístění v~kořenu souborového systému, tedy /data, /system a~/cache.
     \item Přepíše scripty původní ROM těmi z~uživatelem vybrané ROM.
-    \item \B{Upraví scripty tak, aby nepřipojovali původní diskové oddíly na /data, /system a~/cache} -- přepsali by složky vedlejší ROM, které boot manager již připojil.
+    \item \B{Upraví scripty tak, aby nepřipojovaly původní diskové oddíly na /data, /system a~/cache} -- přepsali by složky vedlejší ROM, které boot manager již připojil.
     \item Boot manager se ukončí a~\B{spustí místo sebe \It{init} z~uživatelem vybrané ROM}, který prokračuje ve spouštění této ROM ze složek, které boot manager připojil na /data, /system a~/cache.
 \end{enumerate}
 
@@ -598,7 +598,7 @@ dir_cmdline="rootsubdir=%s"
 \linespread{1.3}
 
 \section{Srovnání s~jinými multiboot nástroji}
-Žádný jiný multiboot nástroj pro zařízení řady Nexus, které MultiROM podporuje, neexistují, proto budu můj projekt srovnávat s~metodami, které jsou běžné pro jiné telefony a~tablety.
+Žádný jiný multiboot nástroj pro zařízení řady Nexus, které MultiROM podporuje, neexistuje, proto budu můj projekt srovnávat s~metodami, které jsou běžné pro jiné telefony a~tablety.
 
 Nejčastějším způsobem je tzv. \B{dual-boot kernel}, který spočívá v~upravení \It{init} skriptů a~používání některé z~volných oddílů na zařízení pro umístění druhé ROM (například |/cache|). Do druhého systému se uživatel nabootuje, pokud bude držet některou z~kláves na zařízení, např. snížení hlasitosti. Nevýhody této metody jsou možnost instalace pouze dvou systémů, které navíc musí být jen Android ROM. Dále používá pro obě ROM stejné jádro, které tím pádem musí být s~oběma kompatibilní. To může být často problém, na většině zařízení existují 2 a~více základních druhů ROM, které mezi sebou nejsou kompatibilní.
 
@@ -668,7 +668,7 @@ Poměrně brzo po vydání MultiROM se na serveru Youtube začaly objevovat vide
 
 \hfill \It{číslo 21/2013 německého tištěného časopisu c't magazin\cite{ctmagazine}} \\
 
-\noindent \uv{...A great thing about MultiROM is the wa  y it doesn’t require a~lot of tweaking on the user’s part to get things to work...}
+\noindent \uv{...A great thing about MultiROM is the way it doesn’t require a~lot of tweaking on the user’s part to get things to work...}
 
 \hfill \It{AddictiveTips\cite{addictivetips}} \\
 
