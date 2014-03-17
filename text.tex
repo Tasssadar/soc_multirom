@@ -232,7 +232,7 @@ Prohlašuji, že jsem svou práci vypracoval samostatně, použil jsem pouze pod
 \vspace{150mm}
 
 \section*{Poděkování}
-Děkuji Ing. Jaroslavu Hodálovi za rady, obětavou pomoc, velkou trpělivost a~podnětné připomínky poskytované během psaní této práce, Jakubu \mbox{Streitovi} za velkou pomoc s~prací a v neposlední řadě Ing. Martinu Foučkovi za pomoc s textovou částí práce.
+Děkuji Ing. Jaroslavu Hodálovi za rady, obětavou pomoc, velkou trpělivost a~podnětné připomínky poskytované během psaní této práce, Jakubu \mbox{Streitovi} za velkou pomoc s~prací a~v~neposlední řadě Ing. Martinu Foučkovi za pomoc s~textovou částí práce.
  
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -241,12 +241,12 @@ Děkuji Ing. Jaroslavu Hodálovi za rady, obětavou pomoc, velkou trpělivost a~
 \vspace{-20mm}
 
 \section*{Anotace}
-Tato práce popisuje softwarovou modifikaci pro mobilní zařízení s~operačním systémem Google Android, která umožňuje instalaci více operačních systémů vedle sebe na jedno zařízení, podobně jako na PC. Může se jednat pouze o několik různých verzí OS Google Android, ale i~úplně jiné systémy -- například právě se vyvíjející Ubuntu Touch a~další.
+Tato práce popisuje softwarovou modifikaci pro mobilní zařízení s~operačním systémem Google Android, která umožňuje instalaci více operačních systémů vedle sebe na jedno zařízení, podobně jako na PC. Může se jednat pouze o~několik různých verzí OS Google Android, ale i~úplně jiné systémy -- například právě se vyvíjející Ubuntu Touch a~další.
 
 Možnost provozovat více operačních systémů na jednom zařízení je užitečná spíše pro pokročilé uživatele, podobně jako na stolních počítačích, nicméně více než 13 000 aktivních uživatelů (březen 2014) dokazuje, že zájem o~tuto modifikaci rozhodně je.
 
 \section*{Annotation}
-This thesis covers a software modification for mobile devices running on Google Android operating system which enables installation of multiple operating systems on a single device, a feature commonly known as \It{multiboot}. This is a very common feature on desktop computers, but most portable devices are able to run just one system at a time. My project supports not only several versions of Android, but also different systems, like currently-in-development Ubuntu Touch and others.
+This thesis covers a~software modification for mobile devices running on Google Android operating system which enables installation of multiple operating systems on a~single device, a~feature commonly known as \It{multiboot}. This is a~very common feature on desktop computers, but most portable devices are able to run just one system at a~time. My project supports not only several versions of Android, but also different systems, like currently-in-development Ubuntu Touch and others.
 
 Just like on desktop computers, \It{multiboot} is feature only more advanced users are likely to use, however, more than 13,000 MultiROM's active users (march 2014) prove that demand for this feature certainly exists.
 
@@ -271,13 +271,13 @@ Just like on desktop computers, \It{multiboot} is feature only more advanced use
 \section*{Úvod}
 \addcontentsline{toc}{section}{Úvod} % přidá položku úvod do obsahu
 \label{uvod}
-Můj projekt MultiROM je modifikace pro tablety a telefony původně s OS Google Android, která umožňuje instalaci více operačních systémů zároveň. MultiROM tedy přidává funkci, která je na stolních počítačích samozřejmostí, ale v kategorii těchto přenosných počítačů v naprosté většině případů chybí. Mezi hlavní vlastnosti MultiROM patří zejména:
+Můj projekt MultiROM je modifikace pro tablety a~telefony původně s~OS Google Android, která umožňuje instalaci více operačních systémů zároveň. MultiROM tedy přidává funkci, která je na stolních počítačích samozřejmostí, ale v~kategorii těchto přenosných počítačů v~naprosté většině případů chybí. Mezi hlavní vlastnosti MultiROM patří zejména:
 
 \begin{itemize}
     \item Možnost instalace libovolného množství operačních systémů na jedno zařízení.
     \item Podpora mnoha operačních systémů, kromě Androidu podporuje například systém Ubuntu Touch nebo Plasma Active.
-    \item V porovnání s existujícími modifikacemi s podobným účelem se MultiROM velmi snadno používá a často má mnohem větší možnosti.
-    \item Dokáže vedlejší systémy instalovat jak do vnitřní paměti, tak na USB disk připojený k zařízení.
+    \item V~porovnání s~existujícími modifikacemi s~podobným účelem se MultiROM velmi snadno používá a~často má mnohem větší možnosti.
+    \item Dokáže vedlejší systémy instalovat jak do vnitřní paměti, tak na USB disk připojený k~zařízení.
 \end{itemize}
 
 \section{Motivace}
@@ -301,7 +301,7 @@ Kromě Androidu existují i~další mobilní operační systémy, například Ub
 \end{figure}
 
 \subsection{Více systémů na jednom zařízení}
-Tyto telefony a~tablety tedy ve většině případů (více o~této problematice v~příloze \attref{sec:locked}) nejsou uzamknuté na jediném, výrobcem vybraném systému a~jeho verzi a~dokáží podobně jako stolní počítače provozovat více typů a~verzí operačních systémů. Chybí jim však možnost mít více systémů nainstalovaných zároveň (dále jen \It{multiboot}). Tato skutečnost pravděpodobně nevadí běžnému uživateli, nicméně pro zkušené uživatele a~vývojáře je \It{multiboot} neocenitelnou funkcí, a to i na těchto přenosných zařízeních. Mohou ho využít například při:
+Tyto telefony a~tablety tedy ve většině případů (více o~této problematice v~příloze \attref{sec:locked}) nejsou uzamknuté na jediném, výrobcem vybraném systému a~jeho verzi a~dokáží podobně jako stolní počítače provozovat více typů a~verzí operačních systémů. Chybí jim však možnost mít více systémů nainstalovaných zároveň (dále jen \It{multiboot}). Tato skutečnost pravděpodobně nevadí běžnému uživateli, nicméně pro zkušené uživatele a~vývojáře je \It{multiboot} neocenitelnou funkcí, a~to i~na těchto přenosných zařízeních. Mohou ho využít například při:
 
 \begin{itemize}
     \item \B{zkoušení jiných ROM} -- ROM vytvořené komunitou mají v~některých případech nové a~velmi zajímavé funkce, nicméně je často vhodné vyzkoušet si danou ROM před tím, než uživatel projde zdlouhavým procesem obnovování všech svých dat do této nové ROM. S~\It{multibootem} je možné novou ROM jen nainstalovat jako další systém bez toho, aby se smazal ten původní. V~případě, že nová ROM uživateli nesedne, může ji kdykoliv smazat. Jeho původní systém se všemi daty je stále neporušený.\\
@@ -361,33 +361,33 @@ MultiROM aplikace pro Android vyžaduje, aby běžela na systému s~přístupem 
 Naprostá většina potenciálních uživatelů MultiROM již tyto požadavky splňuje, situace kdy uživatel odemyká své zařízení jen kvůli MultiROM není příliš častá.
 
 \subsubsection{Upravení MultiROM pro ještě nepodporované zařízení}
-Kód MultiROM je kompatibilní pouze s tablety a telefony původně běžící na OS Google Android. Dále potřebuje, aby zařízení mělo oddělený diskový oddíl pro recovery a vnitřní paměť dostatečně velkou na instalaci vedlejších systémů. Instalace na reálnou SD kartu v kódu záměrně není podporována, protože SD karty jsou nevhodné pro instalaci celých systémů z důvodů jejich nízké rychlosti a používaných souborových systémů a proto, že zařízení která podporuji fyzickou SD kartou nedisponují.
+Kód MultiROM je kompatibilní pouze s~tablety a~telefony původně běžící na OS Google Android. Dále potřebuje, aby zařízení mělo oddělený diskový oddíl pro recovery a~vnitřní paměť dostatečně velkou na instalaci vedlejších systémů. Instalace na reálnou SD kartu v~kódu záměrně není podporována, protože SD karty jsou nevhodné pro instalaci celých systémů z~důvodů jejich nízké rychlosti a~používaných souborových systémů a~proto, že zařízení která podporuji fyzickou SD kartou nedisponují.
 
-Kód dále potřebuje, aby byl celkově systém alespoň podobný referenční implementaci v AOSP. Někteří výrobci například mění strukturu bootovacího oddílu, nemají oddíl s recovery nebo dělají podobné nízkoúrovňové změny.
+Kód dále potřebuje, aby byl celkově systém alespoň podobný referenční implementaci v~AOSP. Někteří výrobci například mění strukturu bootovacího oddílu, nemají oddíl s~recovery nebo dělají podobné nízkoúrovňové změny.
 
 \subsection{Podíl mojí práce}
-Tento projekt využívá některé další již existující projekty a pouze je rozšiřuje, proto považuji za důležité uvést, co přesně je moje práce.
+Tento projekt využívá některé další již existující projekty a~pouze je rozšiřuje, proto považuji za důležité uvést, co přesně je moje práce.
 
 \subsubsection{Boot manager}
-Naprostá většina této části (přes 90\% z celkově zhruba 10 000 řádků kódu v jazyce C) je moje. Převzal jsem několik málo částí z tzv. programu \It{init} z OS Android (zejména inicializace celého zařízení, boot manager je první program, který se spustí po startu jádra, a proto si musí několik dalších částí připravit).
+Naprostá většina této části (přes 90\% z~celkově zhruba 10 000 řádků kódu v~jazyce C) je moje. Převzal jsem několik málo částí z~tzv. programu \It{init} z~OS Android (zejména inicializace celého zařízení, boot manager je první program, který se spustí po startu jádra, a~proto si musí několik dalších částí připravit).
 
 \subsubsection{Upravená recovery}
-Recovery je založená na již existujícím projektu TWRP (podrobně popsáno dále v kapitole \fullref{recovery}), který jsem dále rozšiřoval tak, aby dokázal spravovat celou moji modifikaci. V absolutních číslech je rozdíl mezi hlavním stromem a mojí verzí TWRP asi 4000 řádků kódu  v C++, 5000 řádků XML v grafických tématech pro tuto recovery ve 190 neslučovacích změnách (\It{commits}) v repozitáři. V porovnání s celkovým rozsahem TWRP (přes 100 000 řádků kódu) je to relativně malá změna, nicméně se snažím co nejvíce přispívat i do původní TWRP a řada mých úprav již byla přidána do hlavního stromu. Spolupráce s projektem TWRP je dále popsána v kapitole \fullref{twrp-spoluprace}.
+Recovery je založená na již existujícím projektu TWRP (podrobně popsáno dále v~kapitole \fullref{recovery}), který jsem dále rozšiřoval tak, aby dokázal spravovat celou moji modifikaci. V~absolutních číslech je rozdíl mezi hlavním stromem a~mojí verzí TWRP asi 4000 řádků kódu  v~C++, 5000 řádků XML v~grafických tématech pro tuto recovery ve 190 neslučovacích změnách (\It{commits}) v~repozitáři. V~porovnání s~celkovým rozsahem TWRP (přes 100 000 řádků kódu) je to relativně malá změna, nicméně se snažím co nejvíce přispívat i~do původní TWRP a~řada mých úprav již byla přidána do hlavního stromu. Spolupráce s~projektem TWRP je dále popsána v~kapitole \fullref{twrp-spoluprace}.
 
 \subsubsection{Kexec-hardboot patch}
-Tuto úpravu Linuxového jádra původně napsal Mike Kasick\cite{kexec-hardboot-orig}. Já jsem ji upravil pro zařízení podporované MultiROM, což znamenalo zejména v případě telefonu Nexus 5 poměrně rozsáhlé změny (toto zařízení používá značně rozdílný způsob bootování). Největším mým příspěvkem je však vylepšení patche tak, že stačí upravit pouze hostitelské jádro a to právě spouštěné může být jakékoliv.
+Tuto úpravu Linuxového jádra původně napsal Mike Kasick\cite{kexec-hardboot-orig}. Já jsem ji upravil pro zařízení podporované MultiROM, což znamenalo zejména v~případě telefonu Nexus 5 poměrně rozsáhlé změny (toto zařízení používá značně rozdílný způsob bootování). Největším mým příspěvkem je však vylepšení patche tak, že stačí upravit pouze hostitelské jádro a~to právě spouštěné může být jakékoliv.
 
-Ve zkratce, kexec je funkce, která umožňuje spuštění jiného jádra z toho již spuštěného (\It{hostitele}). V původní verzi bylo třeba upravit a překompilovat obě jádra, hostitelské i nově spouštěné, já jsem patch upravil tak, že je třeba překompilovat pouze hostitele. To je \B{velmi} významné vylepšení, protože mi dovoluje z MultiROM bootovat jakýkoliv systém, na rozdíl od původního stavu, kdy by musely být všechny vedlejší systémy upravené speciálně pro MultiROM.
+Ve zkratce, kexec je funkce, která umožňuje spuštění jiného jádra z~toho již spuštěného (\It{hostitele}). V~původní verzi bylo třeba upravit a~překompilovat obě jádra, hostitelské i~nově spouštěné, já jsem patch upravil tak, že je třeba překompilovat pouze hostitele. To je \B{velmi} významné vylepšení, protože mi dovoluje z~MultiROM bootovat jakýkoliv systém, na rozdíl od původního stavu, kdy by musely být všechny vedlejší systémy upravené speciálně pro MultiROM.
 
-Patch je napsaný v jazyce C a Assembler (pro procesory ARM).
+Patch je napsaný v~jazyce C a~Assembler (pro procesory ARM).
 
-Podrobný popis změn, které jsem v patchi provedl, najdete v příloze \attref{sec:kexec-hardboot}.
+Podrobný popis změn, které jsem v~patchi provedl, najdete v~příloze \attref{sec:kexec-hardboot}.
 
 \subsubsection{Aplikace pro Android}
-Celá aplikace je moje práce, přes 5000 řádků kódu v jazyce Java. Toto číslo nezahrnuje knihovny které jsem použil:
+Celá aplikace je moje práce, přes 5000 řádků kódu v~jazyce Java. Toto číslo nezahrnuje knihovny které jsem použil:
 \begin{itemize}
     \item \B{libsuperuser} -- knihovna zjednodušující spouštění příkazů pod tzv. superuživatelem.
-    \item \B{CardsUI} -- knihovna pro vytvoření GUI s pomocí \uv{karet}. Tuto knihovnu jsem mírně (25\% kódu) upravil, aby vyhovovala mým potřebám.
+    \item \B{CardsUI} -- knihovna pro vytvoření GUI s~pomocí \uv{karet}. Tuto knihovnu jsem mírně (25\% kódu) upravil, aby vyhovovala mým potřebám.
     \item \B{ActionBar-PullToRefresh} -- implementace tzv. \It{PullToRefresh} principu -- přejetí prstem přes okno aplikace směrem dolů způsobí obnovení jejího obsahu.
 \end{itemize}
 
@@ -402,17 +402,17 @@ Hlavní část MultiROM, která se spustí okamžitě po startu Linuxového jád
 \end{center}
 \end{figure}
 \vspace{-20pt}
-\noindent \It{Další obrázky jsou kvůli velikosti zařazeny v příloze \attref{obrazky}.}
+\noindent \It{Další obrázky jsou kvůli velikosti zařazeny v~příloze \attref{obrazky}.}
 
-Grafické rozhraní je poměrně jednoduché a skládá se ze tří sekcí. Záložka \B{Internal} označuje seznam systémů nainstalovaných ve vnitřní paměti zařízení, hlavní systém (ten, který byl na zařízení nainstalovaný před instalací MultiROM) je vždy první v seznamu. Uživatel si zde může vybrat, který systém chce spustit a poté stisknout tlačítko \uv{boot}.
+Grafické rozhraní je poměrně jednoduché a~skládá se ze tří sekcí. Záložka \B{Internal} označuje seznam systémů nainstalovaných ve vnitřní paměti zařízení, hlavní systém (ten, který byl na zařízení nainstalovaný před instalací MultiROM) je vždy první v~seznamu. Uživatel si zde může vybrat, který systém chce spustit a~poté stisknout tlačítko \uv{boot}.
 
-Záložka s textem \B{USB} je velmi podobná, rozdílem je to, že dává na výběr ze systémů nainstalovaných na USB disku připojeném k zařízení.
+Záložka s~textem \B{USB} je velmi podobná, rozdílem je to, že dává na výběr ze systémů nainstalovaných na USB disku připojeném k~zařízení.
 
-Poslední část, \B{Misc}\footnote{\It{Miscellaneous} -- různý, různorodý}, obsahuje tlačítka pro restartování zařízení, uložení souboru se záznamem a nastavení barvy prostředí boot manageru.
+Poslední část, \B{Misc}\footnote{\It{Miscellaneous} -- různý, různorodý}, obsahuje tlačítka pro restartování zařízení, uložení souboru se záznamem a~nastavení barvy prostředí boot manageru.
 
-Boot manager umí po nastavené prodlevě automaticky spustit některý ze systémů. Tato funkce se nastavuje v recovery, je možné nastavit prodlevu a jeden ze dvou typů výběru OS ke spuštění -- první pouze spouští předem nastavený systém a druhý spouští ten, který byl uživatelem vybrán naposledy.
+Boot manager umí po nastavené prodlevě automaticky spustit některý ze systémů. Tato funkce se nastavuje v~recovery, je možné nastavit prodlevu a~jeden ze dvou typů výběru OS ke spuštění -- první pouze spouští předem nastavený systém a~druhý spouští ten, který byl uživatelem vybrán naposledy.
 
-Kromě ovládání dotykem je možné ovládat toto menu i pomocí hardwarových tlačítek. To se hodí například pokud je dotyková vrstva zničená pádem, ale zařízení je jinak stále použitelné (v tomto vyniká zejména původní model tabletu Nexus 7, se systémem Ubuntu Desktop, myší a klávesnicí ho lze používat jako netbook i přesto, že je dotyková obrazovka nefunguje).
+Kromě ovládání dotykem je možné ovládat toto menu i~pomocí hardwarových tlačítek. To se hodí například pokud je dotyková vrstva zničená pádem, ale zařízení je jinak stále použitelné (v~tomto vyniká zejména původní model tabletu Nexus 7, se systémem Ubuntu Desktop, myší a~klávesnicí ho lze používat jako netbook i~přesto, že je dotyková obrazovka nefunguje).
 
 \newpage
 \section{Upravená recovery}
@@ -433,7 +433,7 @@ TeamWin Recovery Project\cite{twrp} (dále jen TWRP) je jedna z~upravených reco
 \end{center}
 \end{figure}
 \vspace{-20pt}
-\noindent \mbox{\It{Další obrázky jsou kvůli velikosti zařazeny v příloze \attref{obrazky}.}}
+\noindent \mbox{\It{Další obrázky jsou kvůli velikosti zařazeny v~příloze \attref{obrazky}.}}
 
 \subsection{Jak MultiROM využívá TWRP}
 TWRP je svobodným softwarem a~kdokoliv do ní může přispívat a~používat její zdrojové kódy, což mi umožnilo použít ji ke správě systémů nainstalovaných v~MultiROM. TWRP jsem za tímto účelem značně upravil a~při práci na ní jsem vytvořil i~několik oprav a~úprav, které bylo možné zaslat i~do hlavního vývojového stromu TWRP.
@@ -470,7 +470,7 @@ Tento patch původně napsal Mike Kasick\cite{kexec-hardboot-orig}, já jsem ho 
 \section{Aplikace pro Android}
 Aplikace \It{MultiROM Manager} je poměrně nová část MultiROM, přidaná hlavně za účelem zjednodušení instalace celé modifikace. Postupně přibyla instalace Ubuntu Touch, správa nainstalovaných systémů a~možnost nabootovat do vybraného systému přímo z~této aplikace, bez nutnosti restartovat nejdříve do boot manageru.
 
-Aplikace je zdarma dostupná v obchodě Google Play, kde má velmi pozitivní hodnocení (4,7 z 5 hvězdiček k 11.\,3.\,2014).
+Aplikace je zdarma dostupná v~obchodě Google Play, kde má velmi pozitivní hodnocení (4,7 z~5 hvězdiček k~11.\,3.\,2014).
 
 \marginnote{\qrcode{http://play.google.com/store/apps/details?id=com.tassadar.multirommgr}}
 \begin{itemize}
@@ -485,7 +485,7 @@ Aplikace je zdarma dostupná v obchodě Google Play, kde má velmi pozitivní ho
 \end{center}
 \end{figure}
 \vspace{-20pt}
-\noindent \mbox{\It{Další obrázky jsou kvůli velikosti zařazeny v příloze \attref{obrazky}.}}
+\noindent \mbox{\It{Další obrázky jsou kvůli velikosti zařazeny v~příloze \attref{obrazky}.}}
 
 \subsection{Instalace a~aktualizace MultiROM}
 Aplikace dokáže vše potřebné (MultiROM, Recovery a~kernel) stáhnout a~nainstalovat. Dále hlídá, jestli jsou verze všech komponent aktuální a~v~případě že nejsou, nabídne uživateli aktualizaci. Kvůli této funkci jsem vytvořil server, který hostuje data o~dostupných verzích pro jednotlivé zařízení a~skladuje všechny instalační soubory.
@@ -500,7 +500,7 @@ Tato část aplikace výrazně zjednodušila instalaci a~aktualizace celého pro
 \end{figure}
 
 \subsection{Instalace Ubuntu Touch}
-Původně Ubuntu Touch používalo ke své instalaci ZIP soubory s~\It{Edify} scriptem, podobně jako Android ROM. Jeho vývojáři ale přešli na nový systém, skládající se z~obrovské složky s datovými soubory pojmenovanými podle toho, jaká data přesně obsahují a~z~metadat, která určují, jaký datový soubor patří k určité verzi OS a~ke kterému zařízení. Uživatel samotný bez jakéhokoliv nástroje se mezi datovými soubory nemůže vyznat a~stáhnout ten správný, a~tak Ubuntu používá na instalaci na nařízení scripty. Ty běží na počítači, naparsují metadata, stáhnou příslušné datové soubory a~nainstalují je na zařízení připojené k~počítači přes USB. Tyto scripty samozřejmě nejsou kompatibilní s~MultiROM, a~proto jsem do MultiROM Manageru přidal funkci instalace Ubuntu Touch jako další vedlejší systém.
+Původně Ubuntu Touch používalo ke své instalaci ZIP soubory s~\It{Edify} scriptem, podobně jako Android ROM. Jeho vývojáři ale přešli na nový systém, skládající se z~obrovské složky s~datovými soubory pojmenovanými podle toho, jaká data přesně obsahují a~z~metadat, která určují, jaký datový soubor patří k~určité verzi OS a~ke kterému zařízení. Uživatel samotný bez jakéhokoliv nástroje se mezi datovými soubory nemůže vyznat a~stáhnout ten správný, a~tak Ubuntu používá na instalaci na nařízení scripty. Ty běží na počítači, naparsují metadata, stáhnou příslušné datové soubory a~nainstalují je na zařízení připojené k~počítači přes USB. Tyto scripty samozřejmě nejsou kompatibilní s~MultiROM, a~proto jsem do MultiROM Manageru přidal funkci instalace Ubuntu Touch jako další vedlejší systém.
 
 Manager naparsuje metadata, stáhne všechny potřebné soubory podle vybrané verze a~nainstaluje je jako další systém do MultiROM.
 
@@ -519,7 +519,7 @@ MultiROM instaluje všechny vedlejší operační systémy do podsložky na \uv{
 \subsection{Android}
 OS Android má proces startu systému a~uspořádání systému souborů odlišné od běžných Linuxových distribucí. Jádro systému si ihned po startu rozbalí archiv souborů do operační paměti a~použije ho jako kořen souborového systému. Tento archiv je běžně označován jako \It{init ramdisk}, zkráceně \It{initrd}. \It{Initrd} obsahuje první program, který se spustí po startu jádra systému, tvz. \It{init}. Tento má za úkol inicializovat zařízení v~telefonu, připojit všechny \uv{diskové oddíly} a~spustit z~nich zbytek Androidu, k~čemuž používá \It{scripty}, které čte a~vykonává akce v~nich definované.
 
-Před tím, než budu pokračovat, musím upozornit na to, že Android používá tři hlavní diskové oddíly: \B{/data} pro aplikace a~uživatelská data, \B{/system} pro nainstalované neměnné části systému a~\B{/cache} pro dočasné soubory. Nahrazení všech těchto složek jinými a spuštění jiného jádra pomocí funkce kexec prakticky znamená spuštění jiného systému.
+Před tím, než budu pokračovat, musím upozornit na to, že Android používá tři hlavní diskové oddíly: \B{/data} pro aplikace a~uživatelská data, \B{/system} pro nainstalované neměnné části systému a~\B{/cache} pro dočasné soubory. Nahrazení všech těchto složek jinými a~spuštění jiného jádra pomocí funkce kexec prakticky znamená spuštění jiného systému.
 
 MultiROM \B{nahrazuje} \It{init} v~\It{initrd}, je tedy prvním programem, který běží po startu jádra. Poté, co uživatel vybere systém, který chce spustit, boot manager provede následující proces:
 %buďto použije kexec k restartování zařízení s jádrem vybraného systému nebo pokračuje dále s již spuštěným jádrem, které se tedy sdílí mezi hlavní a vedlejší ROM (možné nastavit při instalaci ROM). 
@@ -547,7 +547,7 @@ MultiROM zvládne nabootovat jakýkoliv systém založený na Linuxovém zaříz
 
 MultiROM hledá jádro systému a~\It{initrd} a~předává jádru parametry podle informací v~souboru |rom_info.txt|, umístěného v~adresáři tohoto vedlejšího systému. Jak |rom_info.txt| vypadá můžete vidět v~příkladu \ref{rom-info}.
 
-Tento typ systémů tedy musí byt upraven tak, aby byl schopný připojit složku předanou v~příkazové řádce jádra jako kořen souborového systému. Jedná se obvykle o~poměrně nenáročnou úpravu jednoho ze scriptů programu \It{init}, které většina OS založených na Linuxu má (ale nejsou všechny stejné, proto není možné upravovat je z~MultiROM). V~případě Ubuntu Touch a Ubuntu Desktop dokáže recovery při instalaci systém patřičně upravit, je tedy možné použít původní, neupravené instalační soubory.
+Tento typ systémů tedy musí byt upraven tak, aby byl schopný připojit složku předanou v~příkazové řádce jádra jako kořen souborového systému. Jedná se obvykle o~poměrně nenáročnou úpravu jednoho ze scriptů programu \It{init}, které většina OS založených na Linuxu má (ale nejsou všechny stejné, proto není možné upravovat je z~MultiROM). V~případě Ubuntu Touch a~Ubuntu Desktop dokáže recovery při instalaci systém patřičně upravit, je tedy možné použít původní, neupravené instalační soubory.
 
 \linespread{1.1}
 \begin{figure}[H]
@@ -600,7 +600,7 @@ dir_cmdline="rootsubdir=%s"
 \section{Srovnání s~jinými multiboot nástroji}
 Žádný jiný multiboot nástroj pro zařízení řady Nexus, které MultiROM podporuje, neexistují, proto budu můj projekt srovnávat s~metodami, které jsou běžné pro jiné telefony a~tablety.
 
-Nejčastějším způsobem je tzv. \B{dual-boot kernel}, který spočívá v upravení \It{init} skriptů a~používání některé z~volných oddílů na zařízení pro umístění druhé ROM (například |/cache|). Do druhého systému se uživatel nabootuje, pokud bude držet některou z~kláves na zařízení, např. snížení hlasitosti. Nevýhody této metody jsou možnost instalace pouze dvou systémů, které navíc musí být jen Android ROM. Dále používá pro obě ROM stejné jádro, které tím pádem musí být s~oběma kompatibilní. To může být často problém, na většině zařízení existují 2 a~více základních druhů ROM, které mezi sebou nejsou kompatibilní.
+Nejčastějším způsobem je tzv. \B{dual-boot kernel}, který spočívá v~upravení \It{init} skriptů a~používání některé z~volných oddílů na zařízení pro umístění druhé ROM (například |/cache|). Do druhého systému se uživatel nabootuje, pokud bude držet některou z~kláves na zařízení, např. snížení hlasitosti. Nevýhody této metody jsou možnost instalace pouze dvou systémů, které navíc musí být jen Android ROM. Dále používá pro obě ROM stejné jádro, které tím pádem musí být s~oběma kompatibilní. To může být často problém, na většině zařízení existují 2 a~více základních druhů ROM, které mezi sebou nejsou kompatibilní.
 
 Méně častá jsou \B{řešení založená na volání kexec}, podobně jako MultiROM. Pro ukládání vedlejších ROM používají obrazy oddílů nebo složky a~často mají i~nějakou formu boot manageru. Jako příklad použiji modifikaci \It{Xperia Boot Menu}\cite{xperia-boot-menu}, která používá kexec-hardboot patch, nicméně nemá upravenou recovery, která by pomáhala s~instalací vedlejších ROM. Tato činnost se tím pádem stává poměrně náročnou.
 
@@ -657,7 +657,7 @@ Na grafu č. \ref{graf-uzivatele} můžete vidět graf \B{aktivních} instalací
 \end{figure}
 
 \subsection{Videa na serveru Youtube}
-Poměrně brzo po vydání MultiROM se na serveru Youtube začaly objevovat videa podrobně popisují jak se MultiROM používá. K dnešnímu dni jich na Youtube lze najít několik desítek, zaměřená na různá zařízení nebo jen na instalaci určitého systému. Jedno jsem udělal i já, je silně \It{amatérské} a popisuje a ukazuje většinu možností MultiROM v době natočení videa (15.\,1.\,2013). Moje video je v angličtině a můžete ho najít na přiloženém CD nebo na serveru Youtube:
+Poměrně brzo po vydání MultiROM se na serveru Youtube začaly objevovat videa podrobně popisují jak se MultiROM používá. K~dnešnímu dni jich na Youtube lze najít několik desítek, zaměřená na různá zařízení nebo jen na instalaci určitého systému. Jedno jsem udělal i~já, je silně \It{amatérské} a~popisuje a~ukazuje většinu možností MultiROM v~době natočení videa (15.\,1.\,2013). Moje video je v~angličtině a~můžete ho najít na přiloženém CD nebo na serveru Youtube:
 
 \begin{itemize}
     \item \qrurl{http://www.youtube.com/watch?v=JDnDNxqfSaw}
@@ -727,22 +727,22 @@ Patch upravený pro jednotlivá zařízení s~dalšími vylepšeními jsem zveř
 \end{itemize}
 
 \subsection{Ubuntu Touch}
-Ubuntu Touch\cite{utouch} je nový mobilní operační systém v~současnosti vyvíjený firmou Canonical. Má stejný základ jako počítačová distribuce Ubuntu a~je tedy mnohem blíže úplnému Linuxovému systému než Android. Díky MultiROM jsem si tento systém mohl vyzkoušet bez smazání mého hlavního systému. Kdyby MultiROM neexistovala, pravděpodobně bych tento OS vyzkoušel až mnohem později, protože Ubuntu Touch ještě není připravené pro běžné používání a musel bych kvůli němu smazat svůj hlavní systém. Tento OS mě zaujal, a~tak jsem do tohoto OS různým způsobem přispíval -- nahlašováním chyb a~několika málo opravami.
+Ubuntu Touch\cite{utouch} je nový mobilní operační systém v~současnosti vyvíjený firmou Canonical. Má stejný základ jako počítačová distribuce Ubuntu a~je tedy mnohem blíže úplnému Linuxovému systému než Android. Díky MultiROM jsem si tento systém mohl vyzkoušet bez smazání mého hlavního systému. Kdyby MultiROM neexistovala, pravděpodobně bych tento OS vyzkoušel až mnohem později, protože Ubuntu Touch ještě není připravené pro běžné používání a~musel bych kvůli němu smazat svůj hlavní systém. Tento OS mě zaujal, a~tak jsem do tohoto OS různým způsobem přispíval -- nahlašováním chyb a~několika málo opravami.
 
 Mimo jiné jsem také vytvořil server\cite{tasemnice-si-mail}, který sestavuje Ubuntu Touch pro telefon Nexus 5 a~poskytuje instalační soubory a~aktualizace pro všechny zájemce.  Nexus 5 není oficiálně podporovaný firmou Canonical, ale díky tomuto serveru mohou uživatelé tento systém instalovat stejným způsobem jako na oficiální podporovaná zařízení -- stačí pouze zadat jinou adresu serveru s~instalačními soubory. Fungují dokonce i~automatické aktualizace.
 
 \newpage
 \section*{Závěr}
 \addcontentsline{toc}{section}{Závěr}
-Můj projekt MultiROM se stal až překvapivě úspěšným. Tuto skutečnost přisuzuji zejména, v porovnání s ostatními podobnými úpravami, snadnému používání a takřka žádným nevýhodám oproti stavu, kdy modifikace není nainstalována. Instalaci zvládne díky nabízené aplikaci pro Android i lehce pokročilý uživatel. Na serveru Youtube má pak k dispozici několik desítek video návodů, a to nejen v angličtině.
+Můj projekt MultiROM se stal až překvapivě úspěšným. Tuto skutečnost přisuzuji zejména, v~porovnání s~ostatními podobnými úpravami, snadnému používání a~takřka žádným nevýhodám oproti stavu, kdy modifikace není nainstalována. Instalaci zvládne díky nabízené aplikaci pro Android i~lehce pokročilý uživatel. Na serveru Youtube má pak k~dispozici několik desítek video návodů, a~to nejen v~angličtině.
 
-Vyzkoušení některého z méně známých operačních systémů dostupných pro tato přenosná zařízení dříve znamenalo spoustu času stráveného vytvářením záloh a jejich obnovováním. Díky mému projektu se tento proces značně usnadňuje, a nepřímo tak pomáhá i vývojářům těchto systémů, protože více uživatelů si jejich produkt vyzkouší anebo si ho dokonce oblíbí.
+Vyzkoušení některého z~méně známých operačních systémů dostupných pro tato přenosná zařízení dříve znamenalo spoustu času stráveného vytvářením záloh a~jejich obnovováním. Díky mému projektu se tento proces značně usnadňuje, a~nepřímo tak pomáhá i~vývojářům těchto systémů, protože více uživatelů si jejich produkt vyzkouší anebo si ho dokonce oblíbí.
 
-Vedlejším produktem mojí práce na MultiROM jsou opravy a vylepšení projektů, které moje modifikace rozšiřuje nebo se jich jinak dotýká. Většina změn, které nejsou částí MultiROM, byla odeslána do hlavních stromů příslušných projektů a řada z nich si našla cestu i k uživatelům, kteří MultiROM nemají nainstalovanou. Toto platí zejména o upravené recovery TeamWin Recovery Project.
+Vedlejším produktem mojí práce na MultiROM jsou opravy a~vylepšení projektů, které moje modifikace rozšiřuje nebo se jich jinak dotýká. Většina změn, které nejsou částí MultiROM, byla odeslána do hlavních stromů příslušných projektů a~řada z~nich si našla cestu i~k~uživatelům, kteří MultiROM nemají nainstalovanou. Toto platí zejména o~upravené recovery TeamWin Recovery Project.
 
-MultiROM má po roce a půl od vydaní první verze pro Nexus 7 (2012) téměř 14 tisíc aktivních instalací a mnoho pozitivních ohlasů od uživatelů. Má za sebou úspěšnou crowdfunding kampaň, na kterou přispívali sami uživatelé a vývojáři a díky které se rodina oficiálně podporovaných zařízení z původního Nexusu 7 rozrostla na celkově 2 tablety a 2 telefony z řady Google Nexus a více než dvojnásobek jiných zařízení, která podporují další členové komunity.
+MultiROM má po roce a~půl od vydaní první verze pro Nexus 7 (2012) téměř 14 tisíc aktivních instalací a~mnoho pozitivních ohlasů od uživatelů. Má za sebou úspěšnou crowdfunding kampaň, na kterou přispívali sami uživatelé a~vývojáři a~díky které se rodina oficiálně podporovaných zařízení z~původního Nexusu 7 rozrostla na celkově 2 tablety a~2 telefony z~řady Google Nexus a~více než dvojnásobek jiných zařízení, která podporují další členové komunity.
 
-V budoucnu bych chtěl přidat podporu pro další zařízení a implementovat možnost sdílení aplikací a jejich dat mezi několika instalacemi operačního systému Android.
+V~budoucnu bych chtěl přidat podporu pro další zařízení a~implementovat možnost sdílení aplikací a~jejich dat mezi několika instalacemi operačního systému Android.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
