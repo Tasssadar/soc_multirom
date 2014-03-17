@@ -331,7 +331,7 @@ MultiROM je svobodný software, distribuovaný pod licencí GNU GPLv3 (boot mana
     \item \B{Android aplikace}:\\ \qrurl{http://github.com/Tasssadar/MultiROMMgr}
 \end{itemize}
 
-Na serveru Github je také k~dispozici wiki s~informacemi jak pro uživatele, tak pro vývojáře kteří chtějí vědět více o~tom jak MultiROM funguje nebo ji chtějí upravit pro svoje zařízení. Je napsaný z~části mnou (zejména části týkající se technických záležitostí) a~z~části členy komunity (hlavně informace o~používání MultiROM).
+Na serveru Github je také k~dispozici wiki s~informacemi jak pro uživatele, tak pro vývojáře kteří chtějí vědět více o~tom jak MultiROM funguje nebo ji chtějí upravit pro svoje zařízení. Je napsaná z~části mnou (zejména články týkající se technických záležitostí) a~z~části členy komunity (hlavně informace o~používání MultiROM).
 
 \begin{itemize}
 \item \qrurl{https://github.com/Tasssadar/multirom/wiki}
@@ -361,7 +361,7 @@ MultiROM aplikace pro Android vyžaduje, aby běžela na systému s~přístupem 
 Naprostá většina potenciálních uživatelů MultiROM již tyto požadavky splňuje, situace kdy uživatel odemyká své zařízení jen kvůli MultiROM není příliš častá.
 
 \subsubsection{Upravení MultiROM pro ještě nepodporované zařízení}
-Kód MultiROM je kompatibilní pouze s tablety a telefony původně běžící na OS Google Android. Dále potřebuje, aby zařízení mělo oddělený diskový oddíl pro recovery a vnitřní paměť dostatečně velkou na instalaci vedlejších systémů. Instalace na reálnou SD kartu v kódu záměrně není, protože SD karty jsou nevhodné pro instalaci celých systémů z důvodů jejich nízké rychlosti a používaných souborových systémů a proto, že zařízení která podporuji fyzickou SD kartou nedisponují.
+Kód MultiROM je kompatibilní pouze s tablety a telefony původně běžící na OS Google Android. Dále potřebuje, aby zařízení mělo oddělený diskový oddíl pro recovery a vnitřní paměť dostatečně velkou na instalaci vedlejších systémů. Instalace na reálnou SD kartu v kódu záměrně není podporována, protože SD karty jsou nevhodné pro instalaci celých systémů z důvodů jejich nízké rychlosti a používaných souborových systémů a proto, že zařízení která podporuji fyzickou SD kartou nedisponují.
 
 Kód dále potřebuje, aby byl celkově systém alespoň podobný referenční implementaci v AOSP. Někteří výrobci například mění strukturu bootovacího oddílu, nemají oddíl s recovery nebo dělají podobné nízkoúrovňové změny.
 
@@ -369,20 +369,22 @@ Kód dále potřebuje, aby byl celkově systém alespoň podobný referenční i
 Tento projekt využívá některé další již existující projekty a pouze je rozšiřuje, proto považuji za důležité uvést, co přesně je moje práce.
 
 \subsubsection{Boot manager}
-Naprostá většina této části (přes 90\% z celkově zhruba 10 000 řádků kódu) je moje. Převzal jsem několik málo částí z tzv. programu \It{init} z OS Android (zejména inicializace celého zařízení, boot manager je první program, který se spustí po startu jádra, a proto si musí několik dalších částí připravit).
+Naprostá většina této části (přes 90\% z celkově zhruba 10 000 řádků kódu v jazyce C) je moje. Převzal jsem několik málo částí z tzv. programu \It{init} z OS Android (zejména inicializace celého zařízení, boot manager je první program, který se spustí po startu jádra, a proto si musí několik dalších částí připravit).
 
 \subsubsection{Upravená recovery}
-Recovery je založená na již existujícím projektu TWRP (podrobně popsáno dále v kapitole \fullref{recovery}), který jsem dále rozšiřoval tak, aby dokázal spravovat celou moji modifikaci. V absolutních číslech je rozdíl mezi hlavním stromem a mojí verzí TWRP asi 4000 řádků kódu, 5000 řádků XML v grafických tématech pro tuto recovery ve 190 neslučovacích změnách (\It{commits}) v repozitáři. V porovnání s celkovým rozsahem TWRP (přes 100 000 řádků kódu) je to relativně malá změna, nicméně se snažím co nejvíce přispívat i do původní TWRP a řada mých úprav již byla přidána do hlavního stromu. Spolupráce s projektem TWRP je dále popsána v kapitole \fullref{twrp-spoluprace}.
+Recovery je založená na již existujícím projektu TWRP (podrobně popsáno dále v kapitole \fullref{recovery}), který jsem dále rozšiřoval tak, aby dokázal spravovat celou moji modifikaci. V absolutních číslech je rozdíl mezi hlavním stromem a mojí verzí TWRP asi 4000 řádků kódu  v C++, 5000 řádků XML v grafických tématech pro tuto recovery ve 190 neslučovacích změnách (\It{commits}) v repozitáři. V porovnání s celkovým rozsahem TWRP (přes 100 000 řádků kódu) je to relativně malá změna, nicméně se snažím co nejvíce přispívat i do původní TWRP a řada mých úprav již byla přidána do hlavního stromu. Spolupráce s projektem TWRP je dále popsána v kapitole \fullref{twrp-spoluprace}.
 
 \subsubsection{Kexec-hardboot patch}
 Tuto úpravu Linuxového jádra původně napsal Mike Kasick\cite{kexec-hardboot-orig}. Já jsem ji upravil pro zařízení podporované MultiROM, což znamenalo zejména v případě telefonu Nexus 5 poměrně rozsáhlé změny (toto zařízení používá značně rozdílný způsob bootování). Největším mým příspěvkem je však vylepšení patche tak, že stačí upravit pouze hostitelské jádro a to právě spouštěné může být jakékoliv.
 
 Ve zkratce, kexec je funkce, která umožňuje spuštění jiného jádra z toho již spuštěného (\It{hostitele}). V původní verzi bylo třeba upravit a překompilovat obě jádra, hostitelské i nově spouštěné, já jsem patch upravil tak, že je třeba překompilovat pouze hostitele. To je \B{velmi} významné vylepšení, protože mi dovoluje z MultiROM bootovat jakýkoliv systém, na rozdíl od původního stavu, kdy by musely být všechny vedlejší systémy upravené speciálně pro MultiROM.
 
+Patch je napsaný v jazyce C a Assembler (pro procesory ARM).
+
 Podrobný popis změn, které jsem v patchi provedl, najdete v příloze \attref{sec:kexec-hardboot}.
 
 \subsubsection{Aplikace pro Android}
-Celá aplikace je moje práce, přes 5000 řádků kódu. Toto číslo nezahrnuje knihovny které jsem použil:
+Celá aplikace je moje práce, přes 5000 řádků kódu v jazyce Java. Toto číslo nezahrnuje knihovny které jsem použil:
 \begin{itemize}
     \item \B{libsuperuser} -- knihovna zjednodušující spouštění příkazů pod tzv. superuživatelem.
     \item \B{CardsUI} -- knihovna pro vytvoření GUI s pomocí \uv{karet}. Tuto knihovnu jsem mírně (25\% kódu) upravil, aby vyhovovala mým potřebám.
@@ -406,7 +408,7 @@ Grafické rozhraní je poměrně jednoduché a skládá se ze tří sekcí. Zál
 
 Záložka s textem \B{USB} je velmi podobná, rozdílem je to, že dává na výběr ze systémů nainstalovaných na USB disku připojeném k zařízení.
 
-Poslední část, \B{Misc}\footnote{\It{Miscellaneous} - různý, různorodý}, obsahuje tlačítka pro restartování zařízení, uložení souboru se záznamem a nastavení barvy prostředí boot manageru.
+Poslední část, \B{Misc}\footnote{\It{Miscellaneous} -- různý, různorodý}, obsahuje tlačítka pro restartování zařízení, uložení souboru se záznamem a nastavení barvy prostředí boot manageru.
 
 Boot manager umí po nastavené prodlevě automaticky spustit některý ze systémů. Tato funkce se nastavuje v recovery, je možné nastavit prodlevu a jeden ze dvou typů výběru OS ke spuštění -- první pouze spouští předem nastavený systém a druhý spouští ten, který byl uživatelem vybrán naposledy.
 
@@ -466,7 +468,7 @@ Tento patch původně napsal Mike Kasick\cite{kexec-hardboot-orig}, já jsem ho 
 \newpage
 
 \section{Aplikace pro Android}
-Aplikace \It{MultiROM Manager} je poměrně nová část MultiROM, přidaná hlavně za účelem zjednodušení instalace celé modifikace. Postupně přibyla instalace Ubuntu Touch, možnost správa instalovaných systémů a~možnost nabootovat do systému přímo z~této aplikace, bez nutnosti restartovat nejdříve do boot manageru.
+Aplikace \It{MultiROM Manager} je poměrně nová část MultiROM, přidaná hlavně za účelem zjednodušení instalace celé modifikace. Postupně přibyla instalace Ubuntu Touch, správa nainstalovaných systémů a~možnost nabootovat do vybraného systému přímo z~této aplikace, bez nutnosti restartovat nejdříve do boot manageru.
 
 Aplikace je zdarma dostupná v obchodě Google Play, kde má velmi pozitivní hodnocení (4,7 z 5 hvězdiček k 11.\,3.\,2014).
 
@@ -517,7 +519,7 @@ MultiROM instaluje všechny vedlejší operační systémy do podsložky na \uv{
 \subsection{Android}
 OS Android má proces startu systému a~uspořádání systému souborů odlišné od běžných Linuxových distribucí. Jádro systému si ihned po startu rozbalí archiv souborů do operační paměti a~použije ho jako kořen souborového systému. Tento archiv je běžně označován jako \It{init ramdisk}, zkráceně \It{initrd}. \It{Initrd} obsahuje první program, který se spustí po startu jádra systému, tvz. \It{init}. Tento má za úkol inicializovat zařízení v~telefonu, připojit všechny \uv{diskové oddíly} a~spustit z~nich zbytek Androidu, k~čemuž používá \It{scripty}, které čte a~vykonává akce v~nich definované.
 
-Před tím, než budu pokračovat, musím upozornit na to, že Android používá tři hlavní diskové oddíly: \B{/data} pro aplikace a~uživatelská data, \B{/system} pro nainstalované neměnné části systému a~\B{/cache} pro dočasné soubory. Nahrazení všech těchto složek jinými prakticky znamená spuštění jiného systému.
+Před tím, než budu pokračovat, musím upozornit na to, že Android používá tři hlavní diskové oddíly: \B{/data} pro aplikace a~uživatelská data, \B{/system} pro nainstalované neměnné části systému a~\B{/cache} pro dočasné soubory. Nahrazení všech těchto složek jinými a spuštění jiného jádra pomocí funkce kexec prakticky znamená spuštění jiného systému.
 
 MultiROM \B{nahrazuje} \It{init} v~\It{initrd}, je tedy prvním programem, který běží po startu jádra. Poté, co uživatel vybere systém, který chce spustit, boot manager provede následující proces:
 %buďto použije kexec k restartování zařízení s jádrem vybraného systému nebo pokračuje dále s již spuštěným jádrem, které se tedy sdílí mezi hlavní a vedlejší ROM (možné nastavit při instalaci ROM). 
@@ -621,7 +623,7 @@ Hlavním způsobem, jak získává MultiROM nové uživatele a~já komunikuji s~
 \end{itemize}
 
 \subsection{Indiegogo kampaň}
-Server indiegogo.com\cite{indiegogo} se zaměřuje na tzv. crowdfunding -- jednotlivec či skupina si může na tomto serveru založit projekt, který chtějí vytvořit a~stanoví částku kterou potřebují k~jeho realizaci. Návštěvníci indiegogo přispívají peníze projektům, které se jim líbí. Záleží pouze na nich kolik přispějí -- \$5, \$20 nebo \$10000, jakákoliv částka je možná. Pokud přispěje dostatek lidí, mohou uspět i~velmi finančně náročné projekty (v~řádech milionů dolarů). Důležité je však uvědomit si, že se nejedná o~obchod -- i~když projekt dostane požadovanou částku peněz, není jisté že uspěje, zejména proto, že crowdfunding dává příležitost podnikat i~lidem, kteří nemají žádné zkušenosti. Pokud ale jde vše podle plánu, vznikají často zajímavé projekty, které by jinak umřely jen protože se nelíbily investorům. Projektem může být takřka cokoliv, například počítačová hra, nějaký nový kus hardwaru, ale i~vydání prvního alba amatérské kapely či peněžní sbírky pro příspěvkové organizace.
+Server indiegogo.com\cite{indiegogo} se zaměřuje na tzv. crowdfunding -- jednotlivec či skupina si může na tomto serveru založit projekt, který chtějí vytvořit a~stanoví částku kterou potřebují k~jeho realizaci. Návštěvníci indiegogo přispívají peníze projektům, které se jim líbí. Záleží pouze na nich kolik přispějí -- \$5, \$20 nebo \$10000, jakákoliv částka je možná. Pokud přispěje dostatek lidí, mohou uspět i~velmi finančně náročné projekty (v~řádech milionů dolarů). Důležité je však uvědomit si, že se nejedná o~obchod -- i~když projekt dostane požadovanou částku peněz, není jisté že uspěje, zejména proto, že crowdfunding dává příležitost podnikat i~lidem, kteří nemají žádné zkušenosti. Pokud ale jde vše podle plánu, vznikají často zajímavé projekty, které by jinak umřely jen proto, že se nelíbily investorům. Projektem může být takřka cokoliv, například počítačová hra, nějaký nový kus hardwaru, ale i~vydání prvního alba amatérské kapely či peněžní sbírky pro příspěvkové organizace.
 
 Po vydání nové verze tabletu Nexus 7 v~roce 2013 jsem zaznamenal poměrně velké množství požadavků aby MultiROM podporovala i~toto zařízení. Poskytnout takovou úroveň podpory, kterou bych chtěl (zejména řešení problémů pokud něco nefunguje) je však takřka nemožné, pokud zařízení nevlastním a~nemohu na něm vše testovat. Založil jsem tedy na indiegogo projekt na zakoupení Nexusu 7 a~přidaní kompatibility pro toto zařízení\cite{indiegogo-multirom}. Cílem byla částka \$500 (menší indiegogo nepodporuje). \B{Kampaň byla úspěšná}, celkově se vybralo 562 dolarů a~\B{já jsem svůj \uv{závazek} splnil, a~to i~v~odhadovaném čase} -- verze pro Nexus 7 byla vydána necelý měsíc po skončení kampaně.
 
@@ -674,6 +676,7 @@ Poměrně brzo po vydání MultiROM se na serveru Youtube začaly objevovat vide
 
 \hfill \It{Linux Journal\cite{linuxjournal}} \\
 
+\enlargethispage{40pt}
 \noindent \uv{...The Nexus 7 is one of the best devices for a~few reasons ... So, how could you make something this good even better? XDA Recognized Developer Tasssadar can answer this question with his latest creation: Multi-Boot for the Nexus 7.}
 
 \hfill \It{XDA-Developers portal\cite{xda-multirom}} \\
@@ -724,7 +727,7 @@ Patch upravený pro jednotlivá zařízení s~dalšími vylepšeními jsem zveř
 \end{itemize}
 
 \subsection{Ubuntu Touch}
-Ubuntu Touch\cite{utouch} je nový mobilní operační systém v~současnosti vyvíjený firmou Canonical. Má stejný základ jako počítačová distribuce Ubuntu a~je tedy mnohem blíže úplnému Linuxovému systému než Android. Díky MultiROM jsem si tento systém mohl vyzkoušet bez smazání mého hlavního systému. Kdyby MultiROM neexistovala, pravděpodobně bych tento OS vyzkoušel až mnohem později, protože Ubuntu Touch ještě není připravené pro běžné používání, je teprve ve vývoji. Tento OS mě zaujal, a~tak jsem do tohoto OS různým způsobem přispíval -- nahlašováním chyb a~několika málo opravami.
+Ubuntu Touch\cite{utouch} je nový mobilní operační systém v~současnosti vyvíjený firmou Canonical. Má stejný základ jako počítačová distribuce Ubuntu a~je tedy mnohem blíže úplnému Linuxovému systému než Android. Díky MultiROM jsem si tento systém mohl vyzkoušet bez smazání mého hlavního systému. Kdyby MultiROM neexistovala, pravděpodobně bych tento OS vyzkoušel až mnohem později, protože Ubuntu Touch ještě není připravené pro běžné používání a musel bych kvůli němu smazat svůj hlavní systém. Tento OS mě zaujal, a~tak jsem do tohoto OS různým způsobem přispíval -- nahlašováním chyb a~několika málo opravami.
 
 Mimo jiné jsem také vytvořil server\cite{tasemnice-si-mail}, který sestavuje Ubuntu Touch pro telefon Nexus 5 a~poskytuje instalační soubory a~aktualizace pro všechny zájemce.  Nexus 5 není oficiálně podporovaný firmou Canonical, ale díky tomuto serveru mohou uživatelé tento systém instalovat stejným způsobem jako na oficiální podporovaná zařízení -- stačí pouze zadat jinou adresu serveru s~instalačními soubory. Fungují dokonce i~automatické aktualizace.
 
