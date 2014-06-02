@@ -11,8 +11,12 @@
 \usepackage{bbding}
 \usepackage{tabularx}
 \usepackage{wrapfig}
+\usepackage{xcolor}
 
 \usetikzlibrary{shadows}
+
+\definecolor{sourcesclr}{rgb}{.38,.38,.38}
+
 % Themes: http://www.hartwork.org/beamer-theme-matrix/
 \mode<presentation>{\usetheme{Madrid}}
 \usecolortheme{default}
@@ -27,6 +31,7 @@
 \newcommand{\B}{\textbf} %tučné písmo
 \newcommand{\U}{\underline}  % podtržené písmo
 \newcommand{\sectsel}[1]{\U{\B{#1}}}
+\newcommand{\srctext}[1]{{\fontsize{7}{9}\selectfont\textcolor{sourcesclr}{#1}}}
 
 \newenvironment<>{positiveblock}[1]{%
   \begin{actionenv}#2%
@@ -54,7 +59,6 @@
       \usebeamertemplate{block begin}}
     {\par\usebeamertemplate{block end}\end{actionenv}}
 
-
 \author{Vojtěch Boček}
 %\institute[vbocek@gmail.com]{SPŠ a VOŠ technická, Sokolská 1, Brno \\[0.5cm] \includegraphics[width=2cm]{logo-skoly}}
 \institute[vbocek@gmail.com]{SPŠ a VOŠ technická Brno, Sokolská 1}
@@ -72,6 +76,14 @@
 
 \frame{\titlepage}
 
+%\setbeamercolor{background canvas}{bg=black}
+\begin{frame}
+    \begin{figure}[H]
+    \includegraphics[width=110px]{../img/broken_android.png}
+    \end{figure}
+\end{frame}
+
+%\setbeamercolor{background canvas}{bg=white}
 \begin{frame}
     \frametitle{MultiROM}
     \begin{columns}
@@ -100,15 +112,21 @@
     \frametitle{Aktuální stav}
     \begin{itemize}
         \item Oficiálně podporována 4 zařízení (tablety Nexus 7 2012 \& 2013 a telefony Nexus 4 a Nexus 5)
+        \pause
         \item Více než desítka dalších zařízení podporována komunitou
-        \item Přes 15 000 aktivních instalací
+        \pause
         \item Úspěšný crowdfunding projekt
+        \pause
+        % Z jakých států a tak
+        \item Přes 18 000 aktivních instalací
     \end{itemize}
     \begin{figure}[H]
     \begin{tikzpicture}
          \node[fill=white,draw] at (0,0) { \includegraphics[width=0.95\textwidth]{../img/graph_active.png}};
     \end{tikzpicture}
     \end{figure}
+    \vspace{-5mm}
+    \hspace{1mm} \srctext{Zdroj: Google Play Store statistiky pro vývojáře}
 \end{frame}
 
 % \begin{frame}
@@ -156,7 +174,7 @@
     1. Boot manager | \sectsel{2. Upravená recovery} | 3. Kexec-hardboot patch | 4. Aplikace pro Android
     \end{beamercolorbox}
     \vspace{-1.5ex}
-    
+
     \frametitle{Upravená recovery}
     \begin{columns}
     \column{.48\textwidth}
@@ -171,7 +189,7 @@
     \column{.48\textwidth}
     \begin{figure}[H]
     \begin{tikzpicture}
-        \node[drop shadow={shadow xshift=.8ex,shadow yshift=-.8ex},fill=white,draw] at (0,0) { \includegraphics[width=120px]{../img/recovery.png}};
+        \node[drop shadow={shadow xshift=.8ex,shadow yshift=-.8ex},fill=white,draw] at (0,0) { \includegraphics[width=120px]{../img/recovery2.png}};
     \end{tikzpicture}
     \end{figure}
     \end{columns}
@@ -183,24 +201,24 @@
     \usebeamerfont{sections}
     1. Boot manager | 2. Upravená recovery | \sectsel{3. Kexec-hardboot patch} | 4. Aplikace pro Android
     \end{beamercolorbox}
-    \vspace{10.0ex}
+    \vspace{13.0ex}
 
     \frametitle{Kexec-hardboot patch}
     \begin{itemize}
         \item Úprava Linuxového jádra
         \item Spouštění jiného jádra s pomocí toho již běžícího
-        \item Nepřepíše jádro uložené v boot sektoru
-        \item Technicky umožňuje multiboot na zařízeních s tak limitovaným přístupem, jako jsou tablety a telefon s OS Android
+        %\item Nepřepíše jádro uložené v boot sektoru
+        \item \B{Technicky umožňuje multiboot na zařízeních s tak limitovaným přístupem, jako jsou tablety a telefony s OS Android}
     \end{itemize}
 \end{frame}
 
 \begin{frame}
-    \vspace{-2.0ex}
+    \vspace{-3.7ex}
     \begin{beamercolorbox}[wd=\paperwidth,ht=2.5ex,dp=1.125ex,center=true]{palette quaternary}%
     \usebeamerfont{sections}
     1. Boot manager | 2. Upravená recovery | 3. Kexec-hardboot patch | \sectsel{4. Aplikace pro Android}
     \end{beamercolorbox}
-    \vspace{-1.5ex}
+    \vspace{-1.0ex}
     
     \frametitle{Aplikace pro Android}
     \begin{columns}
@@ -215,7 +233,7 @@
     \column{.48\textwidth}
     \begin{figure}[H]
     \begin{tikzpicture}
-        \node[drop shadow={shadow xshift=.8ex,shadow yshift=-.8ex},fill=white,draw] at (0,0) { \includegraphics[width=120px]{../img/app_main.png}};
+        \node[drop shadow={shadow xshift=.8ex,shadow yshift=-.8ex},fill=white,draw] at (0,0) { \includegraphics[width=120px]{../img/app_main2.png}};
     \end{tikzpicture}
     \end{figure}
     \end{columns}
@@ -238,30 +256,30 @@
 \end{frame}
 
 
-\begin{frame}
-    \frametitle{Porovnání s existujicími řešeními}
-    \begin{positiveblock}{Výhody}
-    \begin{itemize}
-        \item Velmi snadné používání
-        \item Libovolné množství systémů
-        \item Libovolný typ systémů
-        \item Instalace vedlejších systémů do vnitřní paměti nebo na USB flash disk
-        \item Žádný dopad na rychlost systému
-    \end{itemize}
-    \end{positiveblock}
-
-    \pause
-    \begin{negativeblock}{Nevýhody}
-    \begin{itemize}
-        \item Nemožnost sdílení aplikací mezi systémy
-    \end{itemize}
-    \end{negativeblock}
-\end{frame}
+% \begin{frame}
+%     \frametitle{Porovnání s existujicími řešeními}
+%     \begin{positiveblock}{Výhody}
+%     \begin{itemize}
+%         \item Velmi snadné používání
+%         \item Libovolné množství systémů
+%         \item Libovolný typ systémů
+%         \item Instalace vedlejších systémů do vnitřní paměti nebo na USB flash disk
+%         \item Žádný dopad na rychlost systému
+%     \end{itemize}
+%     \end{positiveblock}
+% 
+%     \pause
+%     \begin{negativeblock}{Nevýhody}
+%     \begin{itemize}
+%         \item Nemožnost sdílení aplikací mezi systémy
+%     \end{itemize}
+%     \end{negativeblock}
+% \end{frame}
 
 \begin{frame}
     \frametitle{Proč?}
     \begin{itemize}
-        \item Na PC je multiboot běžná funkcionalita
+        \item Na PC je multiboot běžná funkce
         \item Vyzkoušení jiných operačních systémů
         \item Vývoj aplikací pro Android
         \item Využívání aplikací kompatibilních pouze s jedním OS
@@ -304,7 +322,7 @@
         \item Podpora prakticky jakéhokoliv operačního systému
 %        \item Přispívání zpět do komunity, zejména TWRP a Ubuntu Touch
         \item MultiROM nebo její části využívají i další vývojáři
-        \item Přes 15 000 uživatelů
+        \item Přes 18 000 uživatelů
         \item Úspěšný crowdfunding projekt
         \item Další vývoj:
         \begin{itemize}
@@ -322,6 +340,8 @@
         \vspace{20mm}
         MultiROM Manager: \\
         \url{http://bit.ly/mrom_app}
+
+        
     \end{center}
 \end{frame}
 
