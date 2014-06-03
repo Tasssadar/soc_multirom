@@ -1,4 +1,3 @@
-% TODO: zdroje (obrazek?)
 \documentclass{beamer}
 
 \usepackage[czech]{babel}
@@ -45,7 +44,7 @@
      }%
       \usebeamertemplate{block begin}}
     {\par\usebeamertemplate{block end}\end{actionenv}}
-    
+
 \newenvironment<>{negativeblock}[1]{%
   \begin{actionenv}#2%
       \def\insertblocktitle{#1}%
@@ -60,14 +59,10 @@
     {\par\usebeamertemplate{block end}\end{actionenv}}
 
 \author{Vojtěch Boček}
-%\institute[vbocek@gmail.com]{SPŠ a VOŠ technická, Sokolská 1, Brno \\[0.5cm] \includegraphics[width=2cm]{logo-skoly}}
 \institute[vbocek@gmail.com]{SPŠ a VOŠ technická Brno, Sokolská 1}
 \title{MultiROM}
 \subtitle{Nástroj pro instalaci více operačních systémů\\na jedno mobilní zařízení}
 \date[]{}
-
-%\newdate{date}{13}{03}{2013}
-%\date{\displaydate{date}}
 
 \setbeamerfont{sections}{size=\fontsize{8}{9}\selectfont}
 
@@ -76,23 +71,26 @@
 
 \frame{\titlepage}
 
-%\setbeamercolor{background canvas}{bg=black}
 \begin{frame}
-    \begin{figure}[H]
-    \includegraphics[width=110px]{../img/broken_android.png}
-    \end{figure}
+    \begin{center}
+        \vspace{15mm}
+        \begin{figure}[H]
+        \includegraphics[width=120px]{../img/broken_android.png}
+        \end{figure}
+    \end{center}
+    \vspace{20mm}
+    \srctext{Zdroj obrázku: android / platform/bootable/recovery@280a238b / res/icon{\textunderscore}error.png}
 \end{frame}
 
-%\setbeamercolor{background canvas}{bg=white}
 \begin{frame}
     \frametitle{MultiROM}
     \begin{columns}
     \column{.48\textwidth}
     \vspace{-10mm}
     \begin{itemize}
-        \item Instalace libovolného množství vedlejších systémů -- \It{multiboot}
-        \item Podpora mnoha operačních systémů
-        \item Snadné používání
+        \item instalace libovolného množství vedlejších systémů -- \It{multiboot}
+        \item podpora mnoha operačních systémů
+        \item snadné používání
     \end{itemize}
     \column{.48\textwidth}
     \vspace{-5mm}
@@ -111,14 +109,14 @@
 \begin{frame}
     \frametitle{Aktuální stav}
     \begin{itemize}
-        \item Oficiálně podporována 4 zařízení (tablety Nexus 7 2012 \& 2013 a telefony Nexus 4 a Nexus 5)
+        \item oficiálně podporována 4 zařízení (tablety Nexus 7 2012 \& 2013 a telefony Nexus 4 a Nexus 5)
         \pause
-        \item Více než desítka dalších zařízení podporována komunitou
+        \item více než desítka dalších zařízení podporována komunitou
         \pause
-        \item Úspěšný crowdfunding projekt
+        \item úspěšný crowdfunding projekt
         \pause
         % Z jakých států a tak
-        \item Přes 18 000 aktivních instalací
+        \item přes 18 000 aktivních instalací
     \end{itemize}
     \begin{figure}[H]
     \begin{tikzpicture}
@@ -151,10 +149,10 @@
     \begin{columns}
     \column{.48\textwidth}
     \begin{itemize}
-        \item Zobrazuje se po spuštění zařízení
-        \item Slouží pro výběr systému
-        \item Obsahuje kód, který se stará o multiboot
-        \item Umí automaticky spustit nastavený systém
+        \item zobrazuje se po spuštění zařízení
+        \item slouží pro výběr systému
+        \item obsahuje kód, který se stará o multiboot
+        \item umí automaticky spustit nastavený systém
     \end{itemize}
     \vspace{10mm}
 
@@ -179,10 +177,10 @@
     \begin{columns}
     \column{.48\textwidth}
     \begin{itemize}
-        \item Původně zejména pro opravu hlavního systému
-        \item Správa vedlejších systémů
-        \item Nastavení MultiROM
-        \item Založená na open-source projektu TWRP
+        \item původně zejména pro opravu hlavního systému
+        \item správa vedlejších systémů
+        \item nastavení MultiROM
+        \item založená na open-source projektu TWRP
     \end{itemize}
     \vspace{10mm}
 
@@ -205,10 +203,10 @@
 
     \frametitle{Kexec-hardboot patch}
     \begin{itemize}
-        \item Úprava Linuxového jádra
-        \item Spouštění jiného jádra s pomocí toho již běžícího
-        %\item Nepřepíše jádro uložené v boot sektoru
-        \item \B{Technicky umožňuje multiboot na zařízeních s tak limitovaným přístupem, jako jsou tablety a telefony s OS Android}
+        \item úprava Linuxového jádra
+        \item spouštění jiného jádra s pomocí toho již běžícího
+        %\item nepřepíše jádro uložené v boot sektoru
+        \item \B{technicky umožňuje multiboot na zařízeních s tak limitovaným přístupem, jako jsou tablety a telefony s OS Android}
     \end{itemize}
 \end{frame}
 
@@ -219,14 +217,14 @@
     1. Boot manager | 2. Upravená recovery | 3. Kexec-hardboot patch | \sectsel{4. Aplikace pro Android}
     \end{beamercolorbox}
     \vspace{-1.0ex}
-    
+
     \frametitle{Aplikace pro Android}
     \begin{columns}
     \column{.48\textwidth}
     \begin{itemize}
-        \item Instalace a aktualizace MultiROM
-        \item Přejmenovávání a mazání nainstalovaných systémů
-        \item Bootování přímo do nainstalovaných systémů
+        \item instalace a aktualizace MultiROM
+        \item přejmenovávání a mazání nainstalovaných systémů
+        \item bootování přímo do nainstalovaných systémů
     \end{itemize}
     \vspace{10mm}
 
@@ -249,10 +247,13 @@
 \begin{frame}
     \begin{center}
         {\Large *\It{Pravděpodobně} živá ukázka!* }
+        \vspace{5mm}
         \begin{figure}[H]
         \includegraphics[width=0.4\textwidth]{../img/kocka.png}
         \end{figure}
     \end{center}
+    \vspace{15mm}
+    \srctext{Autor obrázku: Ketrina Yim (draguunthor.deviantart.com)}
 \end{frame}
 
 
@@ -279,10 +280,10 @@
 \begin{frame}
     \frametitle{Proč?}
     \begin{itemize}
-        \item Na PC je multiboot běžná funkce
-        \item Vyzkoušení jiných operačních systémů
-        \item Vývoj aplikací pro Android
-        \item Využívání aplikací kompatibilních pouze s jedním OS
+        \item na PC je multiboot běžná funkce
+        \item vyzkoušení jiných operačních systémů
+        \item vývoj aplikací pro Android
+        \item využívání aplikací kompatibilních pouze s jedním OS
     \end{itemize}
 \end{frame}
 
@@ -292,12 +293,12 @@
     \column{.48\textwidth}
         \begin{negativeblock}{Dříve}
             \begin{enumerate}
-                \item Udělat zálohu stávajícího OS
-                \item Nainstalovat nový systém
-                \item Zjistit, že starý byl lepší
-                \item Obnovit zálohu
+                \item udělat zálohu stávajícího OS
+                \item nainstalovat nový systém
+                \item zjistit, že starý byl lepší
+                \item obnovit zálohu
                 \pause
-                \item Zhrozit se nad množstvím času stráveného touto operací
+                \item zhrozit se nad množstvím času stráveného touto operací
             \end{enumerate}
         \end{negativeblock}
     \pause
@@ -305,10 +306,10 @@
         \begin{positiveblock}{S MultiROM}
             \vspace{3mm}
             \begin{enumerate}
-                \item Nainstalovat nový systém do MultiROM
-                \item[2a.] Zjistit, že starý byl lepší a smazat ho
+                \item nainstalovat nový systém do MultiROM
+                \item[2a.] zjistit, že starý byl lepší a smazat ho
                 \pause
-                \item[2b.] Hmm, ujde, zatím ho nesmažu
+                \item[2b.] hmm, ujde, zatím ho nesmažu
             \end{enumerate}
             \vspace{2mm}
         \end{positiveblock}
@@ -318,16 +319,16 @@
 \begin{frame}
     \frametitle{Shrnutí}
     \begin{itemize}
-        \item Výrazně jednodušší používání v porovnání s ostatními podobnými modifikacemi
-        \item Podpora prakticky jakéhokoliv operačního systému
+        \item výrazně jednodušší používání v porovnání s ostatními podobnými modifikacemi
+        \item podpora prakticky jakéhokoliv operačního systému
 %        \item Přispívání zpět do komunity, zejména TWRP a Ubuntu Touch
         \item MultiROM nebo její části využívají i další vývojáři
-        \item Přes 18 000 uživatelů
-        \item Úspěšný crowdfunding projekt
-        \item Další vývoj:
+        \item přes 18 000 uživatelů
+        \item úspěšný crowdfunding projekt
+        \item další vývoj:
         \begin{itemize}
-            \item Podpora dalších zařízení
-            \item Možnost sdílení aplikací mezi instalacemi Android ROM
+            \item podpora dalších zařízení
+            \item možnost sdílení aplikací mezi instalacemi Android ROM
         \end{itemize}
     \end{itemize}
 \end{frame}
@@ -335,14 +336,19 @@
 
 \begin{frame}
     \begin{center}
-        {\huge Děkuji za pozornost}
+        {\huge Děkuji za pozornost.}
 
-        \vspace{20mm}
+        \vspace{15mm}
         MultiROM Manager: \\
         \url{http://bit.ly/mrom_app}
-
-        
     \end{center}
+    \vspace{25mm}
+    \srctext{Zdroje obrázků:}
+    \begin{itemize}
+        \item[]\hspace{-5mm}\srctext{\B{Rozbitý android:} součást AOSP, např.:\\ \url{https://android.googlesource.com/platform/bootable/recovery/+/android-4.4.3_r1/res/images/icon_error.png}}
+        \item[]\hspace{-5mm}\srctext{\B{Graf aktivních instalací:} Google Play Store konzole pro vývojáře, není veřejně dostupná}
+        \item[]\hspace{-5mm}\srctext{\B{Schrödingerova kočka:} \url{http://draguunthor.deviantart.com/art/Schrodinger-s-Cat-163302750}}
+    \end{itemize}
 \end{frame}
 
 \end{document}
