@@ -18,10 +18,10 @@
 
 % Themes: http://www.hartwork.org/beamer-theme-matrix/
 \mode<presentation>{\usetheme{Madrid}}
-\usecolortheme{default}
+\usecolortheme{beaver}
 \beamertemplatenavigationsymbolsempty 
 \setbeamertemplate{title page}[default][colsep=0bp,rounded=true]
-\setbeamertemplate{itemize items}{$\star$}
+\setbeamertemplate{itemize items}{$\bullet$}
 \setbeamercolor*{item}{fg=black}
 \setbeamertemplate{enumerate item}[default]
 \newcommand{\Has}{\textcolor{green}{\CheckmarkBold}}
@@ -79,7 +79,7 @@
         \end{figure}
     \end{center}
     \vspace{20mm}
-    \srctext{Zdroj obrázku: android / platform/bootable/recovery@280a238b / res/icon{\textunderscore}error.png}
+    \srctext{Zdroj obrázku: android | platform/bootable/recovery@280a238b | res/icon{\textunderscore}error.png}
 \end{frame}
 
 \begin{frame}
@@ -95,7 +95,7 @@
     \column{.48\textwidth}
     \vspace{-5mm}
     \begin{figure}[H]
-    \includegraphics[width=145px]{../img/boot_manager_promo.png}
+    \includegraphics[width=170px]{../img/dragon.png}
     \end{figure}
 %     \begin{figure}[H]
 %     \begin{tikzpicture}
@@ -109,7 +109,7 @@
 \begin{frame}
     \frametitle{Aktuální stav}
     \begin{itemize}
-        \item oficiálně podporována 4 zařízení (tablety Nexus 7 2012 \& 2013 a telefony Nexus 4 a Nexus 5)
+        \item oficiálně podporována 4 zařízení (tablety Nexus 7 2012 \& 2013 a~telefony Nexus 4 a~Nexus 5)
         \pause
         \item více než desítka dalších zařízení podporována komunitou
         \pause
@@ -120,7 +120,7 @@
     \end{itemize}
     \begin{figure}[H]
     \begin{tikzpicture}
-         \node[fill=white,draw] at (0,0) { \includegraphics[width=0.95\textwidth]{../img/graph_active.png}};
+         \node[fill=white,draw] at (0,0) { \includegraphics[width=0.95\textwidth]{../img/graph_active_prez.png}};
     \end{tikzpicture}
     \end{figure}
     \vspace{-5mm}
@@ -151,7 +151,7 @@
     \begin{itemize}
         \item zobrazuje se po spuštění zařízení
         \item slouží pro výběr systému
-        \item obsahuje kód, který se stará o multiboot
+        \item obsahuje kód, který se stará o~multiboot
         \item umí automaticky spustit nastavený systém
     \end{itemize}
     \vspace{10mm}
@@ -278,7 +278,7 @@
 % \end{frame}
 
 \begin{frame}
-    \frametitle{Proč?}
+    \frametitle{Využití}
     \begin{itemize}
         \item na PC je multiboot běžná funkce
         \item vyzkoušení jiných operačních systémů
@@ -307,7 +307,7 @@
             \vspace{3mm}
             \begin{enumerate}
                 \item nainstalovat nový systém do MultiROM
-                \item[2a.] zjistit, že starý byl lepší a smazat ho
+                \item[2a.] zjistit, že starý byl lepší a~smazat ho
                 \pause
                 \item[2b.] hmm, ujde, zatím ho nesmažu
             \end{enumerate}
@@ -338,11 +338,17 @@
     \begin{center}
         {\huge Děkuji za pozornost.}
 
-        \vspace{15mm}
+        \vspace{5mm}
         MultiROM Manager: \\
         \url{http://bit.ly/mrom_app}
+        \vspace{5mm}
+
+        \begin{figure}[H]
+        \includegraphics[width=0.3\textwidth]{../img/dragon_full.png}
+        \end{figure}
     \end{center}
-    \vspace{25mm}
+    %\vspace{25mm}
+    %\vspace{-5mm}
     \srctext{Zdroje obrázků:}
     \begin{itemize}
         \item[]\hspace{-5mm}\srctext{\B{Rozbitý android:} součást AOSP, např.:\\ \url{https://android.googlesource.com/platform/bootable/recovery/+/android-4.4.3_r1/res/images/icon_error.png}}
