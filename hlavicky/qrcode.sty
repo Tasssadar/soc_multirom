@@ -1,0 +1,14 @@
+\RequirePackage{tikz}
+\usetikzlibrary{fit}
+\directlua{dofile("qrcodegenerator2.lua")}  % <--- Oooh!
+\newcommand{\qrcode}[2][10]{%
+\begin{scope}[qrcode]
+\directlua{tikzQRCode("#2",#1)}%
+\end{scope}
+}
+\tikzset{
+  qrcode/.style = {line width = 2sp},
+  pixel on/.style = {black},
+  pixel off/.style = {white},
+  pixel err/.style = {red}
+}
