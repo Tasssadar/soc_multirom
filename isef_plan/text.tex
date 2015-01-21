@@ -1,0 +1,205 @@
+\documentclass[12pt, a4paper, oneside]{article} 
+% velikost písma, stránky, typ dokumentu -- detaily viz literatura
+
+\usepackage{ucs}
+\usepackage{czech} % nastavení češtiny
+%\usepackage[latin2]{inputenc}
+%\usepackage[cp1250]{inputenc} % pro win1250
+\usepackage[center]{caption} 
+\usepackage[utf8]{inputenc}
+\usepackage{wrapfig} % nastavení obtékání textu
+\usepackage{graphicx,amsmath} % nastavení grafiky, matematiky
+\usepackage{subfig} % více obrázků vedle sebe 
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bbding}
+\usepackage{enumitem}
+\usepackage{breakurl}
+\usepackage{pdflscape}
+\usepackage{wrapfig}
+\usepackage{textcomp}
+\usepackage[backend=biber,bibstyle=numeric,sorting=none,date=long,dateabbrev=false,texencoding=utf8,bibencoding=utf8]{biblatex}
+
+%\usepackage{indentfirst}
+
+\usepackage{tocloft} %přidá tečky do obsahu ke kapitolám /sekcím 
+\renewcommand{\cftsecdotsep}{\cftdotsep}
+
+\usepackage[bookmarksopen,colorlinks,plainpages=false,linkcolor=black,urlcolor=blue,citecolor=black,filecolor=black,menucolor=black,unicode=true]{hyperref}
+
+\urlstyle{rm}
+%bookmarksopen -- open up bookmark tree 
+%colorlinks -- zbarví odkazy (implicitně orámovaný nezbarvený text)
+%urlcolor -- barva odkazů (implicitně magenta) 
+%linkcolor=black -- barva odkazů v obsahu (implicitně red)
+
+\usepackage{listings}
+\usepackage{color}
+\definecolor{lightgray}{RGB}{240,240,240}
+\definecolor{darkgray}{rgb}{.4,.4,.4}
+\definecolor{purple}{rgb}{0.65, 0.12, 0.82}
+\definecolor{darkgreen}{RGB}{0,150,0}
+
+\lstdefinelanguage{JavaScript}{
+  keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break, for},
+  keywordstyle=\color{blue}\bfseries,
+  ndkeywords={class, export, boolean, throw, implements, import, this},
+  ndkeywordstyle=\color{blue}\bfseries,
+  identifierstyle=\color{black},
+  sensitive=zr,
+  comment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  commentstyle=\color{darkgreen}\ttfamily,
+  stringstyle=\color{red}\ttfamily,
+  morestring=[b]',
+  morestring=[b]"
+}
+
+\lstset{
+   backgroundcolor=\color{lightgray},
+   extendedchars=true,
+   basicstyle=\footnotesize\ttfamily,
+   showstringspaces=false,
+   showspaces=false,
+   numbers=left,
+   numberstyle=\footnotesize,
+   numbersep=9pt,
+   tabsize=2,
+   breaklines=true,
+   showtabs=false,
+   aboveskip=5mm,
+   belowskip=7mm,
+   captionpos=b
+}
+
+\renewcommand{\listingscaption}{Příklad}
+\renewcommand{\listoflistingscaption}{Příklady}
+
+% \usepackage{parskip} -- zapne americké odstavce v celé práci
+
+\addtolength{\textwidth}{16mm} 
+\addtolength{\hoffset}{-8mm}  % posun textu kvůli kroužkové vazbě  
+
+\setlength{\intextsep}{5mm} % nastavení mezery okolo obrázků
+
+\addtolength{\textheight}{30mm}
+\setlength{\voffset}{-15mm}
+
+% nastavení příkazu >\figcaption pro popis čehokoli, jako by to byly obrázky 
+\makeatletter   
+\newcommand\figcaption{\def\@captype{figure}\caption}
+\makeatother
+
+\renewcommand\refname{Literatura} 
+%\def\bibname{PŘÍLOHA D: Reference}
+%\renewcommand\bibname{PŘÍLOHA D: Reference}
+% přejmenuje anglický název Reference na české Literatura
+
+\addbibresource{text.bib}
+%\DeclareFieldFormat[online]{url}{Dostupné na World Wide Web:\\* \href{#1}{\textless\nolinkurl{#1}\textgreater}}
+%\DeclareFieldFormat[online]{title}{\It{#1} [online]}
+\DeclareNameAlias{default}{last-first}
+
+
+%\makeindex % příprava pro výrobu indexu (jestli ho chcete)
+
+%%    VLNKA <fileinput>  KkSsVvZzOoUuAaIi        
+% Defaultni  koncovka pro <fileinput> je  ".tex"
+%FIXME: haze error
+%\cstieon % Vypne chovani vlnky jako tvrde mezery v matematickem rezimu
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%V PROSTŘEDÍ ROVNIC SE NESMÍ VYSKYTOVAT PRÁZDNÝ ŘÁDEK
+%
+%PROGRAMY VLNKA A CSINDEX SE MUSÍ SPUSTIT SAMOSTATNĚ
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% definice příkazů 
+\newcommand{\D}{\medskip \noindent} % nový odstavec v "americkém" formátování 
+\newcommand{\B}{\textbf} %tučné písmo
+\newcommand{\A}{\mathbf} %tučné písmo v matematickém režimu
+\newcommand{\TO}{\ensuremath{\boldsymbol\Omega}} % tučný znak velké omega -- pro ohmy
+\newcommand{\I}{\index}  % vytváří položku indexu (asi nepoužijete)
+\newcommand{\Deg}[1][]{\ensuremath{{#1}^\circ}} % vysází značku stupně Celsia
+\newcommand{\Def}{\footnotesize Definice: \normalsize}
+\newcommand{\Pos}{\footnotesize Experiment: \normalsize}
+\newcommand{\Odv}{\footnotesize Odvození: \normalsize}
+\newcommand{\Vym}{\footnotesize Vymezení pojmu: \normalsize}
+\newcommand{\Ob}{obrázek }
+\newcommand{\It}{\textit}  % kurzíva
+\newcommand{\M}{\mathrm}   % v prostředí rovnic nastaví normální písmo (místo kurzívy ) 
+\newcommand{\F}{\footnotesize} % zmenšená velikost písma
+\newcommand{\N}{\normalsize} % normální velikost písma
+%\newcommand{\U}{\underline}  % podtržené písmo
+\newcommand{\e}{\ensuremath} 
+\newcommand{\Has}{\textcolor{green}{\CheckmarkBold}}
+\newcommand{\NoHas}{\textcolor{red}{\XSolidBrush}}
+% další příkaz se aplikuje, pouze, když jste v matematickém režimu
+
+%\hyphenation{Pusť-me pla-tí hod-no-ty do-sa-dí-me za-da-né dal-ším}
+% dělení slov, kdyby implicitní nevyhovovalo
+
+\linespread{1.15} 
+% řádkování 1,5x  
+% použijete podle situace  
+
+\unitlength=1mm % nastavení volby jednotek 
+
+% www.amavet.cz www.fvtp.cz
+
+% titulek - přidat školu a zemi - přeložit - loga pryc
+% abstrakt - kontaktní údaje, web, email - spojit adresu
+
+% konec hlavičky
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%SuperTajneISeFhEslo1606
+\pagestyle{plain}
+
+\begin{document}
+\begin{center}
+\Large
+\B{MultiROM} \\
+\large
+\B{The Multiboot Modification For Android Devices} \\
+\normalsize
+Vojtěch Boček (vbocek@gmail.com, \url{http://tasssadar.github.io})
+\end{center}
+
+\vspace{5mm}
+
+\It{"Why does one need to go through this lenghty process of backing up & restoring all the data on the device when trying out a different operating system?"}
+
+\It{"Desktop computers have supported multiboot for years, why isn't the same possible on Android devices?"}
+
+\section{Introduction}
+A fairly large community of enthusiasts and developers has formed around Google Android\texttrademark~powered devices. Since Android is open-source, the community soon started making modified versions of it, these are called "ROMs"\cite{whatisrom}. Principle of Android ROMs can be compared to the Linux distributions - some have more features, some change the looks of user interface and so on. And because some Android devices themselves are fairly open compared to others, developers of new mobile operating systems soon started using them as testing devices for their creations (since they don't have their own hardware made yet).
+
+As a result, there are a lot of operating systems you can run on Android devices (this varies depending on the exact device). Unlike desktop computers however, Android devices don't support multiboot, you can't install more than one operating system at a time. Instead, one has to go through a lengthy procedure of backing up all the data, installing another operating system and restoring everything again when going back.
+
+While "average users" won't ever hit the problem, a multiboot modification could save a lot of time for enthusiasts, developers and other individuals working with Android devices on a deeper level.
+
+\section{Engineering goal}
+The goal of this project is to develop a software modification which adds multiboot feature to Android devices, can boot any operating system available for particular device and supports unlimited number of secondary systems installed. It should also do so in a way that is easy to use. The resulting code will be released as Open Source Software under the GNU GPLv3 license.
+
+\newpage
+\section{Procedures}
+\begin{enumerate}
+    \item Determine the best method of implementing multiboot on relatively closed Android devices\cite{androidboot}. Using Linux kernel syscall "kexec"\cite{kexec} seems feasible.
+    \item Implement proof-of-concept code, without any extensive GUI or management tools.
+    \item Implement a boot manager with GUI.
+    \item Add management of secondary system installed on the device into existing open source TeamWin Recovery Project\cite{twrp}.
+    \item Release the project on XDA-developers\cite{xda} forums for public to use.
+    \item Develop an Android application which will automatically install and update all parts of this modification.
+    \item Add support for more Android devices.
+    \item Maintain the project.
+\end{enumerate}
+
+\section{Risk assessment}
+As this is purely a software project, no severe risks are present. I will however be modifying low-level parts of device's software, which could possibly result in broken hardware. Parts of open-source software will also be used, so honoring their licenses should not be neglected.
+
+\section{Bibliography}
+\printbibliography[heading=none]
+
+\end{document}
